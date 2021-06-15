@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Veldora</title>
+  </head>
+  <body>
+    <header>Veldora</header>
+    <section id="dashboard">
+      <aside>
+        <ol>
+          <li>Dashboard</li>
+          <li>Plans</li>
+          <li>Settings</li>
+          <li>Logout</li>
+        </ol>
+      </aside>
+      <main>
+        <div>
+          <h2>Welcome Back, Person</h2>
+          <h4>Plan: Basic</h4>
+        </div>
+        <div>
+          <progress value="30" max="100"></progress>
+        </div>
+        <div>
+          <div>
+            <p>Collections</p>
+            <button>Create new collection</button>
+          </div>
+          <div>
+            <span>
+              <img src="" alt="collection" />
+              <p>You have no collections yet...</p>
+            </span>
+          </div>
+          <!-- <div>
+        <div>
+            <ul>
+                <div>Collection</div>
+            </ul>
+        </div>
+    </div> -->
+        </div>
+      </main>
+    </section>
+    <section>
+      <div>
+        <h2>Create new collection</h2>
+        <form action="" method="post">
+          <label for=""><input type="text" /></label>
+          <label for="">
+              <textarea name="" id="" cols="30" rows="10"></textarea>
+          </label>
+          <div>
+              <button>Cancel</button>
+              <button type="submit"></button>
+          </div>
+        </form>
+      </div>
+    </section>
+    <!-- <script>
+        let createWarpBtn = document.querySelector("#warp-create-btn")
+        createWarpBtn.addEventListener("click", ()=>{
+            fetch("/warp/create").then(res=>{
+                console.log(res);
+                res.json()
+            }).then(data=>{
+                console.log(data);
+            })
+        })
+    </script> -->
+  </body>
+</html>
