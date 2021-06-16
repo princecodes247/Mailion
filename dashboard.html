@@ -5,34 +5,42 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Veldora</title>
+    <link rel="stylesheet" href="general.css">
+    <link rel="stylesheet" href="dashboard.css">
   </head>
   <body>
     <header>Veldora</header>
     <section id="dashboard">
       <aside>
-        <ol>
-          <li>Dashboard</li>
-          <li>Plans</li>
-          <li>Settings</li>
-          <li>Logout</li>
-        </ol>
+        <div class="top">
+          <img src="" alt="Wwee">
+          <p>Prince Lee</p>
+        </div>
+        <div class="bottom">
+          <ol>
+            <li>Dashboard</li>
+            <li>Plans</li>
+            <li>Settings</li>
+            <li>Logout</li>
+          </ol>
+        </div>
       </aside>
       <main>
-        <div>
-          <h2>Welcome Back, Person</h2>
+        <div class="heading">
+          <h3>Welcome Back, Person</h3>
           <h4>Plan: Basic</h4>
         </div>
-        <div>
+        <div class="progress-bar">
           <progress value="30" max="100"></progress>
         </div>
-        <div>
-          <div>
+        <article class="collections">
+          <div class="top">
             <p>Collections</p>
             <button>Create new collection</button>
           </div>
-          <div>
-            <span>
-              <img src="" alt="collection" />
+          <div class="bottom">
+            <span class="no-collection-sign">
+              <img src="" alt="collectionz" />
               <p>You have no collections yet...</p>
             </span>
           </div>
@@ -43,12 +51,12 @@
             </ul>
         </div>
     </div> -->
-        </div>
+        </article>
       </main>
     </section>
-    <section>
-      <div>
-        <h2>Create new collection</h2>
+    <section class="modal">
+      <div class="form">
+        <h3>Create new collection</h3>
         <form action="" method="post">
           <label for=""><input type="text" /></label>
           <label for="">

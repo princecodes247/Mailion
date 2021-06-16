@@ -1,4 +1,16 @@
-
+h2::after {
+  position: absolute;
+  content: "";
+  top: 65%;
+  left: 0;
+  right: 0;
+  /* -webkit-transform: translate(-50%);
+  transform: translate(-50%);
+  width: 230px; */
+  height: 15px;
+  background-color: var(--prim-color);
+  z-index: -1;
+  }
 
 section#intro {
   height: 92vh;

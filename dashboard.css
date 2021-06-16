@@ -1,25 +1,111 @@
 header {
   display: none;
 }
-#dashboard {
+
+body {
+  background: var(--alt-bg);
+  color: var(--alt-font-color);
+  
+}
+
+section {
     padding: 0;
     display: flex;
-    outline: 1px solid red;
-    background-color: olive;
+    background: var(--alt-bg);
     align-items: stretch;
     justify-content: stretch;
     text-align: left;
     height: 100vh;
   }
- #dashboard aside{
+ section aside{
+   display: flex;
+   flex-direction: column;
     flex: 2;
     background: var(--alt-bg);
+    box-shadow: 3px 0 6px 4px #0002;
   }
-  section#dashboard main{
+
+  section aside .top {
+    flex: 4;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: var(--bg);
+  }
+
+  section aside .bottom {
+    flex: 6;
+    display: flex;
+    flex-direction: column;
+    justify-content: stretch;
+    align-items: stretch;
+    
+  }
+
+  section aside .bottom ol{
+    
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+    gap: 15px;
+  }
+
+  section aside .bottom ol li{
+    padding: 6% 20%;
+    background-color: var(--black-3);
+  }
+
+  section main{
     flex: 8;
+    padding: 5% 5% 3%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+  }
+  section#dashboard main .heading {
+    flex: 3;
+  }
+  section#dashboard main .progress-bar {
+    flex: 2;
+    background-color: var(--black-3);
+    border-radius: 40px;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  section#dashboard main .collections {
+    flex: 10;
+    display: flex;
+    flex-direction: column;
+    
+  }
+  section#dashboard main .collections > .bottom{
+    flex: 8;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .no-collection-sign {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 2.1em;
+  }
+  section#dashboard main .collections .top{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
   }
   
-  section#dashboard ul {
+  .collections ul {
     display: -ms-grid;
     display: grid;
     height: -webkit-min-content;
@@ -49,30 +135,27 @@ header {
     overflow: hidden;
   }
   
-  section#dashboard ul li::before {
-    content: "";
+
+  .modal {
     position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     top: 0;
+    background: #0005;
+    bottom: 0;
     left: 0;
     right: 0;
-    height: 5px;
-    background-color: var(--prim-color);
   }
-  
-  section#dashboard ul li sub {
-    -ms-flex-item-align: end;
-        align-self: flex-end;
+
+  .modal .form {
+    background: var(--alt-bg);
+    width: 50%;
+    padding: 5%;
   }
-  
-  section#dashboard .username {
-    position: relative;
-  }
-  
-  section#dashboard .username::after {
-    content: "basic";
-    position: absolute;
-    font-size: 12px;
-    background-color: var(--sub-bg);
-    padding: 2px 5px;
-    border-radius: 12px;
+
+  .modal .form form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
