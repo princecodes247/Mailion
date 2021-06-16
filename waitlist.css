@@ -1,0 +1,35 @@
+.waitlist {
+    margin: 30px 0;
+    position: relative;
+    display: inline;
+  }
+  
+  .waitlist p {
+    left: 47%;
+    top: -30%;
+    position: absolute;
+    opacity: 0;
+    -webkit-transform: translate(-95%, -50%) skew(20deg);
+            transform: translate(-95%, -50%) skew(20deg);
+    color: #666;
+    font-size: smaller;
+  }
+  
+  .waitlist input {
+    position: relative;
+    background-color: var(--sub-bg);
+    padding: 10px;
+    border: none;
+  }
+  
+  .waitlist input:focus-within + p {
+    opacity: 0;
+    -webkit-transform: translate(-95%, -50%) skew(0deg);
+            transform: translate(-95%, -50%) skew(0deg);
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+  }
+  
+  .waitlist button {
+    text-transform: capitalize;
+  }
