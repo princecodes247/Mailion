@@ -20,14 +20,15 @@
     --black: #000000;
     --black-2: #010101;
     --black-3: #707070;
-    --bg: #4A3FE0;
-    --alt-bg: #e3e3e3;
+    --blue-1: #4A3FE0;
+    --prim-color: var(--blue-1);
+    --bg: #eee;
+    --alt-bg: var(--prim-color);
     --sub-bg: #e3e3e3;
-    --prim-color: #4A3FE0;
     --transparent: #832e8e00;
     --sub-prim-color: #f3f4f5;
-    --font-color: var(--white);
-    --alt-font-color: var(--black);
+    --font-color: var(--black);
+    --alt-font-color: var(--white);
     --border-rad-1: 10px;
     --border-rad-2: 2px;
     --button-active: #00F663;
@@ -35,22 +36,7 @@
     --button-active-3: #3fe090;
   }
   
-  .bg-invert {
-    position: relative;
-    --bg: var(--alt-bg);
-    color: var(--alt-font-color);
-  }
-  
-  .bg-invert::before {
-    position: absolute;
-    content: "";
-    right: 0;
-    background: var(--prim-color);
-    height: 80px;
-    width: 200px;
-    border-radius: 100px 0 0 100px;
-  }
-  
+
   body {
       position: relative;
     color: var(--font-color);
@@ -89,21 +75,6 @@
     font-size: 1.1em;
   }
     
-    button {
-      background-color: var(--button-active);
-      padding: 10px 20px;
-      color: var(--alt-font-color);
-      border: none;
-      border-radius: var(--border-rad-2);
-      -ms-flex-item-align: center;
-          -ms-grid-row-align: center;
-          align-self: center;
-      padding: 10px 20px;
-      border: none;
-      text-decoration: none;
-      border-radius: var(--border-rad-2);
-      background-color: var(--button-active);
-    }
     header {
       position: -webkit-sticky;
       position: sticky;
@@ -377,7 +348,7 @@ section {
     justify-content: space-between;
     
     height: 40vh;
-    background-color: var(--bg);
+    background-color: var(--alt-bg);
     color: white;
     padding: 2% 10%
   }

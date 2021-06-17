@@ -1,33 +1,4 @@
-.messages .message {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    position: relative;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-pack: space-evenly;
-        -ms-flex-pack: space-evenly;
-            justify-content: space-evenly;
-    text-align: left;
-    border-radius: var(--border-rad-1);
-    background-color: var(--sub-bg);
-    padding: 20px;
-    margin: 20px 0;
-    overflow: hidden;
-    min-height: 300px;
-  }
-  
-  .messages .message::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 5px;
-    background-color: var(--prim-color);
-  }
+
   
   form {
     display: -webkit-box;
@@ -39,32 +10,28 @@
             flex-direction: column;
     margin-bottom: 30px;
   }
+
   
   form label {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: reverse;
-        -ms-flex-direction: column-reverse;
-            flex-direction: column-reverse;
+
     margin-bottom: 30px;
     position: relative;
   }
   
+
   form label p {
     position: absolute;
     top: 50%;
+    left: 1.5%;
     -webkit-transform: translateY(-50%);
             transform: translateY(-50%);
-    left: 2%;
     color: #333;
     -webkit-transition: 0.2s;
     transition: 0.2s;
     pointer-events: none;
   }
   
-  form label input {
+  form label input, form label textarea {
     padding: 10px;
     border: none;
     outline: 2px solid var(--transparent);
@@ -73,7 +40,7 @@
     transition: 0.1s;
   }
 
-  form label input:focus-within, form label input:valid {
+  form label input:focus-within, form label input:valid,  form label textarea:focus-within, form label textarea:valid  {
     outline: 1px solid var(--prim-color);
   }
   

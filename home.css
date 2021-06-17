@@ -1,3 +1,29 @@
+body {
+  background: var(--alt-bg);
+  color: var(--alt-font-color);
+  
+}
+
+section {
+  background-color: transparent;
+}
+
+.bg-invert {
+  position: relative;
+  background-color: var(--bg);
+  color: var(--font-color);
+}
+
+.bg-invert::before {
+  position: absolute;
+  content: "";
+  right: 0;
+  background: var(--prim-color);
+  height: 80px;
+  width: 200px;
+  border-radius: 100px 0 0 100px;
+}
+
 h2::after {
   position: absolute;
   content: "";
@@ -15,7 +41,7 @@ h2::after {
 section#intro {
   height: 92vh;
   padding-top: 0;
-  text-align: center;
+  text-align: left;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -34,6 +60,9 @@ section#intro {
   position: relative;
 }
 
+#intro button {
+  align-self: flex-start;
+}
 
 
 section#intro .hero-text-cont {
@@ -63,8 +92,8 @@ section#intro .hero-text {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: var(--alt-bg);
   padding: 10% 15%;
+  
 }
 
 #about * {
@@ -106,8 +135,8 @@ section#how ol li .top {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  color: var(--alt-font-color);
-  background: var(--alt-bg);
+  color: var(--font-color);
+  background: var(--bg);
   align-self: center;
   border-radius: 100%;
 }
@@ -174,7 +203,19 @@ section#how ol li:not(li:last-of-type)::after {
   height: 8em;
 }
 
-
+.contact-sect {
+   padding: 0;
+  height: 40vh;
+  /* outline: 1px solid red; */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.contact-sect h2 {
+  margin: 0;
+  /* outline: 1px solid red; */
+  
+}
 @-webkit-keyframes span1 {
   0% {
     width: 100%;

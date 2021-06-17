@@ -20,7 +20,12 @@ main form button{
   text-align: left;
 }
 
-.styled-table {
+.table-top {
+  display: flex;
+  justify-content: end;
+}
+.table-bottom {
+  width: 100%;
   border-collapse: collapse;
   margin: 25px 0;
   font-size: 0.9em;
@@ -28,29 +33,30 @@ main form button{
   box-shadow: 0 0 20px rgb(0, 0, 0, 0.15);
 }
 
-.styled-table thead tr {
+.table-bottom thead tr {
   background-color: var(--prim-color);
   color: #fff;
 }
 
-.styled-table th,
-.styled-table td {
+.table-bottom th,
+.table-bottom  td {
   padding: 12px 15px;
 }
 
-.styled-table tbody tr {
+.table-bottom tbody tr {
   border-bottom: thin solid #dddd;
 }
 
-.styled-table tbody tr:nth-of-type(even) {
+.table-bottom  tbody tr:nth-of-type(even) {
   background-color: #f3f3f3;
 }
 
-.styled-table tbody tr:last-of-type {
+.table-bottom tbody tr:last-of-type {
   border-bottom: 2px solid var(--prim-color);
 }
 
-.styled-table tbody tr.active-row {
+.table-bottom tbody tr.active-row {
   font-weight: bold;
   color: var(--prim-color);
 }
+

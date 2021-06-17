@@ -1,0 +1,28 @@
+.button, button {
+    background-color: var(--button-active);
+    padding: 10px 20px;
+    color: var(--font-color);
+    border: none;
+    border-radius: var(--border-rad-2);
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+    padding: 10px 20px;
+    border: none;
+    text-decoration: none;
+    box-shadow: 2px 2px 5px 1px #0002;
+    border-radius: var(--border-rad-2);
+    background-color: var(--button-active);
+  }
+
+  .button--outline {
+    border: 2px solid var(--button-active);
+  }
+  .button-alt {
+    background-color: var(--prim-color);
+}
+  .button-alt {
+    background-color: transparent;
+    border: 2px solid var(--prim-color);
+    box-shadow: none;
+}
