@@ -7,6 +7,9 @@
     <title>Veldora</title>
     <link rel="stylesheet" href="general.css">
     <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="form.css">
+    <link rel="stylesheet" href="button.css">
+    
   </head>
   <body>
     <header>Veldora</header>
@@ -36,7 +39,7 @@
         <article class="collections">
           <div class="top">
             <p>Collections</p>
-            <button>Create new collection</button>
+            <button class="open-modal-btn">Create new collection</button>
           </div>
           <div class="bottom">
             <span class="no-collection-sign">
@@ -54,17 +57,21 @@
         </article>
       </main>
     </section>
-    <section class="modal">
+    <section class="modal close">
       <div class="form">
-        <h3>Create new collection</h3>
+        <h4>Create new collection</h4>
+        
         <form action="" method="post">
-          <label for=""><input type="text" /></label>
           <label for="">
-              <textarea name="" id="" cols="30" rows="10"></textarea>
+            <input type="text" required/>
+            <p>Collection Name</p>
+          </label>
+          <label for="">
+            <textarea name="" id="" cols="30" rows="10" placeholder="A brief description of the collection" required></textarea>
           </label>
           <div>
-              <button>Cancel</button>
-              <button type="submit"></button>
+              <button class="close-modal-btn">Cancel</button>
+              <button type="submit">Create</button>
           </div>
         </form>
       </div>
