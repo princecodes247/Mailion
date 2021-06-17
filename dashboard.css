@@ -2,16 +2,11 @@ header {
   display: none;
 }
 
-body {
-  background: var(--alt-bg);
-  color: var(--alt-font-color);
-  
-}
+
 
 section {
     padding: 0;
     display: flex;
-    background: var(--alt-bg);
     align-items: stretch;
     justify-content: stretch;
     text-align: left;
@@ -21,7 +16,7 @@ section {
    display: flex;
    flex-direction: column;
     flex: 2;
-    background: var(--alt-bg);
+    background: var(--bg);
     box-shadow: 3px 0 6px 4px #0002;
   }
 
@@ -31,7 +26,7 @@ section {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background: var(--bg);
+    background: var(--alt-bg);
   }
 
   section aside .bottom {
@@ -146,16 +141,50 @@ section {
     bottom: 0;
     left: 0;
     right: 0;
+    transition: 1s all ease;
   }
 
+  .modal.close {
+    background: #0000;
+
+  }
+  .modal.close .form {
+    opacity: 0;
+    width: 0px;
+    overflow: hidden;
+    visibility: hidden;
+  }
   .modal .form {
-    background: var(--alt-bg);
+    background: var(--bg);
+    height: 90%;
     width: 50%;
-    padding: 5%;
+    padding: 5% 5% 2%;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: space-between;
+  }
+  .modal .form h4 {
+   flex: 1;
   }
 
   .modal .form form {
+    margin-top: 30px;
     display: flex;
+    flex: 1;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
+    
+  }
+
+  .modal .form form label{
+   flex: 1;
+   display: flex;
+   flex-direction: column;
+   align-items: stretch;
+  }
+
+  .modal .form form textarea{
+    resize: none;
+    height: 100%;
   }
