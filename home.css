@@ -15,16 +15,18 @@ section {
 }
 
 .bg-invert::before {
+  display: none;
   position: absolute;
   content: "";
   right: 0;
   background: var(--prim-color);
-  height: 80px;
-  width: 200px;
+  height: 60px;
+  width: 70px;
   border-radius: 100px 0 0 100px;
 }
 
 h2::after {
+  display: none;
   position: absolute;
   content: "";
   top: 65%;
@@ -61,7 +63,7 @@ section#intro {
 }
 
 #intro button {
-  align-self: flex-start;
+  align-self: center;
 }
 
 
@@ -79,12 +81,12 @@ section#intro .hero-text-cont {
 }
 
 section#intro .hero-text {
-  width: 70%;
-  text-align: left;
+  width: 100%;
+  text-align: center;
   display: flex;
   gap: 20px;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   z-index: 2;
 }
 
@@ -108,59 +110,14 @@ section#how {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+  
+  height: fit-content;
 }
 
 section#how button{
   margin-top: 30px;
 }
 
-section#how ol {
-  height: 25em;
-  display: flex;
-  justify-content: space-around;
-  gap: 20px;
-}
-
-section#how ol li {
-  height: 80%;
-  width: 25%;
-  flex-direction: column;
-  justify-content: space-around;
-}
-
-section#how ol li .top {
-  height: 150px;
-  width: 150px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  color: var(--font-color);
-  background: var(--bg);
-  align-self: center;
-  border-radius: 100%;
-}
-section#how ol li .top > h3 {
-  font-size: 4em;
-}
-
-section#how ol, section#how ol li {
-  position: relative;
-  display: flex;
-}
-
-section#how ol li:not(li:last-of-type)::after {
-  position: absolute;
-  content: "";
-  left: 90%;
-  width: 100px;
-  height: 100px;
-  border-radius: 100px;
-  border: 4px solid var(--prim-color);
-  border-left: 4px solid transparent;
-  border-bottom: 4px solid transparent;
-  border-style: dashed;
-}
 
 
 .feats {
@@ -484,11 +441,6 @@ section#how ol li:not(li:last-of-type)::after {
   }
 }
 
-/* @media screen and (min-width: 768px) {
-  body h1 {
-    font-size: 3.5em;
-  }
-} */
 /* 
 
 @media screen and (min-width: 550px) {
@@ -517,7 +469,7 @@ section#how ol li:not(li:last-of-type)::after {
   }
 } */
 
-/* @media screen and (min-width: 768px) {
+@media screen and (min-width: 768px) {
   section#intro {
     -webkit-box-align: center;
         -ms-flex-align: center;
@@ -530,7 +482,7 @@ section#how ol li:not(li:last-of-type)::after {
         -ms-flex-pack: justify;
             justify-content: space-between;
   }
-  section#intro .hero-text-cont {
+  section#intro .hero-text {
     -webkit-box-pack: start;
         -ms-flex-pack: start;
             justify-content: start;
@@ -539,4 +491,19 @@ section#how ol li:not(li:last-of-type)::after {
             align-items: flex-start;
     text-align: left;
   }
-} */
+
+  #intro button {
+    align-self: flex-start;
+  }
+  .bg-invert::before {
+
+    right: 0;
+    display: inline;
+    height: 80px;
+    width: 200px;
+    
+  }
+  h2::after {
+    display: inline;
+  }
+}

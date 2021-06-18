@@ -19,7 +19,7 @@
     --white: #ffffff;
     --black: #000000;
     --black-2: #010101;
-    --black-3: #707070;
+    --black-3: hsl(0, 0%, 86%);
     --blue-1: #4A3FE0;
     --prim-color: var(--blue-1);
     --bg: #eee;
@@ -46,34 +46,34 @@
   }
   
   h1 {
-    font-size: 4rem;
+    font-size: 3rem;
   }
   
   h2 {
     position: relative;
-    font-size:2.9rem;
+    font-size:2.2rem;
      
   }
   
   h3 {
     position: relative;
-    font-size: 2rem;
+    font-size: 1.7rem;
   }
   h4 {
     position: relative;
-    font-size: 1.4rem;
+    font-size: 1.3rem;
   }
   h5 {
     position: relative;
-    font-size: 1rem;
+    font-size: 1.2rem;
   }
   h6 {
     position: relative;
-    font-size: 0.6rem;
+    font-size: 1rem;
   }
   p {
     position: relative;
-    font-size: 1.1em;
+    font-size: 0.9em;
   }
     
     header {
@@ -326,6 +326,8 @@ section {
   }
   
   .line-list li {
+    display: flex;
+    flex-direction: column;
     list-style: inside;
     text-align: left;
     background-color: var(--sub-bg);
@@ -338,6 +340,56 @@ section {
   .line-list li a:link {
     color: var(--prim-color);
   }
+  .step-list {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+      flex-direction: column;
+      align-items: center;
+  }
+ 
+  .step-list li {
+    
+    width: 25%;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+  
+  .step-list li .top {
+    height:8em;
+    width: 8em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: var(--font-color);
+    background: var(--bg);
+    align-self: center;
+    border-radius: 100%;
+    margin-bottom: 10px;
+  }
+  .step-list li .top > h3 {
+    font-size: 4em;
+  }
+  
+  .step-list, .step-list li {
+    position: relative;
+    display: flex;
+  }
+  
+  .step-list li:not(li:last-of-type)::after {
+    position: absolute;
+    content: "";
+    left: 90%;
+    width: 100px;
+    height: 100px;
+    border-radius: 100px;
+    border: 4px solid var(--prim-color);
+    border-left: 4px solid transparent;
+    border-bottom: 4px solid transparent;
+    border-style: dashed;
+  }
+  
   
   .hidden {
     display: hidden;
@@ -355,3 +407,52 @@ section {
   }
   
   
+@media screen and (min-width: 768px) {
+  
+  h1 {
+    font-size: 4rem;
+  }
+  
+  h2 {
+    position: relative;
+    font-size:2.9rem;
+     
+  }
+  
+  h3 {
+    position: relative;
+    font-size: 2rem;
+  }
+  h4 {
+    position: relative;
+    font-size: 1.4rem;
+  }
+  h5 {
+    position: relative;
+    font-size: 1rem;
+  }
+  h6 {
+    position: relative;
+    font-size: 0.6rem;
+  }
+  p {
+    position: relative;
+    font-size: 1.1em;
+  }
+
+  .step-list {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    height: 25em;
+    flex-direction: row;
+  }
+
+   
+  .step-list li {
+    height: 80%;
+    width: 25%;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+}

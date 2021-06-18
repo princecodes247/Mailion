@@ -23,11 +23,16 @@
     border: 2px solid var(--button-active);
   }
   .button-alt {
-    
+    color: var(--alt-font-color);
     background-color: var(--prim-color);
 }
-  .button-alt {
+  .button-alt--outline {
+    
     background-color: transparent;
     border: 2px solid var(--prim-color);
     box-shadow: none;
+}
+
+  .button-alt:active {
+    background-color: var(--prim-color);
 }

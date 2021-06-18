@@ -11,7 +11,15 @@
     margin-bottom: 30px;
   }
 
-  
+  form .desc {
+    margin-bottom: 40px;
+  }
+  form .button-sect {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    justify-content: space-between;
+  }
   form label {
 
     margin-bottom: 30px;
