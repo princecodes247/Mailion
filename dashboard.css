@@ -10,9 +10,13 @@ section {
     align-items: stretch;
     justify-content: stretch;
     text-align: left;
-    height: 100vh;
+    min-height: 100vh;
   }
  section aside{
+   position: sticky;
+   left: 0;
+   top: 0;
+   height: 100vh;
    display: flex;
    flex-direction: column;
     flex: 2;
@@ -141,18 +145,19 @@ section {
     bottom: 0;
     left: 0;
     right: 0;
-    transition: 1s all ease;
+    transition: 0.8s all ease;
   }
 
   .modal.close {
     background: #0000;
-
+    pointer-events: none;
   }
   .modal.close .form {
     opacity: 0;
     width: 0px;
     overflow: hidden;
     visibility: hidden;
+    pointer-events: none;
   }
   .modal .form {
     background: var(--bg);

@@ -19,7 +19,7 @@
   }
   
 
-  form label p {
+  form label p.float {
     position: absolute;
     top: 50%;
     left: 1.5%;
@@ -44,7 +44,7 @@
     outline: 1px solid var(--prim-color);
   }
   
-  form label input:focus-within + p, form label input:valid + p {
+  form label input:focus-within + p.float, form label input:valid + p.float {
     color: var(--prim-color);
     top: -25%;
     font-size: 14px;

@@ -32,6 +32,7 @@
     --border-rad-1: 10px;
     --border-rad-2: 2px;
     --button-active: #00F663;
+    --button-clicked: hsl(144, 100%, 35%);
     --button-active-2: #3fe090;
     --button-active-3: #3fe090;
   }
