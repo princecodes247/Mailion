@@ -7,6 +7,7 @@
     <title>Veldora</title>
     <link rel="stylesheet" href="general.css">
     <link rel="stylesheet" href="button.css">
+    <link rel="stylesheet" href="form.css">
     <link rel="stylesheet" href="dashboard.css">
     <link rel="stylesheet" href="collection.css">
 </head>
@@ -30,7 +31,7 @@
               <main>
                 <div class="heading">
                 <div class="top">
-                    <h3>Collection: Project Survey - Settings</h3>
+                    <h3>Account Settings</h3>
                   
                     <div>
                       <button>S</button>
@@ -39,29 +40,47 @@
                       </div>
                 </div>
                   
-                  <div class="bottom">
-                    <h5>Description</h5>
-                    <p>This is a something for something</p>
-                </div>
+                  
                   </div>
                   <form action="" method="post">
+                    <div>
+                      <h5>Update your profile</h5>
+                      
+                  </div>
                       <label for="">
-                        <input type="text">
-                        <p class="float">Collection Name</p>
+                          <p>Name</p>
+                          <input type="text">
                       </label>
                       <label for="">
+                        <p>Email address</p>
                         <input type="text">
-                        <p class="float">Collection Description</p>
                     </label>
-                    <label for="">
-                        <input type="checkbox">
-                    </label>
-                    <label for="">
-                        <input type="checkbox">
-                    </label>
+                                   
                     <div>
-                        <button>Discard</button>
-                    <button type="submit">Save</button>
+                      <button type="submit">Update Profile</button>
+                    </div>
+                  </form>
+
+                  <form action="" method="post">
+                    <div>
+                      <h5>Change Password</h5>
+                      <p>Make sure it's at least 8 characters including a number and lowercase letter.</p>
+                  </div>
+                      <label for="">
+                        <input type="text" required>
+                        <p class="float">Old password</p>
+                      </label>
+                      <label for="">
+                        <input type="text" required>
+                        <p class="float">New password</p>
+                    </label>
+                    <label for="">
+                      <input type="text" required>
+                      <p class="float">Confirm new password</p>
+                  </label>                  
+                    <div>
+                      <button type="submit">Save</button>
+                      <a href="">Forgot password?</a>
                     </div>
                   </form>
           
