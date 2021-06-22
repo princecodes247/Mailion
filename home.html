@@ -10,118 +10,156 @@
   <link rel="stylesheet" href="home2.css">
 </head>
 <body>
-  <header class="navbar">
-    <div class="navbar__logo">
-      Veldora
+  <script defer src="./scroll_shrink.js"></script>
+  <header class="c-navbar scroll-shrink">
+    <div class="c-navbar__logo">
+      <img src="./assets/img/logo_long.png" width="100px" alt="">
     </div>
 <nav>
-  <ul class="navbar__links">
-    <li class="navbar__link">about</li>
-    <li class="navbar__link">docs</li>
-    <li class="navbar__link">FAQ</li>
-    <li class="navbar__link">signin</li>
+  <ul class="c-navbar__links">
+    <li class="c-navbar__link">about</li>
+    <li class="c-navbar__link">docs</li>
+    <li class="c-navbar__link">FAQ</li>
+    <li class="c-navbar__link">signin</li>
   </ul>
 </nav>
   </header>
 <main>
-  <section class="sect intro">
-    <div class="intro__img"></div>
-    <div class="intro__content">      
-      <h1 class="intro__title">No backend, Just Forms</h1>
-      <h3 class="intro__desc">Get rid of your form backend code, let Veldora handle it</h3>
-      <button class="button--active">Sign up for free</button>
+  <section class="c-sect c-sect--row c-intro">
+    <div class="c-sect__img">
+      <img src="./assets/img/logo_cloud.png" alt="">
     </div>
-    <div class="intro__social_links">
+    <div class="c-intro__content">      
+      <h1 class="c-intro__title">No backend, Just Forms</h1>
+      <h3 class="c-intro__desc">Get rid of your form backend code, let Veldora handle it</h3>
+      <button class="button button--active">Sign up for free</button>
+    </div>
+    <div class="c-intro__social_links">
       <a href="#1">Facebook</a>
       <a href="#2">Twitter</a>
       <a href="#3">Github</a>
     </div>
         </section>
     
-        <section class="sect--white about">
-          <div class="sect__content">
-            <h2 class="sect__title">What we do</h2>
-          <h3 class="sect__body">With Veldora you can create your form and send the form data to our server. We handle the rest: email notifications, submission management, data validation and more. It's super easy!</h3>
+  <section class="c-sect c-sect--row c-sect--white about">
+    <div class="c-sect__content">
+      <h2 class="c-sect__title">What we do</h2>
+    <h4 class="c-sect__body">With Veldora you can create your form and send the form data to our server. We handle the rest: email notifications, submission management, data validation and more. It's super easy!</h4>
+    </div>
+    <div class="c-sect__img">
+      <img src="./assets/img/logo_cloud.png" alt="">
+    </div>
+  </section>
+  <section class="c-sect how">
+    <h2 class="c-sect__title">How Veldora works</h2>
+    <div class="c-sect__content">
+      <ul class="c-sect__list">
+        <li class="c-sect__list_item c-card">
+          <div class="c-card__top c-card__top--circle">
+            <h3>1</h3>
           </div>
-          <div class="sect__img">
-            V
+          <div class="c-card__bottom">
+            <h3>Register</h3>
+          <h4>Register an account with us <a href="/register">Register</a></h4>
           </div>
-        </section>
-      
-        <section class=" sect how">
-          <h2 class="sect__title">How it works</h2>
-          <ol class="sect__list">
-            <li class="list_card card">
-              <div class="card__top">
-                <h3>1</h3>
-              </div>
-              <div class="card__bottom">
-                <h3>Register</h3>
-              <h4>Register an account with us <a href="/register">Register</a></h4>
-              </div>
-            </li>
-            <li class="list_card card">
-              <div class="card__top">
-                <h3>2</h3>
-              </div>
-              <div class="card__bottom">
-                <h3>Register</h5>
-              <h4>Create a warp. Give it a name, a description of it's use</h4>
-              </div>
-            </li>
-            <li class="list_card card">
-              <div class="card__top">
-                <h3>3</h3>
-              </div>
-              <div class="card__bottom">
-                <h3>Register</h5>
-              <h4>Copy and use the warp link provided in your forms</h4>
-              </div>
-            </li>
-            
-          </ol>
-          
-        </section>
-        <section class="sect testimonial bg-invert">
-          <h2 class="sect__title">What are people saying</h2>
-        </section>
-        <section class="feats">
-          <h2>What can you do with Veldora</h2>
-          <ol class="box-list">
-            <li>
-              <h4>Step 1</h4>
-              <p>Register an account with us <a href="/register">Register</a></p>
-            </li>
-            <li>
-              <h4>Step 2</h4>
-              <p>Create a warp. Give it a name, a description of it's use</p>
-            </li>
-            <li>
-              <h4>Step 3</h4>
-              <p>Copy and use the warp link provided in your forms</p>
-            </li>
-            <li>
-              <h4>Step 1</h4>
-              <p>Register an account with us <a href="/register">Register</a></p>
-            </li>
-            <li>
-              <h4>Step 2</h4>
-              <p>Create a warp. Give it a name, a description of it's use</p>
-            </li>
-            <li>
-              <h4>Step 3</h4>
-              <p>Copy and use the warp link provided in your forms</p>
-            </li>
-          </ol>
-          
-        </section>
-        <section class="contact-sect">
-          <h2>Are you ready?</h2>
-          <p>Start using Veldora today!</p>
-          <button>Sign up for free</button>
-        </section>
+        </li>
+        <li class="c-sect__list_item c-card">
+          <div class="c-card__top c-card__top--circle">
+            <h3>2</h3>
+          </div>
+          <div class="c-card__bottom">
+            <h3>Register</h3>
+          <h4>Register an account with us <a href="/register">Register</a></h4>
+          </div>
+        </li>
+        <li class="c-sect__list_item c-card">
+          <div class="c-card__top c-card__top--circle">
+            <h3>3</h3>
+          </div>
+          <div class="c-card__bottom">
+            <h3>Register</h3>
+          <h4>Register an account with us <a href="/register">Register</a></h4>
+          </div>
+        </li>
+        
+        
+      </ul>
+    </div>
+    
+  </section>
+  <section class="c-sect c-sect--white testimonial">
+    <h2 class="c-sect__title">What are people saying</h2>
+    <div class="c-sect__content">
+      <div class="c-carousel">
+      <ul class="c-carousel__items">
+        <button class="c-carousel__button c-carousel__button--disabled">L</button>
+        <li class="c-carousel__item">
+          <div class="c-carousel__item_img"></div>
+          <div class="c-carousel__item_content">
+          <h3>Dani Fletch</h3>
+          <p>I love the new look and the speed</p>
+          <p><i>Frontend Developer, MSN</i></p>
+          </div>
+        </li>
+        <li class="c-carousel__item">
+          <div class="c-carousel__item_img"></div>
+          <div class="c-carousel__item_content">
+          <h3>Dani Fletch</h3>
+          <p>I love the new look and the speed</p>
+          <p><i>Frontend Developer, MSN</i></p>
+          </div>
+        </li>
+        <button class="c-carousel__button c-carousel__button--disabled">R</button>
+      </ul>
+      <div class="c-carousel__pos_marker">
+        <div class="c-carousel__pos_marker_dot c-carousel__pos_marker_dot--active"></div>
+        <div class="c-carousel__pos_marker_dot"></div>
+      </div>
+    </div>
+    </div>
+  </section>
+  <!-- <section class="c-sect feats">
+    <h2>What can you do with Veldora</h2>
+    
+      <ul class="c-sect__list">
+        <li class="c-sect__list_item c-card">
+          <div class="c-card__top">
+            <div class="c-card__img"></div>
+          </div>
+          <div class="c-card__bottom">
+            <h3>Do Something</h3>
+          <h4>Do Something Do Something Do Something</h4>
+          </div>
+        </li>
+      </ul>
+    
+    
+  </section> -->
+  <section class="c-sect how">
+    <h2 class="c-sect__title">What can you do with Veldora</h2>
+    <div class="c-sect__content">
+    <ul class="c-sect__list">
+      <li class="c-sect__list_item c-card">
+        <div class="c-card__top">
+          <div class="c-card__img"></div>
+        </div>
+        <div class="c-card__bottom">
+          <h3>Do Something</h3>
+        <h4>Do Something Do Something Do Something</h4>
+        </div>
+      </li>
+    </ul>
+  </div>
+  </section>
+  <section class="c-sect contact">
+    <h2 class="body_font">Get updates sent to you</h2>
+    <div class="in">
+      <input type="text" class="inn" placeholder="example@mymail.com">
+      <button type="submit">Add email</button>
+    </div>
+  </section>
 </main>
-    <footer>
+    <footer class="footer">
       <ol>
         <li>Home</li>
       </ol>
