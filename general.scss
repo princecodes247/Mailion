@@ -1,0 +1,189 @@
+/*GENERAL CSS*/
+
+@font-face {
+    font-family: Coolvetica;
+    src: url("./assets/fonts/coolvetica.ttf");
+  }
+  @font-face {
+    font-family: Arial;
+    src: url("./assets/fonts/arial.ttf");
+  }
+  
+  *,
+  *::after,
+  *::before {
+    padding: 0;
+    margin: 0;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+  }
+  
+  :root {
+    
+    --body-font: Arial, "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+    sans-serif;
+    --heading-font: Coolvetica, "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+    sans-serif;
+    --white: hsl(0, 0%, 100%);
+    --black: hsl(0, 0%, 0%);
+    --black-2: hsl(0, 0%, 0%);
+    --black-3: hsl(0, 0%, 86%);
+    --blue-1: hsl(244, 69%, 65%);
+    --blue-2: hsl(244, 69%, 55%);
+    --blue-3: hsl(243, 70%, 35%);
+    --blue-4: hsl(243, 71%, 25%);
+    --green-1: hsl(150, 72%, 56%);
+    --green-2: hsl(144, 100%, 35%);
+    --green-3: hsl(150, 100%, 30%);
+    --amber-1: hsl(39, 100%, 60%);
+    --amber-2: hsl(39, 100%, 50%);
+    --amber-3: hsl(39, 70%, 50%);
+    --red-1: hsl(5, 100%, 60%);
+    --red-2: hsl(5, 80%, 50%);
+    --red-3: hsl(5, 80%, 40%);
+    --prim-color: var(--blue-2);
+    --transition-color: var(--blue-3);
+    --sec-color: var(--blue-4);
+    --warning-color: var(--red-3);
+    --bg: #eee;
+    --alt-bg: var(--prim-color);
+    --sub-bg: #e3e3e3;
+    --transparent: #832e8e00;
+    --sub-prim-color: #f3f4f5;
+    --font-color: var(--black);
+    --alt-font-color: var(--white);
+    --border-rad-1: 10px;
+    --border-rad-2: 2px;
+    --active-color: var(--amber-2);
+    --button-active: var(--active-color);
+    --button-clicked: hsl(144, 100%, 35%);
+    --button-active-2: #3fe090;
+    --button-active-3: #3fe090;
+  }
+  
+  body {
+      position: relative;
+    color: var(--font-color);
+    background-color: var(--bg);
+    min-height: 100vh;
+    font-family: var(--body-font);
+  }
+  
+  h1, h2, h3 {
+    font-family: var(--heading-font);
+    &.body_font {
+      font-family: var(--body-font);
+    }
+  }
+  
+  h1 {
+    font-size: 3rem;
+  }
+  
+  h2 {
+    position: relative;
+    font-size:2.2rem;
+     
+  }
+  
+  h3 {
+    position: relative;
+    font-size: 1.7rem;
+  }
+  h4 {
+    position: relative;
+    font-size: 1.3rem;
+  }
+  h5 {
+    position: relative;
+    font-size: 1.2rem;
+  }
+  h6 {
+    position: relative;
+    font-size: 1rem;
+  }
+  p {
+    position: relative;
+    font-size: 0.9em;
+  }
+    
+    
+
+      
+  
+  section {
+    background-color: var(--bg);
+    padding: 8% 5%;
+    /* padding-top: 10%; */
+    text-align: center;
+    
+  }
+  
+  section h2 {
+    margin-bottom: 50px;
+    z-index: 3;
+    align-items: center;
+  }
+
+  .c-sect {
+    background-color: transparent;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10% 5% 10% 10%;
+  
+    // This variable controls the color of the 
+    // headers in each section.
+    --title-color: var(--white);
+  
+    // Modifiers
+    &--white {
+      color: var(--black);
+      background-color: var(--bg);
+      --title-color: var(--prim-color);
+    }
+    &--row {
+      flex-direction: row;
+    }
+  
+    //Elements
+    &__img {
+      flex: 4;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    &__title {
+      color: var(--title-color);
+    }
+    &__content {
+      flex: 5;
+      display: flex;
+      flex-direction: column;
+      text-align: left;
+    }
+    &__list {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      
+      grid-auto-rows: 340px;
+      gap: 20px;
+      width: 100%;
+      list-style: none;
+  
+    }
+  }
+  
+  footer {
+    display: flex;
+    justify-content: space-between;
+    
+    height: 40vh;
+    background-color: var(--alt-bg);
+    color: white;
+    padding: 2% 10%
+  }
+  
+  
+  

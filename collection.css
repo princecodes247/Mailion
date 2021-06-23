@@ -1,10 +1,10 @@
-section main .heading {
+.dashboard__top {
   /* flex: 3; */
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
-section main .heading .top {
+.dashboard__nav {
   display: flex;
   justify-content: space-between;
   margin-bottom: 50px;

@@ -12,24 +12,29 @@
 </head>
 <body>
     
-        <section>
-            <aside>
-                <div class="top">
-                  <img src="" alt="Wwee">
-                  <p>Prince Lee</p>
-                </div>
-                <div class="bottom">
-                  <ol>
-                    <li>Dashboard</li>
-                    <li>Plans</li>
-                    <li>Settings</li>
-                    <li>Logout</li>
-                  </ol>
-                </div>
-              </aside>
-              <main>
-                <div class="heading">
-                    <div class="top">
+        <main>
+          <aside class="side_menu">
+            <div class="side_menu__logo">
+              <img src="./assets/img/logo_long.png" width="80px" alt="">
+            </div>
+            <div class="side_menu__top">
+              <div class="side_menu__profile">
+                <img class="side_menu__profile_pic" src="" alt="">
+              <p class="side_menu__profile_name">Prince Lee</p>
+              </div>
+            </div>
+            <div class="side_menu__bottom">
+              <ol class="side_menu__nav">
+                <li class="side_menu__link side_menu__link--active">Dashboard</li>
+                <li class="side_menu__link">Plans</li>
+                <li class="side_menu__link">Settings</li>
+                <li class="side_menu__link">Logout</li>
+              </ol>
+            </div>
+          </aside>
+          <article class="dashboard">
+            <div class="dashboard__top">
+                    <div class="dashboard__nav">
                         <h3>Collection: Project Survey</h3>
                       
                         <div>
@@ -43,8 +48,14 @@
                         <h5>Description</h5>
                         <p>This is a something for something</p>
                     </div>
-                      </div>
-                
+            </div>
+            <div class="dashboard__search_sect">
+              <div class="dashboard__search_bar">
+                <button class="button button-secondary dashboard__filter_btn">E</button>
+                <input class="dashboard__search" type="search" name="dashboard_search" id="dashboard_search" placeholder="Search collection">
+                <button class="button button--alt dashboard__search_btn">Search</button>
+              </div>
+            </div>
                 <div>
                     <div class="table-top">
                         <button class="button-alt">Table</button>
@@ -53,6 +64,7 @@
                     <table class="table-bottom">
                         <thead>
                            <tr>
+                            <th>S/N</th>
                             <th>Name</th>
                             <th>Sex</th>
                             <th>Age</th>
@@ -62,12 +74,14 @@
                         <tbody>
                             
                             <tr>
+                              <td>1</td>
                                 <td>Susan</td>
                                 <td>Female</td>
                                 <td>23</td>
                                 <td>I think it's great</td>
                             </tr>
                             <tr class="active-row">
+                              <td>2</td>
                                 <td>Susan</td>
                                 <td>Female</td>
                                 <td>23</td>
@@ -77,8 +91,8 @@
                     </table>
                
                 </div>
-            </main>
-        </section>
+            </article>
+        </main>
  
 </body>
 </html>

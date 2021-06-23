@@ -6,58 +6,92 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Veldora</title>
     <link rel="stylesheet" href="general.css">
+    <link rel="stylesheet" href="button.css">
     <link rel="stylesheet" href="dashboard.css">
     <link rel="stylesheet" href="form.css">
-    <link rel="stylesheet" href="button.css">
+    <link rel="stylesheet" href="control.css">
     
   </head>
   <body>
     <script defer src="./control-modal.js"></script>
     <header>Veldora</header>
-    <section id="dashboard">
-      <aside>
-        <div class="top">
-          <img src="" alt="Wwee">
-          <p>Prince Lee</p>
+    <main>
+      <aside class="side_menu">
+        <div class="side_menu__logo">
+          <img src="./assets/img/logo_long.png" width="80px" alt="">
         </div>
-        <div class="bottom">
-          <ol>
-            <li>Dashboard</li>
-            <li>Plans</li>
-            <li>Settings</li>
-            <li>Logout</li>
+        <div class="side_menu__top">
+          <div class="side_menu__profile">
+            <img class="side_menu__profile_pic" src="" alt="">
+          <p class="side_menu__profile_name">Prince Lee</p>
+          </div>
+        </div>
+        <div class="side_menu__bottom">
+          <ol class="side_menu__nav">
+            <li class="side_menu__link side_menu__link--active">Dashboard</li>
+            <li class="side_menu__link">Plans</li>
+            <li class="side_menu__link">Settings</li>
+            <li class="side_menu__link side_menu__link--warning">Logout</li>
           </ol>
         </div>
       </aside>
-      <main>
-        <div class="heading">
-          <h3>Welcome Back, Person</h3>
-          <h4>Plan: Basic</h4>
+      <article class="dashboard">
+        <div class="dashboard__top">
+          <h3>Dashboard</h3>
+          
         </div>
-        <div class="progress-bar">
-          <progress value="30" max="100"></progress>
-        </div>
-        <article class="collections">
-          <div class="top">
-            <p>Collections</p>
-            <button class="open-modal-btn">Create new collection</button>
+        <div class="dashboard__search_sect">
+          <div class="dashboard__search_bar">
+            <button class="button button-secondary dashboard__filter_btn">E</button>
+            <input class="dashboard__search" type="search" name="dashboard_search" id="dashboard_search" placeholder="Search collection">
+            <button class="button button--alt dashboard__search_btn">Search</button>
           </div>
-          <div class="bottom">
-            <span class="no-collection-sign">
+        </div>
+        <section class="dashboard__collections">
+          <div class="dashboard__collections_top">
+            <p class="">Collections</p>
+            <button class="button open-modal-btn">Create new collection</button>
+          </div>
+          <div class="dashboard__collections_bottom">
+            <span class="no-collection-sign hidden">
               <img src="" alt="collectionz" />
               <p>You have no collections yet...</p>
             </span>
           </div>
-          <!-- <div>
-        <div>
-            <ul>
-                <div>Collection</div>
-            </ul>
-        </div>
-    </div> -->
-        </article>
-      </main>
-    </section>
+
+          <div class="dashboard__collections_grid">
+            <div class="collection_item">
+              <h4 class="collection_item__title">Collection</h4>
+              <p class="collection_item__desc">Some stuff about some stuff</p>
+              <div class="collection_item__insights">
+                <div class="collection_item__message_insight">40 messages</div>
+            </div>
+            </div>
+            <div class="collection_item">
+              <h4 class="collection_item__title">Collection</h4>
+              <p class="collection_item__desc">Some stuff about some stuff</p>
+              <div class="collection_item__insights">
+                <div class="collection_item__message_insight">40 messages</div>
+            </div>
+            </div>
+            <div class="collection_item">
+              <h4 class="collection_item__title">Collection</h4>
+              <p class="collection_item__desc">Some stuff about some stuff</p>
+              <div class="collection_item__insights">
+                <div class="collection_item__message_insight">40 messages</div>
+            </div>
+            </div>
+            <div class="collection_item">
+              <h4 class="collection_item__title">Collection</h4>
+              <p class="collection_item__desc">Some stuff about some stuff</p>
+              <div class="collection_item__insights">
+                <div class="collection_item__message_insight">40 messages</div>
+            </div>
+            </div>
+          </div>
+        
+        </section>
+    
     <section class="modal close">
       <div class="form">
         <h4>Create new collection</h4>
@@ -77,6 +111,8 @@
         </form>
       </div>
     </section>
+  </article>
+  </main>
     <!-- <script>
         let createWarpBtn = document.querySelector("#warp-create-btn")
         createWarpBtn.addEventListener("click", ()=>{

@@ -1,0 +1,8 @@
+.hidden {
+    display: none;
+  }
+
+.bg--black {
+  background-color: var(--black);
+  background-color: var(--white);
+}

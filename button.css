@@ -4,9 +4,9 @@
     color: var(--font-color);
     border: none;
     border-radius: var(--border-rad-2);
-    -ms-flex-item-align: center;
-        -ms-grid-row-align: center;
-        align-self: center;
+     -ms-flex-item-align: left;
+        -ms-grid-row-align: left;
+        align-self: left;
     padding: 10px 20px;
     border: none;
     text-decoration: none;
@@ -22,17 +22,32 @@
   .button--outline {
     border: 2px solid var(--button-active);
   }
-  .button-alt {
+  .button--alt {
     color: var(--alt-font-color);
     background-color: var(--prim-color);
 }
-  .button-alt--outline {
+  .button--alt_outline {
     
     background-color: transparent;
     border: 2px solid var(--prim-color);
     box-shadow: none;
 }
 
-  .button-alt:active {
+  .button--alt:active {
     background-color: var(--prim-color);
+}
+
+.button--sec {
+  color: var(--alt-font-color);
+  background-color: var(--prim-color);
+}
+.button--sec_outline {
+  
+  background-color: transparent;
+  border: 2px solid var(--prim-color);
+  box-shadow: none;
+}
+
+.button--sec:active {
+  background-color: var(--prim-color);
 }
