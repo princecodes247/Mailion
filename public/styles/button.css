@@ -1,0 +1,108 @@
+:root {
+  --button-default: var(--amber-2);
+  --button-clicked: var(--amber-3);
+  --button-hover: var(--amber-1);
+  --button-default-3: #3fe090;
+}
+
+/* Basic Button */
+.button, button {
+    background-color: var(--button-default);
+    padding: 10px 20px;
+    color: var(--font-color);
+    border: none;
+    border-radius: var(--border-rad-2);
+     -ms-flex-item-align: left;
+        -ms-grid-row-align: left;
+        align-self: left;
+    padding: 10px 20px;
+    border: none;
+    text-decoration: none;
+    box-shadow: 2px 2px 5px 1px #0002;
+    border-radius: var(--border-rad-2);
+    background-color: var(--button-default);
+    font-family: var(--heading-font);
+  }
+.button:hover, button:hover {
+    background-color: var(--button-hover);
+  }
+.button:active, button:active {
+    background-color: var(--button-clicked);
+  }
+/* ****************************** */
+
+/* Basic button with only Outline */
+  .button--outline {
+    background-color: transparent;
+    box-shadow: none;
+    color: var(--white);
+    border: 0.13rem solid #ffffff82;
+    padding: 8px 20px;
+  }
+  .button--outline:hover {
+    background-color: var(--sub-bg);
+    opacity: 0.9;
+  }
+.button--outline:active {
+    opacity: 1;
+  }
+/* ****************************** */
+
+/* Basic button with alt color */
+.button--alt {
+  color: var(--alt-font-color);
+  --button-default: var(--blue-2);
+  --button-clicked: var(--blue-3);
+  --button-hover: var(--blue-1);
+}
+
+/* ****************************** */
+
+/* Basic button with secondary color on outline */
+.button--alt_outline {
+  --button-default: var(--blue-2);
+  --button-clicked: ;
+  --button-hover: ;
+  background-color: transparent;
+  border: 2px solid var(--button-default);
+  box-shadow: none;
+}
+/* ****************************** */
+
+/* Basic button with secondary color */
+.button--sec {
+  color: var(--alt-font-color);
+  --button-default: var(--blue-2);
+  --button-clicked: var(--blue-3);
+  --button-hover: var(--blue-1);
+  
+}
+
+.button--sec_outline {
+  
+  background-color: transparent;
+  border: 2px solid var(--prim-color);
+  box-shadow: none;
+}
+
+.button--sec_outline:hover {
+  background-color: var(--button-hover);
+}
+
+.button--sec_outline:active {
+  background-color: var(--prim-color);
+}
+/* ****************************** */
+
+/* Basic button with no bacound */
+.button--trans {
+  --button-default: transparent;
+  --button-clicked: var(--sub-bg);
+  --button-hover: var(--sub-bg);
+}
+.button--trans:hover {
+  opacity: 0.7;
+}
+.button--trans:active {
+  opacity: 1;
+}
