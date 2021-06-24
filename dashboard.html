@@ -5,20 +5,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Veldora</title>
-    <link rel="stylesheet" href="general.css">
-    <link rel="stylesheet" href="button.css">
-    <link rel="stylesheet" href="dashboard.css">
-    <link rel="stylesheet" href="form.css">
-    <link rel="stylesheet" href="control.css">
+    <link rel="stylesheet" href="./public/styles/general.css">
+    <link rel="stylesheet" href="./public/styles/button.css">
+    <link rel="stylesheet" href="./public/styles/dashboard.css">
+    <link rel="stylesheet" href="./public/styles/form.css">
+    <link rel="stylesheet" href="./public/styles/control.css">
     
   </head>
   <body>
-    <script defer src="./control-modal.js"></script>
+    <script defer src="./public/scripts/control-modal.js"></script>
     <header>Veldora</header>
     <main>
       <aside class="side_menu">
         <div class="side_menu__logo">
-          <img src="./assets/img/logo_long.png" width="80px" alt="">
+          <a href="./home.html"><img src="./public/assets/img/logo_long.png" width="80px" alt="Veldora logo"></a>
         </div>
         <div class="side_menu__top">
           <div class="side_menu__profile">
@@ -42,9 +42,9 @@
         </div>
         <div class="dashboard__search_sect">
           <div class="dashboard__search_bar">
-            <button class="button button-secondary dashboard__filter_btn">E</button>
+            <button class="button button--trans dashboard__filter_btn">E</button>
             <input class="dashboard__search" type="search" name="dashboard_search" id="dashboard_search" placeholder="Search collection">
-            <button class="button button--alt dashboard__search_btn">Search</button>
+            <button class="button button--sec dashboard__search_btn">Search</button>
           </div>
         </div>
         <section class="dashboard__collections">
