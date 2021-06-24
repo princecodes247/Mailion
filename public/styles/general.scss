@@ -2,11 +2,11 @@
 
 @font-face {
     font-family: Coolvetica;
-    src: url("./assets/fonts/coolvetica.ttf");
+    src: url("../assets/fonts/coolvetica.ttf");
   }
   @font-face {
     font-family: Arial;
-    src: url("./assets/fonts/arial.ttf");
+    src: url("../assets/fonts/arial.ttf");
   }
   
   *,
@@ -28,6 +28,7 @@
     --black: hsl(0, 0%, 0%);
     --black-2: hsl(0, 0%, 0%);
     --black-3: hsl(0, 0%, 86%);
+    --black-4: hsl(0, 0%, 83%);
     --blue-1: hsl(244, 69%, 65%);
     --blue-2: hsl(244, 69%, 55%);
     --blue-3: hsl(243, 70%, 35%);
@@ -40,7 +41,8 @@
     --amber-3: hsl(39, 70%, 50%);
     --red-1: hsl(5, 100%, 60%);
     --red-2: hsl(5, 80%, 50%);
-    --red-3: hsl(5, 80%, 40%);
+    --red-3: hsl(3, 91%, 34%);
+    //hsl(5, 80%, 40%);
     --prim-color: var(--blue-2);
     --transition-color: var(--blue-3);
     --sec-color: var(--blue-4);
@@ -53,12 +55,9 @@
     --font-color: var(--black);
     --alt-font-color: var(--white);
     --border-rad-1: 10px;
-    --border-rad-2: 2px;
+    --border-rad-2: 7px;
     --active-color: var(--amber-2);
-    --button-active: var(--active-color);
-    --button-clicked: hsl(144, 100%, 35%);
-    --button-active-2: #3fe090;
-    --button-active-3: #3fe090;
+
   }
   
   body {
@@ -109,25 +108,56 @@
     
     
 
-      
+  .c-navbar {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    height: 15vh;
+    min-height: 50px;
+    width: 100%;
+    background-color: var(--prim-color);
+    color: white;
+    padding: 0 10%;
+    border-bottom: 1px solid var(--white);
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    z-index: 99;
+    --logo-size: 100px;
+    transition: 0.5s 0.05s height ease;
+    font-family: var(--heading-font);
+    &.small {
+      height: 8vh;
+      --logo-size: 70px;
+    }
+    &__logo img {
+      transition: 0.5s 0.05s width ease;
+      width: var(--logo-size);
   
-  section {
-    background-color: var(--bg);
-    padding: 8% 5%;
-    /* padding-top: 10%; */
-    text-align: center;
-    
+    }
+    &__links {
+      display: flex;
+      list-style: none;
+      gap: 20px;
+    }
+    &__link {
+      margin: 5px;
+    }
+  
   }
   
-  section h2 {
-    margin-bottom: 50px;
-    z-index: 3;
-    align-items: center;
-  }
 
   .c-sect {
+    position: relative;
     background-color: transparent;
     display: flex;
+    text-align: center;
     flex-direction: column;
     align-items: center;
     padding: 10% 5% 10% 10%;
@@ -156,12 +186,17 @@
     }
     &__title {
       color: var(--title-color);
+      margin-bottom: 30px;
+      z-index: 3;
+      align-items: center;
     }
     &__content {
       flex: 5;
       display: flex;
       flex-direction: column;
       text-align: left;
+      align-items: flex-start;
+      gap: 20px;
     }
     &__list {
       display: grid;
@@ -171,19 +206,62 @@
       gap: 20px;
       width: 100%;
       list-style: none;
-  
+    }
+
+    &--with_blocks::before, &--with_blocks::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 80%;
+      --block-height: 3vw;
+      --block-width: 20vh;
+      height: var(--block-height);
+      width: var(--block-width);
+      // Most of the colors where altered in the 
+      // sect classes
+      background-color: var(--prim-color);
+    }
+    &--with_blocks::before {
+      bottom: unset;
+      top: 0;
+      left: 10%;
     }
   }
   
-  footer {
+  .footer {
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
-    
+    align-items: stretch;
     height: 40vh;
-    background-color: var(--alt-bg);
     color: white;
-    padding: 2% 10%
+    padding: 1% 0%;
+    &__top {
+      padding: 5% 15%;
+      align-self: stretch;
+      display: flex;
+      justify-content: space-between;
+        list-style: none;
+        background-color: var(--blue-3);
+    }
+    &__list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+    &__bottom {
+      padding: 2% 15%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
   }
-  
+ 
+  .scroll_up_btn {
+    position: fixed;
+    right: 20px;
+    bottom: 30px;
+  }
   
   

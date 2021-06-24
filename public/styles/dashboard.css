@@ -51,6 +51,7 @@ main {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  padding-left: 10%;
 }
 
 .side_menu__top {
@@ -70,6 +71,7 @@ main {
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
+  padding-left: 10%;
 }
 
 .side_menu__profile {
@@ -84,8 +86,8 @@ main {
 
 .side_menu__profile_pic {
   background-color: var(--sec-color);
-  width: 80px;
-  height: 80px;
+  width: 50px;
+  height: 50px;
   border-radius: 100px;
   border: none;
 }
@@ -327,6 +329,10 @@ main {
   background-color: var(--sub-bg);
   padding: 10px;
   overflow: hidden;
+}
+
+.collection_item:hover {
+  background-color: var(--black-4);
 }
 
 .modal {

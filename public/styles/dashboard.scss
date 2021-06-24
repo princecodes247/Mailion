@@ -28,7 +28,7 @@ main {
       flex: 1;
       display: flex;
       align-items: center;
-      
+      padding-left: 10%;
     }
     &__top {
     flex: 4;
@@ -36,6 +36,7 @@ main {
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
+    padding-left: 10%;
   }
   &__profile {
     display: flex;
@@ -44,8 +45,8 @@ main {
   }
   &__profile_pic {
     background-color: var(--sec-color);
-    width: 80px;
-    height: 80px;
+    width: 50px;
+    height: 50px;
     border-radius: 100px;
     border: none;
   }
@@ -196,6 +197,9 @@ main {
     background-color: var(--sub-bg);
     padding: 10px;
     overflow: hidden;
+    &:hover {
+      background-color: var(--black-4);
+    }
   }
   
 
