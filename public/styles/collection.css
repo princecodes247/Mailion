@@ -25,38 +25,49 @@ main form button{
   justify-content: end;
 }
 .table-bottom {
-  width: 100%;
+
   border-collapse: collapse;
   margin: 25px 0;
   font-size: 0.9em;
-  min-width: 400px;
+  /* min-width: 400px; */
   box-shadow: 0 0 20px rgb(0, 0, 0, 0.15);
 }
 
 .table-bottom thead tr {
-  background-color: var(--prim-color);
+  background-color: var(--black);
   color: #fff;
 }
 
 .table-bottom th,
 .table-bottom  td {
-  padding: 12px 15px;
+  padding: 10px 15px;
 }
 
 .table-bottom tbody tr {
+  font-weight: bold;
   border-bottom: thin solid #dddd;
+  background-color: hsl(0, 0%, 90%);
 }
 
 .table-bottom  tbody tr:nth-of-type(even) {
-  background-color: #f3f3f3;
+  background-color: hsl(0, 0%, 80%);
 }
 
 .table-bottom tbody tr:last-of-type {
-  border-bottom: 2px solid var(--prim-color);
+  border-bottom: 2px solid var(--black);
 }
 
 .table-bottom tbody tr.active-row {
-  font-weight: bold;
-  color: var(--prim-color);
+  /* font-weight: bold; */
+  color: var(--black);
 }
 
+
+@media screen and (max-width: 460px) {
+  .table-bottom {
+
+  width: 90vw;
+  overflow: scroll;
+  outline: 1px solid red;
+  }
+}

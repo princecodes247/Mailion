@@ -1,267 +1,351 @@
 /*GENERAL CSS*/
 
-@font-face {
-    font-family: Coolvetica;
-    src: url("../assets/fonts/coolvetica.ttf");
-  }
-  @font-face {
-    font-family: Arial;
-    src: url("../assets/fonts/arial.ttf");
-  }
-  
-  *,
-  *::after,
-  *::before {
-    padding: 0;
-    margin: 0;
-    -webkit-box-sizing: border-box;
-            box-sizing: border-box;
-  }
-  
-  :root {
-    
-    --body-font: Arial, "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
-    sans-serif;
-    --heading-font: Coolvetica, "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
-    sans-serif;
-    --white: hsl(0, 0%, 100%);
-    --black: hsl(0, 0%, 0%);
-    --black-2: hsl(0, 0%, 0%);
-    --black-3: hsl(0, 0%, 86%);
-    --black-4: hsl(0, 0%, 83%);
-    --blue-1: hsl(244, 69%, 65%);
-    --blue-2: hsl(244, 69%, 55%);
-    --blue-3: hsl(243, 70%, 35%);
-    --blue-4: hsl(243, 71%, 25%);
-    --green-1: hsl(150, 72%, 56%);
-    --green-2: hsl(144, 100%, 35%);
-    --green-3: hsl(150, 100%, 30%);
-    --amber-1: hsl(39, 100%, 60%);
-    --amber-2: hsl(39, 100%, 50%);
-    --amber-3: hsl(39, 70%, 50%);
-    --red-1: hsl(5, 100%, 60%);
-    --red-2: hsl(5, 80%, 50%);
-    --red-3: hsl(3, 91%, 34%);
-    //hsl(5, 80%, 40%);
-    --prim-color: var(--blue-2);
-    --transition-color: var(--blue-3);
-    --sec-color: var(--blue-4);
-    --warning-color: var(--red-3);
-    --bg: #eee;
-    --alt-bg: var(--prim-color);
-    --sub-bg: #e3e3e3;
-    --transparent: #832e8e00;
-    --sub-prim-color: #f3f4f5;
-    --font-color: var(--black);
-    --alt-font-color: var(--white);
-    --border-rad-1: 10px;
-    --border-rad-2: 7px;
-    --active-color: var(--amber-2);
 
-  }
-  
-  body {
-      position: relative;
-    color: var(--font-color);
-    background-color: var(--bg);
-    min-height: 100vh;
+@font-face {
+  font-family: Coolvetica;
+  src: url("../assets/fonts/coolvetica.ttf");
+}
+@font-face {
+  font-family: Arial;
+  src: url("../assets/fonts/arial.ttf");
+}
+
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+:root {
+  --body-font: Arial, "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+    sans-serif;
+  --heading-font: Coolvetica, "Gill Sans", "Gill Sans MT", Calibri,
+    "Trebuchet MS", sans-serif;
+  --white: hsl(0, 0%, 100%);
+  --black: hsl(0, 0%, 0%);
+  --black-2: hsl(0, 0%, 0%);
+  --black-3: hsl(0, 0%, 86%);
+  --black-4: hsl(0, 0%, 83%);
+  --blue-1: hsl(244, 69%, 65%);
+  --blue-2: hsl(244, 69%, 55%);
+  --blue-3: hsl(243, 70%, 35%);
+  --blue-4: hsl(243, 71%, 25%);
+  --green-1: hsl(150, 72%, 56%);
+  --green-2: hsl(144, 100%, 35%);
+  --green-3: hsl(150, 100%, 30%);
+  --amber-1: hsl(39, 100%, 60%);
+  --amber-2: hsl(39, 100%, 50%);
+  --amber-3: hsl(39, 70%, 50%);
+  --red-1: hsl(5, 100%, 60%);
+  --red-2: hsl(5, 80%, 50%);
+  --red-3: hsl(3, 91%, 34%);
+  //hsl(5, 80%, 40%);
+  --prim-color: var(--blue-2);
+  --transition-color: var(--blue-3);
+  --sec-color: var(--blue-4);
+  --warning-color: var(--red-3);
+  --bg: #eee;
+  --alt-bg: var(--prim-color);
+  --sub-bg: #e3e3e3;
+  --transparent: #832e8e00;
+  --sub-prim-color: #f3f4f5;
+  --font-color: var(--black);
+  --alt-font-color: var(--white);
+  --border-rad-1: 10px;
+  --border-rad-2: 7px;
+  --active-color: var(--amber-2);
+}
+
+body {
+  position: relative;
+  color: var(--font-color);
+  background-color: var(--bg);
+  min-height: 100vh;
+  font-family: var(--body-font);
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--heading-font);
+  &.body_font {
     font-family: var(--body-font);
   }
-  
-  h1, h2, h3 {
-    font-family: var(--heading-font);
-    &.body_font {
-      font-family: var(--body-font);
-    }
-  }
-  
-  h1 {
-    font-size: 3rem;
-  }
-  
-  h2 {
-    position: relative;
-    font-size:2.2rem;
-     
-  }
-  
-  h3 {
-    position: relative;
-    font-size: 1.7rem;
-  }
-  h4 {
-    position: relative;
-    font-size: 1.3rem;
-  }
-  h5 {
-    position: relative;
-    font-size: 1.2rem;
-  }
-  h6 {
-    position: relative;
-    font-size: 1rem;
-  }
-  p {
-    position: relative;
-    font-size: 0.9em;
-  }
-    
-    
+}
 
-  .c-navbar {
-    position: -webkit-sticky;
-    position: sticky;
-    top: 0;
-    height: 15vh;
-    min-height: 50px;
-    width: 100%;
-    background-color: var(--prim-color);
-    color: white;
-    padding: 0 10%;
-    border-bottom: 1px solid var(--white);
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    z-index: 99;
-    --logo-size: 100px;
-    transition: 0.5s 0.05s height ease;
-    font-family: var(--heading-font);
-    &.small {
-      height: 8vh;
-      --logo-size: 70px;
-    }
-    &__logo img {
-      transition: 0.5s 0.05s width ease;
-      width: var(--logo-size);
-  
-    }
-    &__links {
-      display: flex;
-      list-style: none;
-      gap: 20px;
-    }
-    &__link {
-      margin: 5px;
-    }
-  
-  }
-  
+h1 {
+  font-size: 3.5rem;
+}
 
-  .c-sect {
-    position: relative;
-    background-color: transparent;
+h2 {
+  position: relative;
+  font-size: 2.2rem;
+}
+
+h3 {
+  position: relative;
+  font-size: 1.7rem;
+}
+h4 {
+  position: relative;
+  font-size: 1.3rem;
+}
+h5 {
+  position: relative;
+  font-size: 1.2rem;
+}
+h6 {
+  position: relative;
+  font-size: 1rem;
+}
+p {
+  position: relative;
+  font-size: 0.9em;
+}
+
+.navbar_back {
+  height: 15vh;
+  background-color: var(--alt-bg);
+}
+.c-navbar {
+  position: -webkit-sticky;
+  position: fixed;
+  top: 0;
+  height: 15vh;
+  min-height: 50px;
+  width: 100vw;
+  background-color: var(--prim-color);
+  color: white;
+  padding: 0 10%;
+  border-bottom: 1px solid var(--white);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  z-index: 10;
+  --logo-size: 100px;
+  transition: 0.5s 0.05s height ease;
+  font-family: var(--heading-font);
+  &__logo img {
+    transition: 0.5s 0.05s width ease;
+    width: var(--logo-size);
+  }
+  &__links {
     display: flex;
-    text-align: center;
-    flex-direction: column;
+    list-style: none;
+    gap: 20px;
+  }
+  &__link {
+    margin: 5px;
+    text-decoration: none;
+    color: var(--white);
+    &--current {
+      color: var(--active-color);
+    }
+    &:hover {
+      opacity: 0.7;
+    }
+    &:active {
+      color: var(--active-color);
+      opacity: 0.7;
+    }
+  }
+}
+
+.small {
+  height: 8vh;
+  --logo-size: 70px;
+}
+
+.c-sect {
+  position: relative;
+  background-color: transparent;
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  align-items: center;
+  padding: 10% 5% 10% 10%;
+
+  // This variable controls the color of the
+  // headers in each section.
+  --title-color: var(--white);
+
+  // Modifiers
+  &--white {
+    color: var(--black);
+    background-color: var(--bg);
+    --title-color: var(--prim-color);
+  }
+  &--row {
+    flex-direction: row;
+  }
+
+  //Elements
+  &__img_cont {
+    flex: 4;
+    height: 100%;
+    display: flex;
+    justify-content: center;
     align-items: center;
-    padding: 10% 5% 10% 10%;
-  
-    // This variable controls the color of the 
-    // headers in each section.
-    --title-color: var(--white);
-  
-    // Modifiers
-    &--white {
-      color: var(--black);
-      background-color: var(--bg);
-      --title-color: var(--prim-color);
-    }
-    &--row {
-      flex-direction: row;
-    }
-  
-    //Elements
-    &__img {
-      flex: 4;
-      height: 100%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-    &__title {
-      color: var(--title-color);
-      margin-bottom: 30px;
-      z-index: 3;
-      align-items: center;
-    }
-    &__content {
-      flex: 5;
-      display: flex;
-      flex-direction: column;
-      text-align: left;
-      align-items: flex-start;
-      gap: 20px;
-    }
-    &__list {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-      
-      grid-auto-rows: 340px;
-      gap: 20px;
-      width: 100%;
-      list-style: none;
-    }
-
-    &--with_blocks::before, &--with_blocks::after {
-      content: "";
-      position: absolute;
-      bottom: 0;
-      left: 80%;
-      --block-height: 3vw;
-      --block-width: 20vh;
-      height: var(--block-height);
-      width: var(--block-width);
-      // Most of the colors where altered in the 
-      // sect classes
-      background-color: var(--prim-color);
-    }
-    &--with_blocks::before {
-      bottom: unset;
-      top: 0;
-      left: 10%;
-    }
   }
-  
-  .footer {
+  &__title {
+    color: var(--title-color);
+    margin-bottom: 30px;
+    z-index: 3;
+    align-items: center;
+  }
+  &__content {
+    flex: 5;
     display: flex;
     flex-direction: column;
+    text-align: left;
+    align-items: flex-start;
+    gap: 20px;
+  }
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-auto-rows: 340px;
+    gap: 20px;
+    width: 80vw;
+    list-style: none;
+    place-items: stretch center;
+    &--col-3 {
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      max-width: 1000px;
+    }
+  }
+
+  &--with_blocks::before,
+  &--with_blocks::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: 20%;
+    --block-height: 3vw;
+    --block-width: 20vh;
+    height: var(--block-height);
+    width: var(--block-width);
+    // Most of the colors where altered in the
+    // sect classes
+    background-color: var(--prim-color);
+  }
+  &--with_blocks::before {
+    bottom: unset;
+    right: unset;
+    top: 0;
+    left: 10%;
+  }
+}
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: stretch;
+  height: 40vh;
+  color: white;
+  padding: 1% 0%;
+  &__top {
+    padding: 5% 15%;
+    align-self: stretch;
+    display: flex;
     justify-content: space-between;
-    align-items: stretch;
-    height: 40vh;
-    color: white;
-    padding: 1% 0%;
-    &__top {
-      padding: 5% 15%;
-      align-self: stretch;
-      display: flex;
-      justify-content: space-between;
-        list-style: none;
-        background-color: var(--blue-3);
+    list-style: none;
+    background-color: var(--blue-3);
+  }
+  &__list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  &__link {
+    text-decoration: none;
+    color: var(--white);
+    &:hover {
+      color: var(--amber-2);
+      // opacity: 0.7;
     }
-    &__list {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 15px;
-    }
-    &__bottom {
-      padding: 2% 15%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+    &:active {
+      color: var(--amber-1);
     }
   }
- 
-  .scroll_up_btn {
-    position: fixed;
-    right: 20px;
-    bottom: 30px;
+  &__bottom {
+    padding: 2% 15%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
-  
-  
+}
+
+.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;  /* Preferred icon size */
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Support for IE. */
+  font-feature-settings: 'liga';
+}
+.material-icons.md-18 { font-size: 18px; }
+.material-icons.md-24 { font-size: 24px; }
+.material-icons.md-36 { font-size: 36px; }
+.material-icons.md-48 { font-size: 48px; }
+
+/* Rules for using icons as black on a light background. */
+.material-icons.md-dark { color: rgba(0, 0, 0, 0.54); }
+.material-icons.md-dark.md-inactive { color: rgba(0, 0, 0, 0.26); }
+
+/* Rules for using icons as white on a dark background. */
+.material-icons.md-light { color: rgba(255, 255, 255, 1); }
+.material-icons.md-light.md-inactive { color: rgba(255, 255, 255, 0.3); }
+
+.material-icons.md-dark { color: rgba(0, 0, 0, 0.54); }
+.material-icons.md-dark.md-inactive { color: rgba(0, 0, 0, 0.26); }
+
+.material-icons.md-light { color: rgba(255, 255, 255, 1); }
+.material-icons.md-light.md-inactive { color: rgba(255, 255, 255, 0.3); }
+
+
+
+@media screen and (max-width: 460px) {
+  body {
+    width: 100vw;
+    height: max-content;
+    height: 200vh;
+  }
+  .navbar_back {
+    height: 10vh;
+  }
+  .c-navbar {
+    height: 10vh;
+    &__links {
+      display: none;
+    }
+  }
+
+}

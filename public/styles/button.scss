@@ -10,73 +10,60 @@
   height: 30px;
   border-radius: 100px;
   background-color: transparent;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: center;
+  align-items: center;
   text-decoration: none;
   color: var(--white);
-}
-
-.icon:hover {
-  -webkit-filter: drop-shadow(1px 3px 1px #0003);
-          filter: drop-shadow(1px 3px 1px #0003);
+  &:hover {
+    filter: drop-shadow(1px 3px 1px #0003);
+    
+  }
 }
 
 /* Basic Button */
 .button, button {
-  background-color: var(--button-default);
-  padding: 10px 20px;
-  color: var(--font-color);
-  border: none;
-  border-radius: var(--border-rad-2);
-  -ms-flex-item-align: left;
-  -ms-grid-row-align: left;
-  align-self: left;
-  padding: 10px 20px;
-  border: none;
-  text-decoration: none;
-  -webkit-box-shadow: 2px 2px 5px 1px #0002;
-          box-shadow: 2px 2px 5px 1px #0002;
-  border-radius: var(--border-rad-2);
-  background-color: var(--button-default);
-  font-family: var(--heading-font);
-}
-
+    background-color: var(--button-default);
+    padding: 10px 20px;
+    color: var(--font-color);
+    border: none;
+    border-radius: var(--border-rad-2);
+     -ms-flex-item-align: left;
+        -ms-grid-row-align: left;
+        align-self: left;
+    padding: 10px 20px;
+    border: none;
+    text-decoration: none;
+    box-shadow: 2px 2px 5px 1px #0002;
+    border-radius: var(--border-rad-2);
+    background-color: var(--button-default);
+    font-family: var(--heading-font);
+  }
 .button:hover, button:hover {
-  background-color: var(--button-hover);
-}
-
+    background-color: var(--button-hover);
+  }
 .button:active, button:active {
-  background-color: var(--button-clicked);
-}
-
+    background-color: var(--button-clicked);
+  }
 /* ****************************** */
+
 /* Basic button with only Outline */
-.button--outline {
-  background-color: transparent;
-  -webkit-box-shadow: none;
-          box-shadow: none;
-  color: var(--white);
-  border: 0.13rem solid #ffffff82;
-  padding: 8px 20px;
-}
-
-.button--outline:hover {
-  background-color: var(--sub-bg);
-  opacity: 0.9;
-}
-
+  .button--outline {
+    background-color: transparent;
+    box-shadow: none;
+    color: var(--white);
+    border: 0.13rem solid #ffffff82;
+    padding: 8px 20px;
+  }
+  .button--outline:hover {
+    background-color: var(--sub-bg);
+    opacity: 0.9;
+  }
 .button--outline:active {
-  opacity: 1;
-}
-
+    opacity: 1;
+  }
 /* ****************************** */
+
 /* Basic button with alt color */
 .button--alt {
   color: var(--alt-font-color);
@@ -86,6 +73,7 @@
 }
 
 /* ****************************** */
+
 /* Basic button with secondary color on outline */
 .button--alt_outline {
   --button-default: var(--blue-2);
@@ -93,24 +81,24 @@
   --button-hover: ;
   background-color: transparent;
   border: 2px solid var(--button-default);
-  -webkit-box-shadow: none;
-          box-shadow: none;
+  box-shadow: none;
 }
-
 /* ****************************** */
+
 /* Basic button with secondary color */
 .button--sec {
   color: var(--alt-font-color);
   --button-default: var(--blue-2);
   --button-clicked: var(--blue-3);
   --button-hover: var(--blue-1);
+  
 }
 
 .button--sec_outline {
+  
   background-color: transparent;
   border: 2px solid var(--prim-color);
-  -webkit-box-shadow: none;
-          box-shadow: none;
+  box-shadow: none;
 }
 
 .button--sec_outline:hover {
@@ -120,41 +108,36 @@
 .button--sec_outline:active {
   background-color: var(--prim-color);
 }
-
 /* ****************************** */
+
 /* Basic button with no bacound */
 .button--trans {
   --button-default: transparent;
   --button-clicked: var(--sub-bg);
   --button-hover: var(--sub-bg);
-  -webkit-box-shadow: none;
-          box-shadow: none;
+  box-shadow: none;
 }
-
 .button--trans:hover {
   opacity: 0.7;
 }
-
 .button--trans:active {
   opacity: 1;
 }
 
 .button--with_dropdown {
   position: relative;
-  display: block;
-  -webkit-transition-duration: 0.5s;
-          transition-duration: 0.5s;
-}
-
-.button--with_dropdown:hover {
-  cursor: pointer;
-  opacity: 1;
-}
+      display: block;
+      transition-duration: 0.5s;
+      
+      &:hover {
+          cursor: pointer;
+          opacity: 1;
+        }
+  }
 
 .dropdown {
   position: absolute;
   top: 20px;
-  -webkit-transition: all 0.5s ease;
   transition: all 0.5s ease;
   margin-top: 1rem;
   left: -20px;
@@ -166,42 +149,33 @@
   width: 15rem;
   padding: 10px;
   color: var(--black);
-  -webkit-box-shadow: 1px 1px 6px #0002;
-          box-shadow: 1px 1px 6px #0002;
+  box-shadow: 1px 1px 6px #0002;
   outline: thin solid var(--prim-color);
   border-radius: var(--border-rad-1);
-}
-
-.dropdown div {
-  margin: 10px 0;
-}
-
-.dropdown li {
-  display: -webkit-box;
-  display: -ms-flexbox;
+  div {
+      margin: 10px 0;
+  }
+li {
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-transition-duration: 0.5s;
-          transition-duration: 0.5s;
+  justify-content: space-between;
+  transition-duration: 0.5s;
   border-bottom: thin solid #0002;
   padding: 15px 10px;
+  label {
+    flex: 5;
+    text-align: left;
+
+  }
+  &:hover {
+      cursor: pointer;
+  }
 }
 
-.dropdown li label {
-  -webkit-box-flex: 5;
-      -ms-flex: 5;
-          flex: 5;
-  text-align: left;
 }
 
-.dropdown li:hover {
-  cursor: pointer;
-}
 
 .button--with_dropdown:focus-within > ul, .button--with_dropdown ul:focus-within {
-  visibility: visible;
+      visibility: visible;
   opacity: 1;
   display: block;
 }
@@ -218,4 +192,3 @@
     outline: none;
   }
 }
-/*# sourceMappingURL=button.css.map */

@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Veldora</title>
+    <link rel="stylesheet" href="./public/styles/general.css">
+    <link rel="stylesheet" href="./public/styles/button.css">
+    <link rel="stylesheet" href="./public/styles/dashboard.css">
+    <link rel="stylesheet" href="./public/styles/form.css">
+    <link rel="stylesheet" href="./public/styles/dropdown.css">
+    <link rel="stylesheet" href="./public/styles/control.css">
+    
+  </head>
+  <body>
+    <script defer src="./public/scripts/control-modal.js"></script>
+        <header class="c-navbar scroll-shrink">
+      <div class="c-navbar__logo">
+        <a href="./home.html"><img src="./assets/img/logo_long.png" width="100px" alt="" /></a>
+      </div>
+      <nav>
+        <ul class="c-navbar__links">
+          <li ><a href="./home.html" class="c-navbar__link c-navbar__link--current">home</a></li>
+          <li >
+            <a href="http://" class="c-navbar__link">about</a>
+          </li>
+          <li >
+            <a href="http://" class="c-navbar__link">docs</a>
+          </li>
+          <li >
+            <a href="http://" class="c-navbar__link">FAQ</a>
+          </li>
+          <li >
+            <a href="./dashboard.html" class="c-navbar__link button button--outline">
+            Sign In
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <div class="ham"></div>
+    </header>
+    <main>
+      <aside class="side_menu">
+        <div class="side_menu__logo">
+          <a href="./home.html"><img src="./assets/img/logo_long.png" width="80px" alt="Veldora logo"></a>
+        </div>
+        <div class="side_menu__top">
+          <div class="side_menu__profile">
+            <div class="side_menu__profile_pic">
+              <h2>P</h2>
+            </div>
+          <p class="side_menu__profile_name">Prince Lee</p>
+          </div>
+        </div>
+        <div class="side_menu__bottom">
+          <ol class="side_menu__nav">
+            <li class="side_menu__link side_menu__link--active">Dashboard</li>
+            <li class="side_menu__link">Plans</li>
+            <li class="side_menu__link">Settings</li>
+            <li class="side_menu__link side_menu__link--warning">Logout</li>
+          </ol>
+        </div>
+      </aside>
+      <div class="navbar_back"></div>
+      <article class="dashboard">
+        <div class="dashboard__top">
+          <h3>Dashboard</h3>
+          
+        </div>
+        <div class="dashboard__search_sect">
+          <div class="dashboard__search_bar">
+            <button class="button button--trans button--with_dropdown dashboard__filter_btn icon__menu">E
+              <ul class="dropdown">
+                <div>
+                  <p>Search By</p>
+                <li><label>Name</label>
+                <input type="checkbox"></li>
+                <li><label>Description</label>
+                  <input type="checkbox"></li>
+                </div>
+               <div>
+                <p>Sort By</p>
+                <li><label>Messages (desc)</label>
+                <input type="checkbox"></li>
+
+               </div>
+              </ul>
+            </button>
+            <input class="dashboard__search" type="search" name="dashboard_search" id="dashboard_search" placeholder="Search collection">
+            <button class="button button--sec dashboard__search_btn desktop">Search</button>
+            <button class="button button--sec dashboard__search_btn mobile">Q</button>
+          </div>
+        </div>
+        <section class="dashboard__collections">
+          <div class="dashboard__collections_top">
+            <p class="">Collections</p>
+            <button class="button open-modal-btn">Create new collection</button>
+          </div>
+          <div class="dashboard__collections_bottom">
+            <span class="no-collection-sign hidden">
+              <img src="" alt="collectionz" />
+              <p>You have no collections yet...</p>
+            </span>
+          </div>
+
+          <div class="dashboard__collections_grid">
+            <div class="collection_item">
+              <div class="collection_item__top">
+                <div class="collection_item__icon">
+
+                </div>
+                <div class="collection_item__message_insight">40 messages</div>
+              </div>
+              <h4 class="collection_item__title">Collection</h4>
+              <p class="collection_item__desc">Some stuff about some stuff</p>
+
+            </div>
+            <div class="collection_item">
+              <div class="collection_item__top">
+                <div class="collection_item__icon">
+
+                </div>
+                <div class="collection_item__message_insight">40 messages</div>
+              </div>
+              <h4 class="collection_item__title">Collection</h4>
+              <p class="collection_item__desc">Some stuff about some stuff</p>
+
+            </div>
+            <div class="collection_item">
+              <div class="collection_item__top">
+                <div class="collection_item__icon">
+
+                </div>
+                <div class="collection_item__message_insight">40 messages</div>
+              </div>
+              <h4 class="collection_item__title">Collection</h4>
+              <p class="collection_item__desc">Some stuff about some stuff</p>
+
+            </div>
+            <div class="collection_item">
+              <div class="collection_item__top">
+                <div class="collection_item__icon">
+
+                </div>
+                <div class="collection_item__message_insight">40 messages</div>
+              </div>
+              <h4 class="collection_item__title">Collection</h4>
+              <p class="collection_item__desc">Some stuff about some stuff</p>
+
+            </div>
+            <div class="collection_item">
+              <div class="collection_item__top">
+                <div class="collection_item__icon">
+
+                </div>
+                <div class="collection_item__message_insight">40 messages</div>
+              </div>
+              <h4 class="collection_item__title">Collection</h4>
+              <p class="collection_item__desc">Some stuff about some stuff</p>
+
+            </div>
+           
+          </div>
+        
+        </section>
+    
+    <section class="modal close">
+      <div class="form">
+        <h4>Create new collection</h4>
+        
+        <form action="" method="post">
+          <label for="">
+            <input type="text" required/>
+            <p class="float">Collection Name</p>
+          </label>
+          <label for="">
+            <textarea name="" id="" cols="30" rows="10" placeholder="A brief description of the collection" required></textarea>
+          </label>
+          <div class="form__select">
+            <label for="">
+              <p>Input Title</p>
+              <input type="text" required/>
+              </label>
+              <label for="">
+              <select name="" id="">
+                <option value="text">Text</option>
+              </select>
+            </label>
+          </div>
+          <div class="button-sect">
+              <button class="close-modal-btn">Cancel</button>
+              <button type="submit">Create</button>
+          </div>
+        </form>
+      </div>
+    </section>
+  </article>
+  </main>
+    <!-- <script>
+        let createWarpBtn = document.querySelector("#warp-create-btn")
+        createWarpBtn.addEventListener("click", ()=>{
+            fetch("/warp/create").then(res=>{
+                console.log(res);
+                res.json()
+            }).then(data=>{
+                console.log(data);
+            })
+        })
+    </script> -->
+  </body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mailion</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  
+    <header>
+        Mailion
+    </header>
+    <main>
+        <section id="login">
+            <h2>
+                Login
+            </h2>
+            <form id="form" action="http://127.0.0.1:5000/warp/send/warp330569" method="post">
+                <label>
+                    <input name="username" type="text" id="name">
+                    <p>Username</p>
+                </label>
+                <label >
+                    <input type="email" name="mail" id="">
+                    <p>Email</p>
+                </label>
+                <input type="submit" value="Sign Up">
+            </form>
+        </section>
+
+
+
+
+    </main>
+    <footer>
+        From Prince Codes 247
+    </footer>
+    <!-- <script>
+        let testForm = document.getElementById("form");
+        testForm.addEventListener("submit",(event)=>{
+            event.preventDefault()
+            let formData = new FormData(document.getElementById("form"))
+            console.log(formData.values());
+            fetch("http://127.0.0.1:5000/warp/send/warp330569", {
+                method: "POST",
+                headers:{
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(formData)
+            }).then(res=>{
+                console.log("sent");
+            }).catch(err=>{
+                console.log(err);
+            })
+        })
+    </script> -->
+</body>
+
+</html>

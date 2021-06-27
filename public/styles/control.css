@@ -1,8 +1,31 @@
+.invisible {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
 .hidden {
-    display: none;
-  }
+  display: none;
+}
+
+.color--amber {
+  color: var(--amber-2);
+}
 
 .bg--black {
   background-color: var(--black);
   background-color: var(--white);
+}
+.mobile {
+  display: none;
+}
+
+@media screen and (max-width: 460px) {
+  .mobile {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .desktop {
+    display: none;
+  }
 }

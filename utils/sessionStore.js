@@ -1,0 +1,1 @@
+class InMemorySessionStore extends SessionStore {}

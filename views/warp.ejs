@@ -1,0 +1,46 @@
+<main>
+    <nav>
+        <h1>
+            Warp
+        </h1>
+        <button>Settings</button>
+    </nav>
+    <section>
+        <h3>Name: Stuff</h3>
+        <h4>
+            Description
+        </h4>
+        <label for="">
+           
+            <h4>
+                Enable Response mail
+            </h4>
+            helpbtn
+        </label>
+        <h4>
+            JS
+        </h4>
+        
+    </section>
+    <section>
+        <h2>Messages</h2>
+        <ul class="messages">
+            <% if (warp.messages.length == 0) { %>
+             <p>No messages yet..</p>
+            <% } else { %>
+            <% warp.messages.forEach(message => { %>
+                <li class="message">
+                <% let keys = Object.keys(message) %> 
+                <% let values = Object.values(message) %> 
+                <% for( let index = 0; index < keys.length; index++ ) { %>
+                
+                    <span><b><%- keys[index] %> :</b> <%- values[index] %></span>
+                <% } %>
+             
+                </li>
+            <% }) %>
+            <% } %>
+                    </ul>
+    </section>
+
+</main>

@@ -58,3 +58,7 @@
     font-size: 14px;
     left: 0;
   }
+
+  .form__select {
+    display: flex;
+  }

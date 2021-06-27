@@ -21,8 +21,8 @@
 :root {
   --body-font: Arial, "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
     sans-serif;
-  --heading-font: Coolvetica, "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
-    sans-serif;
+  --heading-font: Coolvetica, "Gill Sans", "Gill Sans MT", Calibri,
+    "Trebuchet MS", sans-serif;
   --white: hsl(0, 0%, 100%);
   --black: hsl(0, 0%, 0%);
   --black-2: hsl(0, 0%, 0%);
@@ -65,16 +65,20 @@ body {
   font-family: var(--body-font);
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   font-family: var(--heading-font);
 }
 
-h1.body_font, h2.body_font, h3.body_font {
+h1.body_font,
+h2.body_font,
+h3.body_font {
   font-family: var(--body-font);
 }
 
 h1 {
-  font-size: 3rem;
+  font-size: 3.5rem;
 }
 
 h2 {
@@ -107,13 +111,18 @@ p {
   font-size: 0.9em;
 }
 
+.navbar_back {
+  height: 15vh;
+  background-color: var(--alt-bg);
+}
+
 .c-navbar {
   position: -webkit-sticky;
-  position: sticky;
+  position: fixed;
   top: 0;
   height: 15vh;
   min-height: 50px;
-  width: 100%;
+  width: 100vw;
   background-color: var(--prim-color);
   color: white;
   padding: 0 10%;
@@ -127,16 +136,11 @@ p {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  z-index: 99;
+  z-index: 10;
   --logo-size: 100px;
   -webkit-transition: 0.5s 0.05s height ease;
   transition: 0.5s 0.05s height ease;
   font-family: var(--heading-font);
-}
-
-.c-navbar.small {
-  height: 8vh;
-  --logo-size: 70px;
 }
 
 .c-navbar__logo img {
@@ -155,6 +159,26 @@ p {
 
 .c-navbar__link {
   margin: 5px;
+  text-decoration: none;
+  color: var(--white);
+}
+
+.c-navbar__link--current {
+  color: var(--active-color);
+}
+
+.c-navbar__link:hover {
+  opacity: 0.7;
+}
+
+.c-navbar__link:active {
+  color: var(--active-color);
+  opacity: 0.7;
+}
+
+.small {
+  height: 8vh;
+  --logo-size: 70px;
 }
 
 .c-sect {
@@ -188,7 +212,7 @@ p {
           flex-direction: row;
 }
 
-.c-sect__img {
+.c-sect__img_cont {
   -webkit-box-flex: 4;
       -ms-flex: 4;
           flex: 4;
@@ -234,19 +258,26 @@ p {
 .c-sect__list {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (minmax(250px, 1fr))[auto-fill];
-      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  -ms-grid-columns: (minmax(250px, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   grid-auto-rows: 340px;
   gap: 20px;
-  width: 100%;
+  width: 80vw;
   list-style: none;
+  place-items: stretch center;
+}
+
+.c-sect__list--col-3 {
+  -ms-grid-columns: (minmax(250px, 1fr))[auto-fill];
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  max-width: 1000px;
 }
 
 .c-sect--with_blocks::before, .c-sect--with_blocks::after {
   content: "";
   position: absolute;
   bottom: 0;
-  left: 80%;
+  right: 20%;
   --block-height: 3vw;
   --block-width: 20vh;
   height: var(--block-height);
@@ -256,6 +287,7 @@ p {
 
 .c-sect--with_blocks::before {
   bottom: unset;
+  right: unset;
   top: 0;
   left: 10%;
 }
@@ -305,6 +337,19 @@ p {
   gap: 15px;
 }
 
+.footer__link {
+  text-decoration: none;
+  color: var(--white);
+}
+
+.footer__link:hover {
+  color: var(--amber-2);
+}
+
+.footer__link:active {
+  color: var(--amber-1);
+}
+
 .footer__bottom {
   padding: 2% 15%;
   display: -webkit-box;
@@ -318,9 +363,96 @@ p {
           align-items: center;
 }
 
-.scroll_up_btn {
-  position: fixed;
-  right: 20px;
-  bottom: 30px;
+.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  /* Preferred icon size */
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+  /* Support for IE. */
+  -webkit-font-feature-settings: 'liga';
+          font-feature-settings: 'liga';
+}
+
+.material-icons.md-18 {
+  font-size: 18px;
+}
+
+.material-icons.md-24 {
+  font-size: 24px;
+}
+
+.material-icons.md-36 {
+  font-size: 36px;
+}
+
+.material-icons.md-48 {
+  font-size: 48px;
+}
+
+/* Rules for using icons as black on a light background. */
+.material-icons.md-dark {
+  color: rgba(0, 0, 0, 0.54);
+}
+
+.material-icons.md-dark.md-inactive {
+  color: rgba(0, 0, 0, 0.26);
+}
+
+/* Rules for using icons as white on a dark background. */
+.material-icons.md-light {
+  color: white;
+}
+
+.material-icons.md-light.md-inactive {
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.material-icons.md-dark {
+  color: rgba(0, 0, 0, 0.54);
+}
+
+.material-icons.md-dark.md-inactive {
+  color: rgba(0, 0, 0, 0.26);
+}
+
+.material-icons.md-light {
+  color: white;
+}
+
+.material-icons.md-light.md-inactive {
+  color: rgba(255, 255, 255, 0.3);
+}
+
+@media screen and (max-width: 460px) {
+  body {
+    width: 100vw;
+    height: -webkit-max-content;
+    height: -moz-max-content;
+    height: max-content;
+    height: 200vh;
+  }
+  .navbar_back {
+    height: 10vh;
+  }
+  .c-navbar {
+    height: 10vh;
+  }
+  .c-navbar__links {
+    display: none;
+  }
 }
 /*# sourceMappingURL=general.css.map */

@@ -5,17 +5,42 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Veldora</title>
-    <link rel="stylesheet" href="./public/styles/general.css">
-    <link rel="stylesheet" href="./public/styles/button.css">
-    <link rel="stylesheet" href="./public/styles/dashboard.css">
-    <link rel="stylesheet" href="./public/styles/collection.css">
+    <link rel="stylesheet" href="./styles/general.css">
+    <link rel="stylesheet" href="./styles/dashboard.css">
+    <link rel="stylesheet" href="./styles/collection.css">  
+    <link rel="stylesheet" href="./styles/button.css">
+    <link rel="stylesheet" href="./styles/control.css">
 </head>
 <body>
-    
+  <header class="c-navbar scroll-shrink">
+    <div class="c-navbar__logo">
+      <a href="./home.html"><img src="./assets/img/logo_long.png" width="100px" alt="" /></a>
+    </div>
+    <nav class="desktop">
+      <ul class="c-navbar__links">
+        <li ><a href="./home.html" class="c-navbar__link c-navbar__link--current">home</a></li>
+        <li >
+          <a href="http://" class="c-navbar__link">about</a>
+        </li>
+        <li >
+          <a href="http://" class="c-navbar__link">docs</a>
+        </li>
+        <li >
+          <a href="http://" class="c-navbar__link">FAQ</a>
+        </li>
+        <li >
+          <a href="./dashboard.html" class="c-navbar__link button button--outline">
+          Sign In
+          </a>
+        </li>
+      </ul>
+    </nav>
+    <div class="ham mobile"></div>
+  </header>
         <main>
           <aside class="side_menu">
             <div class="side_menu__logo">
-              <img src="./public/assets/img/logo_long.png" width="80px" alt="">
+              <img src="./assets/img/logo_long.png" width="80px" alt="">
             </div>
             <div class="side_menu__top">
               <div class="side_menu__profile">
@@ -32,15 +57,14 @@
               </ol>
             </div>
           </aside>
+          <div class="navbar_back"></div>
           <article class="dashboard">
             <div class="dashboard__top">
                     <div class="dashboard__nav">
                         <h3>Collection: Project Survey</h3>
                       
-                        <div>
-                          <button>S</button>
-                          <button>S</button>
-                              <button>S</button>
+                        <div class="dashboard__nav_btns">
+                              <button class="button button--trans">S</button>
                           </div>
                     </div>
                       
@@ -51,9 +75,25 @@
             </div>
             <div class="dashboard__search_sect">
               <div class="dashboard__search_bar">
-                <button class="button button-secondary dashboard__filter_btn">E</button>
+                <button class="button button--trans button--with_dropdown dashboard__filter_btn icon__menu">E
+                  <ul class="dropdown">
+                    <div>
+                      <p>Search By</p>
+                    <li><label>Name</label>
+                    <input type="checkbox"></li>
+                    <li><label>Email</label>
+                      <input type="checkbox"></li>
+                      <li><label>Phone Number</label>
+                        <input type="checkbox"></li>
+                    <li><label>Message</label>
+                      <input type="checkbox"></li>
+                    </div>
+                 
+                  </ul>
+                </button>
                 <input class="dashboard__search" type="search" name="dashboard_search" id="dashboard_search" placeholder="Search collection">
-                <button class="button button--alt dashboard__search_btn">Search</button>
+                <button class="button button--sec dashboard__search_btn desktop">Search</button>
+                <button class="button button--sec dashboard__search_btn mobile">Q</button>
               </div>
             </div>
                 <div>
