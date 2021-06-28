@@ -14,10 +14,12 @@ router.get("/view/:collectionID", ensureAuthenticated, (req, res) => {
   let collectionID = req.params.collectionID;
   
   Collection.findById(collectionID).then((collection) => {
+    let keys = Object.keys(Object.assign({}, ...collection.entries))
     let locals = {
       layout: "layouts/layout",
       title: `${collection.title} Collection - ${process.env.APP_NAME}`,
-      collection
+      collection,
+      keys
     };
     res.render("collection", locals);
 })
@@ -28,10 +30,9 @@ router.post("/create", ensureAuthenticated, (req, res) => {
     let { title, desc } = req.body;
     title = title.toString().trim();
     desc = desc.toString().trim();
-
     let newCollection = true;
 //Replace with uuid
-    let collectionID = idGenerator(6);
+    let collectionID = `${idGenerator(6)}${title[0]}${title[1]}${title[2]}`;
 
     Collection.findById(
       collectionID,
@@ -47,7 +48,8 @@ router.post("/create", ensureAuthenticated, (req, res) => {
         };
         Collection.insert(collectionData).then(collection=>{
           console.log("collection created");
-          res.json({body: collection})
+
+          res.json(collectionData)
         }).catch(err=>{
           console.log(err);
         })

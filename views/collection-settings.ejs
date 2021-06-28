@@ -1,48 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Veldora</title>
-    <link rel="stylesheet" href="./styles/general.css">
-    <link rel="stylesheet" href="./styles/button.css">
-    <link rel="stylesheet" href="./styles/form.css">
-    <link rel="stylesheet" href="./styles/dashboard.css">
-    <link rel="stylesheet" href="./styles/collection.css">
-    <link rel="stylesheet" href="./styles/control.css">
-</head>
+
 <body>
     
-        <main class="flex">
-          <aside class="side_menu">
-            <div class="side_menu__logo">
-              <img src="./assets/img/logo_long.png" width="80px" alt="">
-            </div>
-            <div class="side_menu__top">
-              <div class="side_menu__profile">
-                <img class="side_menu__profile_pic" src="" alt="">
-              <p class="side_menu__profile_name">Prince Lee</p>
-              </div>
-            </div>
-            <div class="side_menu__bottom">
-              <ol class="side_menu__nav">
-                <li class="side_menu__link side_menu__link--active">Dashboard</li>
-                <li class="side_menu__link">Plans</li>
-                <li class="side_menu__link">Settings</li>
-                <li class="side_menu__link">Logout</li>
-              </ol>
-            </div>
-          </aside>
+        <main>
           <article class="dashboard">
             <div class="dashboard__top">
               <div class="dashboard__nav">
-                  <h3>Collection: Project Survey</h3>
+                  <h3>Collection: Project Survey - Settings</h3>
                 
                   <div>
-                    <button>S</button>
-                    <button>S</button>
-                        <button>S</button>
+                   
                     </div>
               </div>
               
@@ -51,7 +17,9 @@
                     <p>This is a something for something</p>
                 </div>
                   </div>
-                  <form action="" method="post">
+
+                  <!-- CORRECT THE LINK -->
+                  <form action="/settings/<%- collection.collectionID %> " method="post">
                       <label for="">
                         <input type="text">
                         <p class="float">Collection Name</p>
@@ -75,7 +43,7 @@
                     <button type="submit">Save</button>
                     </div>
                   </form>
-                  <form action="/delete/" method="post">
+                  <form action="/delete" method="post">
                     <h4 class="margin_top--40">Delete Collection</h4>
                     <label for="">
                       <input type="text" placeholder="collection">
@@ -89,6 +57,3 @@
               
             </article>
         </main>
- 
-</body>
-</html>

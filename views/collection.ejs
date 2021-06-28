@@ -8,7 +8,7 @@
           <article class="dashboard">
             <div class="dashboard__top">
                     <div class="dashboard__nav">
-                        <h3>Collection: Project Survey</h3>
+                        <h3>Collection: <%- collection.title %> </h3>
                       
                         <div class="dashboard__nav_btns">
                               <button class="button button--trans">S</button>
@@ -17,7 +17,7 @@
                       
                       <div class="bottom">
                         <h5>Description</h5>
-                        <p>This is a something for something</p>
+                        <p><%- collection.title %> </p>
                     </div>
             </div>
             <div class="dashboard__search_sect">
@@ -26,13 +26,9 @@
                   <ul class="dropdown">
                     <div>
                       <p>Search By</p>
-                    <li><label>Name</label>
+                    <li><label>Title</label>
                     <input type="checkbox"></li>
-                    <li><label>Email</label>
-                      <input type="checkbox"></li>
-                      <li><label>Phone Number</label>
-                        <input type="checkbox"></li>
-                    <li><label>Message</label>
+                    <li><label>Description</label>
                       <input type="checkbox"></li>
                     </div>
                  
@@ -47,35 +43,22 @@
                     <table class="table-bottom">
                         <thead>
                            <tr>
-                            <th>S/N</th>
-                            <th>Name</th>
-                            <th>Sex</th>
-                            <th>Age</th>
-                            <th>Opinion</th>
+                             <% keys.forEach(key => { %>
+                              <th><%- key %> </th>
+                             <% }) %>
                            </tr>
                         </thead>
                         <tbody>
-                            
-                            <tr>
-                              <td>1</td>
-                                <td>Susan</td>
-                                <td>Female</td>
-                                <td>23</td>
-                                <td>I think it's great</td>
-                            </tr>
-                            <tr class="active-row">
-                              <td>2</td>
-                                <td>Susan</td>
-                                <td>Female</td>
-                                <td>23</td>
-                                <td>I think it's great</td>
-                            </tr>
+                            <% for( let count = 0; count < collection.entries.length; count++ ) { %>
+                              <tr>
+                                <% collection.entries[count].forEach(item => { %>
+                                  <td><%- item %> </td>
+                                <% }) %>
+                              </tr>
+                            <% } %>
                         </tbody>
                     </table>
                
                 </div>
             </article>
         </main>
- 
-</body>
-</html>

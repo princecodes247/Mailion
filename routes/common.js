@@ -69,21 +69,6 @@ router.post("/newsletter", (req, res) => {
   //   });
 });
 
-router.post("/review", (req, res) => {
-  let { email } = req.body;
-  let userData = {
-    email,
-  };
-  Review.insert(userData)
-    .then((resp) => {
-      console.log("review added");
-      res.json("Added to reviews");
-    })
-    .catch((err) => {
-      console.log(err);
-    });
-});
-
 //FIX THESE ROUTES
 // router.get("/faq", (req, res) => {
 //   res.render("faq");

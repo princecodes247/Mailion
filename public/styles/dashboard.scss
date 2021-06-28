@@ -12,7 +12,8 @@
   height: 100vh;
   display: flex;
   flex-direction: column;
-  flex: 2;
+  flex: 2 4 290px;
+  max-width: 20vw;
   background: var(--bg);
   box-shadow: 1px 0 6px 4px #0002;
   background: var(--alt-bg);

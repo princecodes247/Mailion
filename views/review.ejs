@@ -1,19 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Veldora</title>
-    <link rel="stylesheet" href="./styles/general.css">
-    <link rel="stylesheet" href="./styles/button.css">
-    <link rel="stylesheet" href="./styles/form.css">
-    <link rel="stylesheet" href="./styles/dashboard.css">
-    <link rel="stylesheet" href="./styles/collection.css">
-</head>
+
 <body>
     
-        <main>
+        <main class="flex">
           <aside class="side_menu">
             <div class="side_menu__logo">
               <img src="./assets/img/logo_long.png" width="80px" alt="">
@@ -36,7 +24,7 @@
           <article class="dashboard">
             <div class="dashboard__top">
               <div class="dashboard__nav">
-                  <h3>Collection: Project Survey</h3>
+                  <h3>Write a review</h3>
                 
                   <div>
                     <button>S</button>
@@ -46,38 +34,28 @@
               </div>
               
                   <div class="bottom">
-                    <h5>Description</h5>
-                    <p>This is a something for something</p>
+                    <h5>What did you think about Veldora?</h5>
+                    <p></p>
                 </div>
                   </div>
-                  <form action="" method="post">
+                  <form action="/review" method="post">
                       <label for="">
-                        <input type="text">
-                        <p class="float">Collection Name</p>
+                        <input type="text" placeholder="John Doe">
+                        <p class="float" >Your Name</p>
                       </label>
                       <label for="">
-                        <input type="text">
-                        <p class="float">Collection Description</p>
+                        <textarea class="input" name="" id="" cols="30" rows="10" placeholder="Your review"></textarea>
+                        
                     </label>
                     <label for="">
-                      <input type="password">
-                      <p class="float">Collection Auth</p>
+                      <input type="password" placeholder="Frontend Developer, VSAW">
+                      <p class="float">Your title (if you have any)</p>
                   </label>
-                    <label for="">
-                        <input type="checkbox">
-                    </label>
-                    <label for="">
-                        <input type="checkbox">
-                    </label>
                     <div class="button-sect">
-                        <button>Discard</button>
-                    <button type="submit">Save</button>
+                    <button type="submit">Send Review</button>
                     </div>
                   </form>
           
               
             </article>
         </main>
- 
-</body>
-</html>

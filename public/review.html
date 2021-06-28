@@ -37,7 +37,7 @@
           <article class="dashboard">
             <div class="dashboard__top">
               <div class="dashboard__nav">
-                  <h3>Collection: Project Survey</h3>
+                  <h3>Write a review</h3>
                 
                   <div>
                     <button>S</button>
@@ -47,44 +47,27 @@
               </div>
               
                   <div class="bottom">
-                    <h5>Description</h5>
-                    <p>This is a something for something</p>
+                    <h5>What did you think about Veldora?</h5>
+                    <p></p>
                 </div>
                   </div>
-                  <form action="" method="post">
+                  <form action="/review" method="post">
                       <label for="">
-                        <input type="text">
-                        <p class="float">Collection Name</p>
+                        <input type="text" placeholder="John Doe">
+                        <p class="float" >Your Name</p>
                       </label>
                       <label for="">
-                        <input type="text">
-                        <p class="float">Collection Description</p>
+                        <textarea class="input" name="" id="" cols="30" rows="10" placeholder="Your review"></textarea>
+                        
                     </label>
                     <label for="">
-                      <input type="password">
-                      <p class="float">Collection Auth</p>
+                      <input type="password" placeholder="Frontend Developer, VSAW">
+                      <p class="float">Your title (if you have any)</p>
                   </label>
-                    <label for="">
-                        <input type="checkbox">
-                    </label>
-                    <label for="">
-                        <input type="checkbox">
-                    </label>
                     <div class="button-sect">
-                        <button>Discard</button>
-                    <button type="submit">Save</button>
+                    <button type="submit">Send Review</button>
                     </div>
                   </form>
-                  <form action="/delete/" method="post">
-                    <h4 class="margin_top--40">Delete Collection</h4>
-                    <label for="">
-                      <input type="text" placeholder="collection">
-                      <p class="float">Verify collection name</p>
-                    </label>
-                  <div class="button-sect">
-                  <button type="submit">Save</button>
-                  </div>
-                </form>
           
               
             </article>

@@ -4,7 +4,6 @@ let closeBtn = modal.querySelector(".close-modal-btn");
 
 openBtn.addEventListener("click", ()=>{
     event.preventDefault();
-    console.log("ji");
     modal.classList.remove("close")
 })
 

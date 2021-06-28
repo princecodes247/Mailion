@@ -45,9 +45,10 @@ router.get("/dashboard", ensureAuthenticated, (req, res) => {
   let user = req.user;
   Collection.find({ userName: user.userName }).then((collections) => {
   let locals = {
-    layout: "layouts/static",
+    layout: "layouts/layout",
     title: `Dashboard - ${process.env.APP_NAME}`,
-    collections
+    collections,
+    user
   };
     res.render("dashboard", locals);
   });
@@ -70,6 +71,32 @@ router.post("/settings", ensureAuthenticated, (req, res) => {
     res.json("settings updated")
   })
 });
+
+router.get("/review", ensureAuthenticated, (req, res) => {
+  let locals = {
+    layout: "layouts/layout",
+    title: `Write a review - ${process.env.APP_NAME}`,
+  };
+  res.render("review", locals);
+});
+
+
+router.post("/review", ensureAuthenticated, (req, res) => {
+  let { email } = req.body;
+  let user = req.user;
+  let userData = {
+    email,
+  };
+  Review.insert(userData)
+    .then((resp) => {
+      console.log("review added");
+      res.json("Added to reviews");
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+});
+
 
 //Remove the username in link
 

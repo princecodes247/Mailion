@@ -4,7 +4,6 @@
 
     <main class="flex">
       <%- include('partials/aside', {active: 1}) %>
-      <div class="navbar_back"></div>
       <article class="dashboard">
         <div class="dashboard__top">
           <h3>Dashboard</h3>
@@ -40,96 +39,44 @@
             <button class="button open-modal-btn">Create new collection</button>
           </div>
           <div class="dashboard__collections_bottom">
-            <span class="no-collection-sign hidden">
-              <img src="" alt="collectionz" />
-              <p>You have no collections yet...</p>
-            </span>
-          </div>
-
-          <div class="dashboard__collections_grid">
-            <div class="collection_item">
-              <div class="collection_item__top">
-                <div class="collection_item__icon">
-
-                </div>
-                <div class="collection_item__message_insight">40 messages</div>
-              </div>
-              <h4 class="collection_item__title">Collection</h4>
-              <p class="collection_item__desc">Some stuff about some stuff</p>
-
-            </div>
-            <div class="collection_item">
-              <div class="collection_item__top">
-                <div class="collection_item__icon">
-
-                </div>
-                <div class="collection_item__message_insight">40 messages</div>
-              </div>
-              <h4 class="collection_item__title">Collection</h4>
-              <p class="collection_item__desc">Some stuff about some stuff</p>
-
-            </div>
-            <div class="collection_item">
-              <div class="collection_item__top">
-                <div class="collection_item__icon">
-
-                </div>
-                <div class="collection_item__message_insight">40 messages</div>
-              </div>
-              <h4 class="collection_item__title">Collection</h4>
-              <p class="collection_item__desc">Some stuff about some stuff</p>
-
-            </div>
-            <div class="collection_item">
-              <div class="collection_item__top">
-                <div class="collection_item__icon">
-
-                </div>
-                <div class="collection_item__message_insight">40 messages</div>
-              </div>
-              <h4 class="collection_item__title">Collection</h4>
-              <p class="collection_item__desc">Some stuff about some stuff</p>
-
-            </div>
-            <div class="collection_item">
-              <div class="collection_item__top">
-                <div class="collection_item__icon">
-
-                </div>
-                <div class="collection_item__message_insight">40 messages</div>
-              </div>
-              <h4 class="collection_item__title">Collection</h4>
-              <p class="collection_item__desc">Some stuff about some stuff</p>
-
-            </div>
-           
-          </div>
+            <% if (collections.length === 0) { %>
+              <span class="no-collection-sign hidden">
+                <img src="" alt="collectionz" />
+                <p>You have no collections yet...</p>
+              </span>
+              <% } else { %>
+                <div class="dashboard__collections_grid">
+                  <% collections.forEach(collection => { %>
+                    <div class="collection_item">
+                      <div class="collection_item__top">
+                        <div class="collection_item__icon">
         
+                        </div>
+                        <div class="collection_item__message_insight"><%- collection.entries.length %>  messages</div>
+                      </div>
+                      <h4 class="collection_item__title"><%- collection.title %> </h4>
+                      <p class="collection_item__desc"><%- collection.desc %> </p>
+        
+                    </div>
+                  <% }) %>
+                 
+                </div>
+                <% } %>
+        </div>
         </section>
     
     <section class="modal close">
       <div class="form">
         <h4>Create new collection</h4>
         
-        <form action="/create" method="post">
+        <form id="create-collection" action="/create" method="post">
           <label for="">
-            <input type="text" required/>
+            <input type="text" name="title" required/>
             <p class="float">Collection Name</p>
           </label>
           <label for="">
-            <textarea name="" id="" cols="30" rows="10" placeholder="A brief description of the collection" required></textarea>
+            <textarea name="desc" id="" cols="30" rows="10" placeholder="A brief description of the collection" required></textarea>
           </label>
-          <div class="form__select">
-            <label for="">
-              <p>Input Title</p>
-              <input type="text" required/>
-              </label>
-              <label for="">
-              <select name="" id="">
-                <option value="text">Text</option>
-              </select>
-            </label>
-          </div>
           <div class="button-sect">
               <button class="close-modal-btn">Cancel</button>
               <button type="submit">Create</button>
@@ -150,5 +97,6 @@
             })
         })
     </script> -->
-  </body>
-</html>
+    <script defer src="./scripts/req.js"></script>
+    <script defer src="./scripts/search.js"></script>
+

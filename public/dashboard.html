@@ -40,7 +40,7 @@
       </nav>
       <div class="ham"></div>
     </header>
-    <main>
+    <main class="flex">
       <aside class="side_menu">
         <div class="side_menu__logo">
           <a href="./home.html"><img src="./assets/img/logo_long.png" width="80px" alt="Veldora logo"></a>
@@ -115,7 +115,7 @@
                 </div>
                 <div class="collection_item__message_insight">40 messages</div>
               </div>
-              <h4 class="collection_item__title">Collection</h4>
+              <h4 class="collection_item__title">Collectison</h4>
               <p class="collection_item__desc">Some stuff about some stuff</p>
 
             </div>
@@ -172,25 +172,14 @@
       <div class="form">
         <h4>Create new collection</h4>
         
-        <form action="" method="post">
+        <form id="create-collection" action="" method="post">
           <label for="">
-            <input type="text" required/>
+            <input id="collection_name_input" type="text" required/>
             <p class="float">Collection Name</p>
           </label>
           <label for="">
-            <textarea name="" id="" cols="30" rows="10" placeholder="A brief description of the collection" required></textarea>
+            <textarea name="" id="collection_desc_input" cols="30" rows="10" placeholder="A brief description of the collection" required></textarea>
           </label>
-          <div class="form__select">
-            <label for="">
-              <p>Input Title</p>
-              <input type="text" required/>
-              </label>
-              <label for="">
-              <select name="" id="">
-                <option value="text">Text</option>
-              </select>
-            </label>
-          </div>
           <div class="button-sect">
               <button class="close-modal-btn">Cancel</button>
               <button type="submit">Create</button>
@@ -211,5 +200,8 @@
             })
         })
     </script> -->
+    <script src="./scripts/axios.min.js"></script>
+    <script src="./scripts/req.js"></script>
+    <script src="./scripts/search.js"></script>
   </body>
 </html>
