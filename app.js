@@ -12,20 +12,13 @@ const app = express();
 const User = require("./models/user");
 
 // Passport Config
-require("./config/passport")(passport);
+//require(".--config--passport")(passport);
 
 // DB Config
-const db = require("./config/keys").mongoURI;
-
-mongoose
-  .connect(db, {
-    useCreateIndex: true,
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  })
-  .then(() => console.log("MongoDB Connected"))
-  .catch((err) => console.log(err));
-
+// if (process.env.APP_ENV === "development") {
+//   let db 
+  
+// }
 // EJS
 app.use(expressLayouts);
 app.set("view engine", "ejs");
@@ -35,24 +28,24 @@ app.use(bodyParser.json());
 app.use(express.urlencoded({ extended: true }));
 
 //Fix Session Warning
-app.use(
-  session({
-    secret: "secret",
-    resave: true,
-    saveUninitialized: true,
-  })
-);
+// app.use(
+//   session({
+//     secret: "secret",
+//     resave: true,
+//     saveUninitialized: true,
+//   })
+// );
 // Connect flash for flash sessions
-app.use(flash());
+// app.use(flash());
 
 // Passport middleware
-app.use(passport.initialize());
-app.use(passport.session());
+// app.use(passport.initialize());
+// app.use(passport.session());
 
 // For Static files
 app.use(express.static("public"));
 
-// app.use("/", require("./routes/common.js"));
+app.use("/", require("./routes/common.js"));
 // app.use("/", require("./routes/users.js"));
 // app.use("/warp", require("./routes/warps.js"));
 // app.use("/sss", require("./routes/messages.js"));

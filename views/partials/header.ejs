@@ -15,48 +15,56 @@
     <link rel="mask-icon" href="/img/safari-pinned-tab.4e80224bde32.svg" color="#832e8e" />
     <meta name="theme-color" content="#832e8e" />
     <meta name="twitter:card" content="summary" />
-    <meta name="twitter:site" content="@mailionjs" />
+    <meta name="twitter:site" content="@veldora" />
     <meta name="twitter:creator" content="@prince_codes247" />
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="Mailion - Supercharged mails" />
+    <meta property="og:title" content="Veldora - Supercharged forms" />
     <meta property="og:image" content="media/images/" />
-    <meta property="og:description" content="Mailion is a tool created by Prince Gbalam that makes it easy to send form details to your mail without
+    <meta property="og:description" content="Veldora is a tool created by Prince Gbalam that makes it easy to handle form data without
         needing to write backend code.
         Try it out today!" />
     <meta property="og:url" content="" />
-    <meta property="og:site_name" content="mailion.com" />
+    <meta property="og:site_name" content="veldora.com" />
     <meta property="fb:app_id" content="206571166063990" />
     <link rel="canonical" href="https://veldora.herokuapp.com" />
     <title>Veldora</title>
-    <link rel="stylesheet" href="/style.css">
-    <link rel="stylesheet" href="/form.css">
+    <link rel="stylesheet" href="/styles/general.css">
+    <link rel="stylesheet" href="/styles/home.css">
+    <link rel="stylesheet" href="/styles/button.css" />
+    <link rel="stylesheet" href="/styles/dashboard.css">
+    <link rel="stylesheet" href="/styles/collection.css">  
+    <link rel="stylesheet" href="/styles/form.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="/styles/control.css" />
 </head>
 
 <body>
-    <header>
-        <div class="logo">
-            <a href="/"><p>Mailion</p></a>
-        </div>
-        <nav>
-            <ul>
-                
-                <li>
-                    <a href="/under-dev">About</a>
-                </li>
-                <li>
-                    <a href="/under-dev">Docs</a>
-                </li>
-                <li>
-                    <a href="/under-dev">Contact Us</a>
-                </li>
-                <li>
-                    <a href="/under-dev">Login</a>
-                </li>
-            </ul>
-        </nav>
-        <div class="ham">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
+    <script src="/scripts/jquery@3.4.1.js"></script>
+    <script defer src="/scripts/scroll.js"></script>
+    <header class="c-navbar scroll-shrink">
+      <div class="c-navbar__logo">
+        <a href="./home.html"><img src="/assets/img/logo_long.png" width="100px" alt="" /></a>
+      </div>
+      <nav>
+        <ul class="c-navbar__links">
+          <li ><a href="./home.html" class="c-navbar__link c-navbar__link--current">home</a></li>
+          <li >
+            <a href="http://" class="c-navbar__link">about</a>
+          </li>
+          <li >
+            <a href="http://" class="c-navbar__link">docs</a>
+          </li>
+          <li >
+            <a href="http://" class="c-navbar__link">FAQ</a>
+          </li>
+          <li >
+            <a href="./dashboard.html" class="c-navbar__link button button--outline">
+            Sign In
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <div class="ham"></div>
     </header>
+    <main>
+      <div class="navbar_back"></div>

@@ -6,21 +6,6 @@
   display: none;
 }
 
-main {
-  padding: 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: stretch;
-      -ms-flex-align: stretch;
-          align-items: stretch;
-  -webkit-box-pack: stretch;
-      -ms-flex-pack: stretch;
-          justify-content: stretch;
-  text-align: left;
-  min-height: 100vh;
-}
-
 .side_menu {
   position: -webkit-sticky;
   position: sticky;

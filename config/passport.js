@@ -1,8 +1,6 @@
 const LocalStrategy = require("passport-local").Strategy;
 const bcrypt = require("bcrypt");
-
-// Load User model
-const User = require("../models/user");
+let User = new Harpert("users", "user");
 
 module.exports = function (passport) {
   passport.use(
@@ -10,8 +8,9 @@ module.exports = function (passport) {
       { usernameField: "email" },
       (username, password, done) => {
         // Match user
-        User.findOne({
-          userName: username,
+        User.find("username", username)
+        .then(function (response) {
+          console.log(JSON.stringify(response.data));
         }).then((user) => {
           if (!user || user == null) {
             console.log("nono");
