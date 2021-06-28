@@ -15,24 +15,24 @@ Veldora is a service that simplifies form handling to the bearest minimum. It en
 
 <!-- [] Create  -->
 
-- [ ] Create Navbar
-- [ ] Create Footer
-- [ ] Create landing page
-- [ ] Create Signup and login pages
-- [ ] Create Dashboard page
+- [x] Create Navbar
+- [x] Create Footer
+- [x] Create landing page
+- [x] Create Signup and login pages
+- [x] Create Dashboard page
 - [ ] Create Settings page
-- [ ] Create Development page
-- [ ] Add 404 page
+- [x] Create Development page
+- [x] Add 404 page
 - [ ] Work on metas
-- [ ] Work on footer
+- [x] Work on footer
 - [ ] Add design elements in header
-- [ ] Add illustrations to homepage
-- [ ] Configure nav links
-- [ ] Configure links on all the pages
-- [ ] Limit Warp box physical size
-- [ ] Fix Create warp message
-- [ ] Design warp boxes
-- [ ] Optimize warp ejs
+- [x] Add illustrations to homepage
+- [x] Configure nav links
+- [x] Configure links on all the pages
+- [x] Limit collection box physical size
+- [ ] Fix Create collection message
+- [ ] Design collection boxes
+- [ ] Optimize collection ejs
 
 
 
@@ -44,25 +44,25 @@ Veldora is a service that simplifies form handling to the bearest minimum. It en
 - [x] Setup mailing system for response
 - [x] Setup passport
 - [x] Implement login and signup logic
-- [x] Send warps data to dashboard
-- [x] Set up warps messaging
-- [x] Add account warp limit
-- [x] Add warp messages limit
-- [x] Fix Create warp message
-- [ ] Update create warp system
+- [x] Send collections data to dashboard
+- [x] Set up collections messaging
+- [x] Add account collection limit
+- [x] Add collection messages limit
+- [x] Fix Create collection message
+- [ ] Update create collection system
 - [ ] Add 404 page route
-- [ ] Set up warp settings
+- [ ] Set up collection settings
 - [ ] Add add custom email setup
-- [ ] Replace warp id generator with uuid
+- [x] Replace collection id generator with uuid
 
 #### Models
-- [ ] Adjust warp model to include settings, a name and a description
+- [ ] Adjust collection model to include settings, a name and a description
 
 ### FIX
 
 - [ ] Signup and login form issues
 - [ ] Mails not sending
-- [ ] Fix session warning
+- [x] Fix session warning
 
 ### General
 

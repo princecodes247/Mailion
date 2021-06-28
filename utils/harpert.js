@@ -154,27 +154,33 @@ class Harpert {
     let req = await this.makeRequest(data);
     return JSON.parse(req);
   }
-  async delete(hash_values) {
+  async delete(hash_value = "1") {
+    //Enable multi delete later
     let data = JSON.stringify({
       operation: "delete",
       schema: this.schema,
       table: this.table,
-      hash_values: hash_values,
+      hash_values: hash_value,
     });
 
     let req = await this.makeRequest(data);
-    return JSON.parse(req);
+    if (JSON.parse(req).length === 1) {
+      req = JSON.stringify(JSON.parse(req)[0])
+    }
   }
-  async deleteOne(hash_value = "") {
+  async deleteOne(hash_value = "1") {
+    //Enable multi delete later
     let data = JSON.stringify({
       operation: "delete",
       schema: this.schema,
       table: this.table,
-      hash_values: [hash_value],
+      hash_values: hash_value,
     });
 
     let req = await this.makeRequest(data);
-    return JSON.parse(req);
+    if (JSON.parse(req).length === 1) {
+      req = JSON.stringify(JSON.parse(req)[0])
+    }
   }
 }
 //TEST

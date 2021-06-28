@@ -13,38 +13,46 @@ router.get("/view/:collectionID", ensureAuthenticated, (req, res) => {
 
   let collectionID = req.params.collectionID;
   
-  Collection.findOne({
-    collectionID,
-  }).then((collection) => {
-  res.render("collection", {
-    collection
-  });
+  Collection.findById(collectionID).then((collection) => {
+    let locals = {
+      layout: "layouts/layout",
+      title: `${collection.title} Collection - ${process.env.APP_NAME}`,
+      collection
+    };
+    res.render("collection", locals);
 })
 });
 
-router.get("/create", ensureAuthenticated, (req, res) => {
-  if (req.user.collections.length < 2) {
-    let newCollection = true;
+router.post("/create", ensureAuthenticated, (req, res) => {
+  if (req.user.collections.length < 10) {
+    let { title, desc } = req.body;
+    title = title.toString().trim();
+    desc = desc.toString().trim();
 
+    let newCollection = true;
+//Replace with uuid
     let collectionID = idGenerator(6);
 
-    Collection.findOne({
+    Collection.findById(
       collectionID,
-    }).then((collection) => {
+    ).then((collection) => {
       if (!collection) {
         newCollection = false;
         req.user.collections.push(collectionID)
         let collectionData = {
           collectionID,
           userName: req.user.userName,
+          title,
+          desc
         };
-        Collection.create(collectionData).then(collection=>{
+        Collection.insert(collectionData).then(collection=>{
           console.log("collection created");
           res.json({body: collection})
         }).catch(err=>{
           console.log(err);
         })
       }
+
     });
   } //ADD else statement
 });
@@ -52,7 +60,7 @@ router.get("/create", ensureAuthenticated, (req, res) => {
 //Change the request type
 router.get("/delete/:collectionID", ensureAuthenticated, (req, res) => {
   let collectionID = req.query.collectionID;
-  Collection.deleteOne({ collectionID }).then((collection) => {
+  Collection.delete(collectionID).then((collection) => {
     console.log(`${collection} deleted successfully`);
   });
 });
@@ -60,14 +68,19 @@ router.get("/delete/:collectionID", ensureAuthenticated, (req, res) => {
 router.get("/settings/:collectionID", ensureAuthenticated, (req, res) => {
   let collectionID = req.params.collectionID;
   
-  Collection.findOne({
-    collectionID,
-  }).then((collection) => {
-  res.render("collection_settings", {
-    collectionID,
-    owner: collection.userName,
-    useMail: collection.useMail
-  });
+  Collection.findById(collectionID).then((collection) => {
+
+if (!collection || collection === null) {
+  res.redirect("/login")
+}
+let locals = {
+  layout: "layouts/static",
+  title: `Home - ${process.env.APP_NAME}`,
+  collectionID,
+  owner: collection.userName,
+  useMail: collection.useMail
+};
+res.render("collection_settings", locals);
 })
 });
 
@@ -80,9 +93,7 @@ router.post("/send/:collectionID", cors(), (req, res) => {
   // Move auth to header
   
   if (true) {
-    Collection.findOne({
-      collectionID,
-    })
+    Collection.findById(collectionID)
       .then((collection) => {
         
         if (collection.messages.length < 100) {
