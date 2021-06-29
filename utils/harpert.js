@@ -3,12 +3,12 @@ const axios = require("axios");
 class Harpert {
   constructor(schema, table) {
     this.method = "post";
-    this.url = "https://veldora-princecodes.harperdbcloud.com";
-    this.auth = "Basic YWRtaW46dmVsZG9yYWFkbWlu";
+    this.url = process.env.DB_HOST;
+    this.auth = process.env.DB_AUTH;
     this.schema = schema;
     this.table = table;
   }
-  async makeRequest(data){
+  async makeRequest(data) {
     let config = {
       method: this.method,
       url: this.url,
@@ -18,126 +18,152 @@ class Harpert {
       },
       data,
     };
-    let request = await axios(config)
-    return request.json()
+    let request = await axios(config).then(function (response) {
+      return JSON.stringify(response.data);
+    });
+    return request;
   }
-  insert() {
-    let item = {
-      id: 1,
-      email: "Penny",
-      owner_name: "Kyle",
-      breed_id: 154,
-      age: 7,
-      weight_lbs: 38,
-    };
+  async insert(item) {
     let data = JSON.stringify({
       operation: "insert",
-      schema: "users",
-      table: "user",
+      schema: this.schema,
+      table: this.table,
       records: [item],
     });
-
-   return this.makeRequest(data);
+    let req = await this.makeRequest(data);
+    return req;
   }
-  find(search_attribute = "id", search_value = ["*"], get_attributes = ["*"]) {
+  async create(item) {
     let data = JSON.stringify({
-      "operation": "search_by_value",
-      "schema": this.schema,
-      "table": this.table,
-      "search_attribute": search_attribute,
-      "search_value": search_value,
-      "get_attributes": get_attributes
+      operation: "insert",
+      schema: this.schema,
+      table: this.table,
+      records: [item],
     });
-    
-    return this.makeRequest(data);
+    let req1 = await this.makeRequest(data);
+    let info = JSON.parse(req1);
+    let hash = info.inserted_hashes[0];
+    let req = await this.findById(hash);
+    return req;
+  }
+  async find(search_target = { id: "*" }, get_attributes = ["*"]) {
+    let data = JSON.stringify({
+      operation: "search_by_value",
+      schema: this.schema,
+      table: this.table,
+      search_attribute: Object.keys(search_target)[0],
+      search_value: Object.values(search_target)[0],
+      get_attributes: get_attributes,
+    });
+    let req = await this.makeRequest(data);
+    return req;
+  }
+  async findOne(search_target = { id: "*" }, get_attributes = ["*"]) {
+    let data = JSON.stringify({
+      operation: "search_by_value",
+      schema: this.schema,
+      table: this.table,
+      search_attribute: Object.keys(search_target)[0],
+      search_value: Object.values(search_target)[0],
+      get_attributes: get_attributes,
+    });
+    let req = await this.makeRequest(data);
+    return JSON.parse(req)[0];
   }
 
+  async conditionalSearch(
+    conditions,
+    operator,
+    options = { skip, limit },
+    get_attributes = ["*"]
+  ) {
+    let data = JSON.stringify({
+      operation: "search_by_conditions",
+      schema: this.schema,
+      table: this.table,
+      operator: operator,
+      offset: skip,
+      limit: limit,
+      get_attributes: get_attributes,
+      conditions: conditions,
+    });
 
-  conditionSearch(get_attributes = ["*"], conditions) {
-    let data = JSON.stringify({
-      "operation": "search_by_conditions",
-      "schema": this.schema,
-      "table": this.table,
-      "operator": operator,
-      "offset": skip,
-      "limit": limit,
-      "get_attributes": get_attributes,
-      "conditions": conditions
-    });
-    
-    return this.makeRequest(data);
-    
+    let req = await this.makeRequest(data);
+    return req;
   }
-  findById(hash_values = ["*"], get_attributes = ["*"]) {
+  async findById(hash_value = "1", get_attributes = ["*"]) {
     let data = JSON.stringify({
-      "operation": "search_by_hash",
-      "schema": this.schema,
-      "table": this.table,
-      "hash_values": hash_values,
-      "get_attributes": get_attributes
+      operation: "search_by_hash",
+      schema: this.schema,
+      table: this.table,
+      hash_values: [hash_value],
+      get_attributes: get_attributes,
     });
-    
-    
-    return this.makeRequest(data);
+
+    let req = await this.makeRequest(data);
+    if (JSON.parse(req).length === 1) {
+      req = JSON.stringify(JSON.parse(req)[0])
+    }
+    return req;
   }
 
   //? I DON'T UNDERSTAND THIS ONE YET
-  update() {
+  async update(id) {
     let data = JSON.stringify({
-      "operation": "update",
-      "schema": this.schema,
-      "table": this.table,
-      "records": [
+      operation: "update",
+      schema: this.schema,
+      table: this.table,
+      records: [
         {
-          "id": 1,
-          "dog_name": "Penny B"
-        }
-      ]
+          id: id,
+          dog_name: "Penny B",
+        },
+      ],
     });
-    
-    return this.makeRequest(data);
-    
+
+    let req = await this.makeRequest(data);
+    return req;
   }
   //? I DON'T UNDERSTAND THIS ONE YET
-  upsert() {
+  async upsert(id) {
     let data = JSON.stringify({
-      "operation": "upsert",
-      "schema": this.schema,
-      "table": this.table,
-      "records": [
+      operation: "upsert",
+      schema: this.schema,
+      table: this.table,
+      records: [
         {
-          "id": 8,
-          "weight_lbs": 155
+          id: id,
+          weight_lbs: 155,
         },
         {
-          "name": "Bill",
-          "breed": "Pit Bull",
-          "id": 10,
-          "age": 11,
-          "weight_lbs": 155
+          name: "Bill",
+          breed: "Pit Bull",
+          id: id,
+          age: 11,
+          weight_lbs: 155,
         },
         {
-          "name": "Harper",
-          "breed": "Mutt",
-          "age": 5,
-          "weight_lbs": 155
-        }
-      ]
+          name: "Harper",
+          breed: "Mutt",
+          age: 5,
+          weight_lbs: 155,
+        },
+      ],
     });
-    
-    return this.makeRequest(data);
+
+    let req = await this.makeRequest(data);
+    return req;
   }
-  delete(hash_values) {
+  async delete(hash_values) {
     let data = JSON.stringify({
-      "operation": "delete",
-      "schema": this.schema,
-      "table": this.table,
-      "hash_values": hash_values
+      operation: "delete",
+      schema: this.schema,
+      table: this.table,
+      hash_values: hash_values,
     });
-    
-    return this.makeRequest(data);
-    
-    
+
+    let req = await this.makeRequest(data);
+    return req;
   }
 }
 //TEST
@@ -173,7 +199,7 @@ class Harpert {
 //       }
 //     ]
 //   });
-  
+
 //   return this.makeRequest(data);
 //}
 
@@ -211,3 +237,22 @@ module.exports = { Harpert };
 //     "search_value": true
 //   }
 // ]
+
+//INSERT Working
+
+// let user = {
+//   username: "kyle",
+//   email: "kyley@gmail.com",
+//   password: "passy",
+//   status: "active",
+//   plan: 0,
+//   level: 0,
+//   collections: [],
+// };
+// User.insert()
+//   .then((result) => {
+//     console.log(result);
+//   })
+//   .catch((err) => {
+//     console.log(`${err} is an error`);
+//   });
