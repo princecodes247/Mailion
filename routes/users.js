@@ -5,10 +5,11 @@ const router = express.Router();
 const sendResetCode = require("../utils/sendResetCode");
 const sendActivationMail = require("../utils/sendActivationMail");
 const idGenerator = require("../utils/idGenerator");
-const User = require("../models/user");
-const Warp = require("../models/collection");
+const { Harpert } = require("../utils/harpert");
+let Collection = new Harpert("users", "collection");
+let User = new Harpert("users", "user");
 const passport = require("passport");
-const { ensureAuthenticated } = require("../config/auth");
+const { ensureAuthenticated, forwardAuthenticated } = require("../config/auth");
 
 router.get("/admin", ensureAuthenticated, (req, res, next) => {
   if (req.user.level == 3) {
@@ -32,9 +33,9 @@ router.get("/login", (req, res) => {
 router.get("/dashboard", ensureAuthenticated, (req, res) => {
   let user = req.user;
 
-  Warp.find({ userName: user.userName }).then((warps) => {
-    res.render("dashboard", { user, warps });
-  });
+ // Collection.find({ userName: user.userName }).then((warps) => {
+    res.render("dashboard", { user });
+  // });
 });
 
 router.get("/settings", ensureAuthenticated, (req, res) => {
@@ -50,7 +51,7 @@ router.post("/settings", ensureAuthenticated, (req, res) => {
 router.post("/register", (req, res) => {
   let { userName, email, password, password2 } = req.body;
 
-  console.log(req.body);
+  console.log(`${req.body} is req.body line 54 users.js`);
   userName = userName.toString().trim();
   email = email.toString().trim();
   password = password.toString().trim();
@@ -59,39 +60,43 @@ router.post("/register", (req, res) => {
     userName,
     email,
     password,
-    password2,
     plan: 0,
     level: 0,
-    warps: [],
+    status: "active",
+  collections: [],
   };
   User.findOne({
-    email,
+    email: email
   })
     .then((user) => {
       if (!user) {
+        console.log(`No user found line 72 users.js`);
         if (password == password2) {
           bcrypt.hash(password, 10, (err, hash) => {
             userData.password = hash;
-            User.create(userData)
-              .then((user) => {
-                console.log("User Registered");
-                //sendActivationMail(req, user);
-                req.login(user, err=>{
-                  if(err){
-                    console.log(err);
-                  }
-                  res.redirect("/dashboard")
-                })
-              })
-              .catch((err) => {
-                console.log({ err });
-                return;
-              });
-          });
+            User.insert(userData)
+              .then((info) => {
+                console.log(`${info} line 78 users.js`);
+                let id = JSON.parse(info).inserted_hashes[0];
+                console.log(`${id} line 80 users.js`);
+                User.findById(id)
+                .then(user=>{
+                  console.log(`${user} Registered at findById at line 83 users.js`);
+                  //sendActivationMail(req, user);
+                  req.login(user, err=>{
+                    if(err){
+                      console.log(`${err} line 87 req.login users.js`);
+                    }
+                    res.redirect("/login")
+                  })
+                }).catch(err=> console.log(`${err} at line 91 findById users.js`))
+          }).catch(err=> console.log(`${err} at line 92 insert users.js`))
+        })
         } else {
           res.json({ error: "Password do not match" });
         }
       } else {
+        console.log(`${user} USER FOUND! line 97 users.js`)
         res.json({ error: "The provided email is registered already" });
         return;
       }
@@ -103,17 +108,17 @@ router.post("/register", (req, res) => {
 });
 
 // Login User
-router.post("/login", (req, res, next) => {
+router.post("/login", forwardAuthenticated, (req, res, next) => {
   passport.authenticate("local", {
     successRedirect: "/dashboard",
     failureRedirect: "/login",
     failureFlash: true,
-  })(req, res, next);
+  })(req, res, next)
 });
 router.get("/logout", (req, res) => {
   req.logout();
   req.flash("success_msg", "You are logged out");
-  res.redirect("/users/login");
+  res.redirect("/login");
 });
 
 module.exports = router;

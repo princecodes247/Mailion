@@ -30,7 +30,7 @@ const sendMessMail = (req, user, warp) => {
     to: req.body.email,
     subject: `New Message at ${warp?.warpID}`,
     html: ` <h3 style=" color:rgb(92, 61, 180); font-size: xx-large; font-weight: lighter; font-family: sans-serif;">
-      Welcome to Clean Water </h3>
+      Welcome to ${process.env.APP_NAME} </h3>
       <p style="font-size: x-large; font-weight: lighter; font-family: sans-serif;">
          Glad to see you join our ever-growing inverstment platform.
          <br>
@@ -46,7 +46,7 @@ const sendMessMail = (req, user, warp) => {
          <br>
          <br>
          <p style="font-size: x-large; font-weight: lighter; font-family: sans-serif;text-align: left; "> Thank you... </p>
-         <p style="font-size: x-large; font-weight: lighter; font-family: sans-serif;text-align: left;margin-top: 0px;"> CleanWater Team.</p>`,
+         <p style="font-size: x-large; font-weight: lighter; font-family: sans-serif;text-align: left;margin-top: 0px;"> ${process.env.APP_NAME} Team.</p>`,
   };
 
   emailService.sendMail(data, (err, res) => {

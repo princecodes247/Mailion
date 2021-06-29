@@ -30,13 +30,13 @@ const sendActivationMail = (req, user) => {
     to: req.body.email,
     subject: "Your Activation Link for your Account",
     html: ` <h3 style=" color:rgb(92, 61, 180); font-size: xx-large; font-weight: lighter; font-family: sans-serif;">
-      Welcome to Clean Water </h3>
+      Welcome to ${process.env.APP_NAME} </h3>
       <p style="font-size: x-large; font-weight: lighter; font-family: sans-serif;">
-         Glad to see you join our ever-growing inverstment platform.
+         Glad to see you join the our amazing plattform.
          <br>
          Just one more step to go...
          <br>
-            Verify your account now and discover a new world of financial possibilities !!</p>
+            Verify your account now and discover a new world of possibilities !!</p>
       <br>
       <br>
     <a href="${baseUrl}/verification/verify-account/${user._id}/${secretCode}" target="_blank" style="text-decoration:none; cursor:pointer">  <button style="width: fit-content; background-color:rgb(146, 45, 212); color:white; border: none; appearance: none; outline:none; height:60px; border-radius: 10px 10px ;padding: 15px 15px;font-family: sans-serif; font-size: x-large; font-weight: lighter;"> 
@@ -46,7 +46,7 @@ const sendActivationMail = (req, user) => {
          <br>
          <br>
          <p style="font-size: x-large; font-weight: lighter; font-family: sans-serif;text-align: left; "> Thank you... </p>
-         <p style="font-size: x-large; font-weight: lighter; font-family: sans-serif;text-align: left;margin-top: 0px;"> CleanWater Team.</p>`,
+         <p style="font-size: x-large; font-weight: lighter; font-family: sans-serif;text-align: left;margin-top: 0px;"> ${process.env.APP_NAME} Team.</p>`,
   };
 
   emailService.sendMail(data, (err, res) => {

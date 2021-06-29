@@ -1,24 +1,18 @@
 const bodyParser = require("body-parser");
 const express = require("express");
 const expressLayouts = require("express-ejs-layouts");
-const mongoose = require("mongoose");
 const dotenv = require("dotenv");
 dotenv.config();
 const flash = require("connect-flash");
-const session = require("express-session");
+const session = require("cookie-session");
+
 const passport = require("passport");
 const cors = require("cors")
 const app = express();
-const User = require("./models/user");
 
 // Passport Config
-//require(".--config--passport")(passport);
+require("./config/passport")(passport);
 
-// DB Config
-// if (process.env.APP_ENV === "development") {
-//   let db 
-  
-// }
 // EJS
 app.use(expressLayouts);
 app.set("view engine", "ejs");
@@ -28,25 +22,27 @@ app.use(bodyParser.json());
 app.use(express.urlencoded({ extended: true }));
 
 //Fix Session Warning
-// app.use(
-//   session({
-//     secret: "secret",
-//     resave: true,
-//     saveUninitialized: true,
-//   })
-// );
-// Connect flash for flash sessions
-// app.use(flash());
+
+app.use(
+  session({
+    secret: "secret",
+    resave: true,
+    saveUninitialized: true,
+  })
+);
+
+//Connect flash for flash sessions
+app.use(flash());
 
 // Passport middleware
-// app.use(passport.initialize());
-// app.use(passport.session());
+app.use(passport.initialize());
+app.use(passport.session());
 
 // For Static files
 app.use(express.static("public"));
 
 app.use("/", require("./routes/common.js"));
-// app.use("/", require("./routes/users.js"));
+app.use("/", require("./routes/users.js"));
 // app.use("/warp", require("./routes/warps.js"));
 // app.use("/sss", require("./routes/messages.js"));
 //REMEBER TO ADD 404 PAGE
