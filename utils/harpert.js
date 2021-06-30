@@ -31,7 +31,7 @@ class Harpert {
       records: [item],
     });
     let req = await this.makeRequest(data);
-    return req;
+    return JSON.parse(req);
   }
   async create(item) {
     let data = JSON.stringify({
@@ -44,7 +44,7 @@ class Harpert {
     let info = JSON.parse(req1);
     let hash = info.inserted_hashes[0];
     let req = await this.findById(hash);
-    return req;
+    return JSON.parse(req);
   }
   async find(search_target = { id: "*" }, get_attributes = ["*"]) {
     let data = JSON.stringify({
@@ -56,7 +56,7 @@ class Harpert {
       get_attributes: get_attributes,
     });
     let req = await this.makeRequest(data);
-    return req;
+    return JSON.parse(req);
   }
   async findOne(search_target = { id: "*" }, get_attributes = ["*"]) {
     let data = JSON.stringify({
@@ -89,7 +89,7 @@ class Harpert {
     });
 
     let req = await this.makeRequest(data);
-    return req;
+    return JSON.parse(req);
   }
   async findById(hash_value = "1", get_attributes = ["*"]) {
     let data = JSON.stringify({
@@ -104,7 +104,7 @@ class Harpert {
     if (JSON.parse(req).length === 1) {
       req = JSON.stringify(JSON.parse(req)[0])
     }
-    return req;
+    return JSON.parse(req);
   }
 
   //? I DON'T UNDERSTAND THIS ONE YET
@@ -122,7 +122,7 @@ class Harpert {
     });
 
     let req = await this.makeRequest(data);
-    return req;
+    return JSON.parse(req);
   }
   //? I DON'T UNDERSTAND THIS ONE YET
   async upsert(id) {
@@ -152,7 +152,7 @@ class Harpert {
     });
 
     let req = await this.makeRequest(data);
-    return req;
+    return JSON.parse(req);
   }
   async delete(hash_values) {
     let data = JSON.stringify({
@@ -163,7 +163,18 @@ class Harpert {
     });
 
     let req = await this.makeRequest(data);
-    return req;
+    return JSON.parse(req);
+  }
+  async deleteOne(hash_value = "") {
+    let data = JSON.stringify({
+      operation: "delete",
+      schema: this.schema,
+      table: this.table,
+      hash_values: [hash_value],
+    });
+
+    let req = await this.makeRequest(data);
+    return JSON.parse(req);
   }
 }
 //TEST
