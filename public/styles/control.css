@@ -6,6 +6,23 @@
 .hidden {
   display: none;
 }
+.height--screen {
+  min-height: 100vh;
+}
+.height--all {
+  height: 100%;
+}
+.margin_top--40{
+  margin: 40px 0;
+}
+.center {
+  justify-content: center;
+  align-items: center;
+}
+.font--xxbig {
+  font-size: 10em;
+}
+
 
 .color--amber {
   color: var(--amber-2);

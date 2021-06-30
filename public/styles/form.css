@@ -30,7 +30,7 @@
   form label p.float {
     position: absolute;
     top: 50%;
-    left: 1.5%;
+    left: 5%;
     -webkit-transform: translateY(-50%);
             transform: translateY(-50%);
     color: #333;
@@ -46,6 +46,7 @@
     background-color: var(--sub-bg);
     -webkit-transition: 0.1s;
     transition: 0.1s;
+    border-radius: var(--border-rad-3);
   }
 
   form label input:focus-within, form label input:valid,  form label textarea:focus-within, form label textarea:valid  {

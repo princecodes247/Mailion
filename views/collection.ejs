@@ -1,0 +1,81 @@
+
+<body>
+  <script defer src="/scripts/jquery@3.4.1.js"></script>
+    <script defer src="/scripts/scroll.js"></script>
+        <main>
+          <%- include('partials/aside', {active: ""}) %>
+          <div class="navbar_back"></div>
+          <article class="dashboard">
+            <div class="dashboard__top">
+                    <div class="dashboard__nav">
+                        <h3>Collection: Project Survey</h3>
+                      
+                        <div class="dashboard__nav_btns">
+                              <button class="button button--trans">S</button>
+                          </div>
+                    </div>
+                      
+                      <div class="bottom">
+                        <h5>Description</h5>
+                        <p>This is a something for something</p>
+                    </div>
+            </div>
+            <div class="dashboard__search_sect">
+              <div class="dashboard__search_bar">
+                <button class="button button--trans button--with_dropdown dashboard__filter_btn icon__menu">E
+                  <ul class="dropdown">
+                    <div>
+                      <p>Search By</p>
+                    <li><label>Name</label>
+                    <input type="checkbox"></li>
+                    <li><label>Email</label>
+                      <input type="checkbox"></li>
+                      <li><label>Phone Number</label>
+                        <input type="checkbox"></li>
+                    <li><label>Message</label>
+                      <input type="checkbox"></li>
+                    </div>
+                 
+                  </ul>
+                </button>
+                <input class="dashboard__search" type="search" name="dashboard_search" id="dashboard_search" placeholder="Search collection">
+                <button class="button button--sec dashboard__search_btn desktop">Search</button>
+                <button class="button button--sec dashboard__search_btn mobile">Q</button>
+              </div>
+            </div>
+                <div>
+                    <table class="table-bottom">
+                        <thead>
+                           <tr>
+                            <th>S/N</th>
+                            <th>Name</th>
+                            <th>Sex</th>
+                            <th>Age</th>
+                            <th>Opinion</th>
+                           </tr>
+                        </thead>
+                        <tbody>
+                            
+                            <tr>
+                              <td>1</td>
+                                <td>Susan</td>
+                                <td>Female</td>
+                                <td>23</td>
+                                <td>I think it's great</td>
+                            </tr>
+                            <tr class="active-row">
+                              <td>2</td>
+                                <td>Susan</td>
+                                <td>Female</td>
+                                <td>23</td>
+                                <td>I think it's great</td>
+                            </tr>
+                        </tbody>
+                    </table>
+               
+                </div>
+            </article>
+        </main>
+ 
+</body>
+</html>

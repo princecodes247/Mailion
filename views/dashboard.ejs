@@ -3,27 +3,7 @@
     <script defer src="./public/scripts/control-modal.js"></script>
 
     <main class="flex">
-      <aside class="side_menu">
-        <div class="side_menu__logo">
-          <a href="./home.html"><img src="./assets/img/logo_long.png" width="80px" alt="Veldora logo"></a>
-        </div>
-        <div class="side_menu__top">
-          <div class="side_menu__profile">
-            <div class="side_menu__profile_pic">
-              <h2>P</h2>
-            </div>
-          <p class="side_menu__profile_name">Prince Lee</p>
-          </div>
-        </div>
-        <div class="side_menu__bottom">
-          <ol class="side_menu__nav">
-            <li class="side_menu__link side_menu__link--active">Dashboard</li>
-            <li class="side_menu__link">Plans</li>
-            <li class="side_menu__link">Settings</li>
-            <li class="side_menu__link side_menu__link--warning"><a href="/logout">Logout</a></li>
-          </ol>
-        </div>
-      </aside>
+      <%- include('partials/aside', {active: 1}) %>
       <div class="navbar_back"></div>
       <article class="dashboard">
         <div class="dashboard__top">
@@ -32,7 +12,7 @@
         </div>
         <div class="dashboard__search_sect">
           <div class="dashboard__search_bar">
-            <button class="button button--trans button--with_dropdown dashboard__filter_btn icon__menu">E
+            <button class="button button--trans button--with_dropdown dashboard__filter_btn icon__menu"><i class="ri-equalizer-line"></i>
               <ul class="dropdown">
                 <div>
                   <p>Search By</p>
@@ -51,7 +31,7 @@
             </button>
             <input class="dashboard__search" type="search" name="dashboard_search" id="dashboard_search" placeholder="Search collection">
             <button class="button button--sec dashboard__search_btn desktop">Search</button>
-            <button class="button button--sec dashboard__search_btn mobile">Q</button>
+            <button class="button button--sec dashboard__search_btn mobile"><i class="ri-search-line"></i></button>
           </div>
         </div>
         <section class="dashboard__collections">
