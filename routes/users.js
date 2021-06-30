@@ -15,9 +15,12 @@ router.get("/admin", ensureAuthenticated, (req, res, next) => {
   if (req.user.level == 3) {
     User.find().then((result) => {
       let temp = ({ userName, email, dateCreated, warps, status } = result);
-      res.render("admin", {
+      let locals = {
+        layout: "layouts/static",
+        title: `Admin - ${process.env.APP_NAME}`,
         users: temp,
-      });
+      };
+      res.render("admin", locals);
     });
     next();
   }
@@ -40,17 +43,32 @@ router.get("/login", (req, res) => {
 });
 router.get("/dashboard", ensureAuthenticated, (req, res) => {
   let user = req.user;
-
- // Collection.find({ userName: user.userName }).then((warps) => {
-    res.render("dashboard", { user });
-  // });
+  Collection.find({ userName: user.userName }).then((collections) => {
+  let locals = {
+    layout: "layouts/static",
+    title: `Dashboard - ${process.env.APP_NAME}`,
+    collections
+  };
+    res.render("dashboard", locals);
+  });
 });
 
 router.get("/settings", ensureAuthenticated, (req, res) => {
-  res.render("settings");
+  let locals = {
+    layout: "layouts/static",
+    title: `Settings - ${process.env.APP_NAME}`,
+  };
+  res.render("settings", locals);
 });
 router.post("/settings", ensureAuthenticated, (req, res) => {
-  res.json("hi");
+  let user = req.user;
+  let settings = {
+    theme: "dark"
+  }
+  User.upsert(settings).then(resp=>{
+    console.log(`${resp} settings updated line 69 users.js`);
+    res.json("settings updated")
+  })
 });
 
 //Remove the username in link
