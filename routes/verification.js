@@ -1,7 +1,9 @@
 const Code = require("../models/secretCode");
 const express = require("express");
 const router = express.Router();
-const User = require("../models/user");
+const { Harpert } = require("../utils/harpert");
+
+let User = new Harpert("users", "user");
 const sendCode = require("../utils/sendCode");
 
 // User Account Verification

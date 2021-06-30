@@ -2,43 +2,45 @@ const express = require("express");
 const router = express.Router();
 const cors = require("cors")
 const { ensureAuthenticated } = require("../config/auth");
-const User = require("../models/user");
-const Collection = require("../models/collection");
 const sendCollectionMail = require("../utils/sendCollectionMail");
 const idGenerator = require("../utils/idGenerator");
+const { Harpert } = require("../utils/harpert");
+const User = new Harpert("users", "user");
+const Collection = new Harpert("users", "collection");
 
 router.get("/view/:collectionID", ensureAuthenticated, (req, res) => {
   //
+
   let collectionID = req.params.collectionID;
   
   Collection.findOne({
-    warpID,
-  }).then((warp) => {
-  res.render("warp", {
-    warp
+    collectionID,
+  }).then((collection) => {
+  res.render("collection", {
+    collection
   });
 })
 });
 
 router.get("/create", ensureAuthenticated, (req, res) => {
-  if (req.user.warps.length < 2) {
+  if (req.user.collections.length < 2) {
     let newCollection = true;
 
-    let warpID = idGenerator(6);
+    let collectionID = idGenerator(6);
 
     Collection.findOne({
-      warpID,
-    }).then((warp) => {
-      if (!warp) {
-        newWarp = false;
-        req.user.warps.push(warpID)
-        let warpData = {
-          warpID,
+      collectionID,
+    }).then((collection) => {
+      if (!collection) {
+        newCollection = false;
+        req.user.collections.push(collectionID)
+        let collectionData = {
+          collectionID,
           userName: req.user.userName,
         };
-        Warp.create(warpData).then(warp=>{
-          console.log("warp created");
-          res.json({body: warp})
+        Collection.create(collectionData).then(collection=>{
+          console.log("collection created");
+          res.json({body: collection})
         }).catch(err=>{
           console.log(err);
         })
@@ -48,50 +50,50 @@ router.get("/create", ensureAuthenticated, (req, res) => {
 });
 
 //Change the request type
-router.get("/delete/:warpID", ensureAuthenticated, (req, res) => {
-  let warpID = req.query.warpID;
-  Collection.deleteOne({ warpID }).then((warp) => {
-    console.log(`${warp} deleted successfully`);
+router.get("/delete/:collectionID", ensureAuthenticated, (req, res) => {
+  let collectionID = req.query.collectionID;
+  Collection.deleteOne({ collectionID }).then((collection) => {
+    console.log(`${collection} deleted successfully`);
   });
 });
 
-router.get("/settings/:warpID", ensureAuthenticated, (req, res) => {
-  let warpID = req.params.warpID;
+router.get("/settings/:collectionID", ensureAuthenticated, (req, res) => {
+  let collectionID = req.params.collectionID;
   
   Collection.findOne({
-    warpID,
-  }).then((warp) => {
-  res.render("warp_settings", {
-    warpID,
-    owner: warp.userName,
-    useMail: warp.useMail
+    collectionID,
+  }).then((collection) => {
+  res.render("collection_settings", {
+    collectionID,
+    owner: collection.userName,
+    useMail: collection.useMail
   });
 })
 });
 
-router.post("/send/:warpID", cors(), (req, res) => {
+router.post("/send/:collectionID", cors(), (req, res) => {
   //
   
 
-  let warpID = req.params.warpID;
+  let collectionID = req.params.collectionID;
   let formData = { ...req.body };
   // Move auth to header
   
   if (true) {
     Collection.findOne({
-      warpID,
+      collectionID,
     })
-      .then((warp) => {
+      .then((collection) => {
         
-        if (warp.messages.length < 100) {
-          warp.messages.push({ formData });
-          warp.save().then(() => {
+        if (collection.messages.length < 100) {
+          collection.messages.push({ formData });
+          Collection.update(collection).then(() => {
             res.json({
               message: "Successful",
             });
           });
-          if (warp.useMail == true) {
-            sendWarpMail(req, warp);
+          if (collection.useMail == true) {
+            sendCollectionMail(req, collection);
           }
         }else {
           res.json("Collection limit exceeded")

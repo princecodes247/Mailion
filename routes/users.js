@@ -25,10 +25,18 @@ router.get("/admin", ensureAuthenticated, (req, res, next) => {
 });
 
 router.get("/signup", (req, res) => {
-  res.render("signup");
+  let locals = {
+    layout: "layouts/forms",
+    title: `Signup - ${process.env.APP_NAME}`,
+  };
+  res.render("signup", locals);
 });
 router.get("/login", (req, res) => {
-  res.render("login", { error: { type: "none" } });
+  let locals = {
+    layout: "layouts/forms",
+    title: `Login - ${process.env.APP_NAME}`,
+  };
+  res.render("login", locals);
 });
 router.get("/dashboard", ensureAuthenticated, (req, res) => {
   let user = req.user;
@@ -48,7 +56,7 @@ router.post("/settings", ensureAuthenticated, (req, res) => {
 //Remove the username in link
 
 // Register User
-router.post("/register", (req, res) => {
+router.post("/signup", (req, res) => {
   let { userName, email, password, password2 } = req.body;
 
   console.log(`${req.body} is req.body line 54 users.js`);
@@ -77,7 +85,7 @@ router.post("/register", (req, res) => {
             User.insert(userData)
               .then((info) => {
                 console.log(`${info} line 78 users.js`);
-                let id = JSON.parse(info).inserted_hashes[0];
+                let id = info.inserted_hashes[0];
                 console.log(`${id} line 80 users.js`);
                 User.findById(id)
                 .then(user=>{
