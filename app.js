@@ -16,6 +16,8 @@ require("./config/passport")(passport);
 // EJS
 app.use(expressLayouts);
 app.set("view engine", "ejs");
+app.set('layout', 'layouts/layout');
+app.set("layout extractStyles", true);
 
 // Express body parser
 app.use(bodyParser.json());
