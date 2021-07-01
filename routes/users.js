@@ -49,6 +49,7 @@ router.get("/dashboard", ensureAuthenticated, (req, res) => {
     title: `Dashboard - ${process.env.APP_NAME}`,
     collections,
     user
+
   };
     res.render("dashboard", locals);
   });
@@ -70,6 +71,7 @@ router.post("/settings", ensureAuthenticated, (req, res) => {
     console.log(`${resp} settings updated line 69 users.js`);
     res.json("settings updated")
   })
+
 });
 
 router.get("/review", ensureAuthenticated, (req, res) => {
@@ -78,6 +80,7 @@ router.get("/review", ensureAuthenticated, (req, res) => {
     title: `Write a review - ${process.env.APP_NAME}`,
   };
   res.render("review", locals);
+
 });
 
 
