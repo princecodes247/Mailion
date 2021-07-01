@@ -23,6 +23,9 @@
   font-size: 10em;
 }
 
+.above-3{
+  z-index: 99;
+}
 
 .color--amber {
   color: var(--amber-2);
