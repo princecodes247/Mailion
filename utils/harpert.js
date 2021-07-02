@@ -101,10 +101,18 @@ class Harpert {
     });
 
     let req = await this.makeRequest(data);
-    if (JSON.parse(req).length === 1) {
-      req = JSON.stringify(JSON.parse(req)[0])
+    req = JSON.parse(req);
+
+    if (req.length === 1) {
+      req = req[0];
+      if (typeof req === String) {
+        req = req.trim() === "" ? null : req;
+      }
     }
-    return JSON.parse(req);
+    if (req.length === 0) {
+      req = undefined;
+    }
+    return req;
   }
 
   //? I DON'T UNDERSTAND THIS ONE YET
@@ -165,7 +173,7 @@ class Harpert {
 
     let req = await this.makeRequest(data);
     if (JSON.parse(req).length === 1) {
-      req = JSON.stringify(JSON.parse(req)[0])
+      req = JSON.stringify(JSON.parse(req)[0]);
     }
   }
   async deleteOne(hash_value = "1") {
@@ -179,7 +187,7 @@ class Harpert {
 
     let req = await this.makeRequest(data);
     if (JSON.parse(req).length === 1) {
-      req = JSON.stringify(JSON.parse(req)[0])
+      req = JSON.stringify(JSON.parse(req)[0]);
     }
   }
 }
@@ -273,3 +281,13 @@ module.exports = { Harpert };
 //   .catch((err) => {
 //     console.log(`${err} is an error`);
 //   });
+
+// req = JSON.parse(req)
+// if (req.length === 1) {
+//   req = req[0]
+//   if(typeof req === String ){
+//     req = req.trim() === "" ? null : req;
+//   }
+// }
+// console.log(`${req} ${typeof req} from collection`);
+// return req;

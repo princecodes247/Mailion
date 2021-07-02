@@ -27,24 +27,29 @@ router.get("/view/:collectionID", ensureAuthenticated, (req, res) => {
 
 router.post("/create", ensureAuthenticated, (req, res) => {
   if (req.user.collections.length < 10) {
+    console.log(req.body);
     let { title, desc } = req.body;
     title = title.toString().trim();
     desc = desc.toString().trim();
     let newCollection = true;
 //Replace with uuid
-    let collectionID = `${idGenerator(6)}${title[0]}${title[1]}${title[2]}`;
-
+    let collectionID = idGenerator(6, title);
+    console.log(`${collectionID} line 37 collection.js`);
     Collection.findById(
       collectionID,
     ).then((collection) => {
       if (!collection) {
+        console.log("no collection line 42 collection.js");
         newCollection = false;
         req.user.collections.push(collectionID)
         let collectionData = {
           collectionID,
           userName: req.user.userName,
           title,
-          desc
+          desc,
+          active: true,
+          settings: [],
+          entries: []
         };
         Collection.insert(collectionData).then(collection=>{
           console.log("collection created");
@@ -54,7 +59,9 @@ router.post("/create", ensureAuthenticated, (req, res) => {
           console.log(err);
         })
       }
-
+      else {
+        console.log(`${collection} line 60 collection.js`);
+      }
     });
   } //ADD else statement
 });

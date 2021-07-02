@@ -15,6 +15,9 @@
 .margin_top--40{
   margin: 40px 0;
 }
+.margin_top--20{
+  margin: 20px 0;
+}
 .center {
   justify-content: center;
   align-items: center;

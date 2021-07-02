@@ -19,14 +19,23 @@ let createCollectionForm = document.querySelector("#create-collection");
 createCollectionForm.addEventListener("submit", () => {
   event.preventDefault();
   let data = {
-    title: createCollectionForm.querySelector("collection_name_input"),
-    desc: createCollectionForm.querySelector("collection_name_desc"),
+    title: createCollectionForm.querySelector("#collection_name_input").value,
+    desc: createCollectionForm.querySelector("#collection_desc_input").value,
   };
-  postRequest("/create", "POST", data)
+  let config = {
+    method: "POST",
+    url: "/collections/create",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    data,
+  };
+  axios(config).then(function (response) {
+    return response.data;
+  })
     .then((resp) => {
       let grid = document.querySelector(".dashboard__collections_grid");
       modal.classList.remove("close");
-      let result = resp.parse();
       let item = document.createElement("div");
       item.classList.add("collection_item");
       let top = document.createElement("div");

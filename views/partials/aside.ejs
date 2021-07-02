@@ -5,9 +5,9 @@
     <div class="side_menu__top">
       <div class="side_menu__profile">
         <div class="side_menu__profile_pic">
-          <h2><%- user.userName[0] %> </h2>
+          <h2><%- user.userName[0].toUpperCase() %> </h2>
         </div>
-      <p class="side_menu__profile_name">req.user.userName</p>
+      <p class="side_menu__profile_name"><%- user.userName %> </p>
       </div>
     </div>
     <div class="side_menu__bottom">

@@ -1,6 +1,6 @@
 
   <body>
-    <script defer src="./public/scripts/control-modal.js"></script>
+    <script defer src="/scripts/control-modal.js"></script>
 
     <main class="flex">
       <%- include('partials/aside', {active: 1}) %>
@@ -47,19 +47,16 @@
               <% } else { %>
                 <div class="dashboard__collections_grid">
                   <% collections.forEach(collection => { %>
-                    <div class="collection_item">
+                    <div class="collection_item" id="<%- collection.collectionID %>">
                       <div class="collection_item__top">
                         <div class="collection_item__icon">
-        
                         </div>
                         <div class="collection_item__message_insight"><%- collection.entries.length %>  messages</div>
                       </div>
                       <h4 class="collection_item__title"><%- collection.title %> </h4>
                       <p class="collection_item__desc"><%- collection.desc %> </p>
-        
                     </div>
                   <% }) %>
-                 
                 </div>
                 <% } %>
         </div>
@@ -71,11 +68,11 @@
         
         <form id="create-collection" action="/create" method="post">
           <label for="">
-            <input type="text" name="title" required/>
+            <input id="collection_name_input" type="text" name="title" required/>
             <p class="float">Collection Name</p>
           </label>
           <label for="">
-            <textarea name="desc" id="" cols="30" rows="10" placeholder="A brief description of the collection" required></textarea>
+            <textarea name="desc" id="collection_desc_input" cols="30" rows="10" placeholder="A brief description of the collection" required></textarea>
           </label>
           <div class="button-sect">
               <button class="close-modal-btn">Cancel</button>
@@ -86,17 +83,6 @@
     </section>
   </article>
   </main>
-    <!-- <script>
-        let createWarpBtn = document.querySelector("#warp-create-btn")
-        createWarpBtn.addEventListener("click", ()=>{
-            fetch("/warp/create").then(res=>{
-                console.log(res);
-                res.json()
-            }).then(data=>{
-                console.log(data);
-            })
-        })
-    </script> -->
-    <script defer src="./scripts/req.js"></script>
-    <script defer src="./scripts/search.js"></script>
-
+    
+  <script src="/scripts/collectionItems.js"></script>
+    
