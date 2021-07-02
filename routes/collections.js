@@ -89,7 +89,8 @@ let locals = {
   title: `Home - ${process.env.APP_NAME}`,
   collectionID,
   owner: collection.userName,
-  useMail: collection.useMail
+  useMail: collection.useMail,
+  active: "collection"
 };
 res.render("collection_settings", locals);
 })

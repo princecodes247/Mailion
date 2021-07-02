@@ -14,6 +14,7 @@
   flex-direction: column;
   flex: 2 4 290px;
   max-width: 20vw;
+  min-width: 230px;
   background: var(--bg);
   box-shadow: 1px 0 6px 4px #0002;
   background: var(--alt-bg);
@@ -57,6 +58,11 @@
       transform: translate(-45%, -48%);
     }
   }
+  &__profile_name {
+    text-overflow: clip;
+    word-wrap: break-word;
+    word-break: break-all;
+  }
   &__bottom {
     flex: 6;
     display: flex;
@@ -85,6 +91,14 @@
     gap: 10px;
     &:hover {
       background-color: var(--transition-color);
+    }
+    a {
+      color: var(--white);
+      text-decoration: none;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      gap: 10px;
     }
     &--active {
       color: var(--active-color);

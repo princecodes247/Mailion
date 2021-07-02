@@ -23,6 +23,7 @@
       -ms-flex: 2 4 290px;
           flex: 2 4 290px;
   max-width: 20vw;
+  min-width: 230px;
   background: var(--bg);
   -webkit-box-shadow: 1px 0 6px 4px #0002;
           box-shadow: 1px 0 6px 4px #0002;
@@ -102,6 +103,12 @@
           transform: translate(-45%, -48%);
 }
 
+.side_menu__profile_name {
+  text-overflow: clip;
+  word-wrap: break-word;
+  word-break: break-all;
+}
+
 .side_menu__bottom {
   -webkit-box-flex: 6;
       -ms-flex: 6;
@@ -160,6 +167,21 @@
 
 .side_menu__link:hover {
   background-color: var(--transition-color);
+}
+
+.side_menu__link a {
+  color: var(--white);
+  text-decoration: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 10px;
 }
 
 .side_menu__link--active {
