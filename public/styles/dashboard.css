@@ -29,7 +29,7 @@
           box-shadow: 1px 0 6px 4px #0002;
   background: var(--alt-bg);
   font-family: var(--heading-font);
-  padding-left: 40px;
+  padding-left: 30px;
 }
 
 .side_menu__logo {
@@ -74,6 +74,7 @@
           align-items: center;
   gap: 10px;
   color: var(--white);
+  padding-right: 15px;
 }
 
 .side_menu__profile_pic {
@@ -104,6 +105,7 @@
 }
 
 .side_menu__profile_name {
+  max-width: 80px;
   text-overflow: clip;
   word-wrap: break-word;
   word-break: break-all;
@@ -162,26 +164,12 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  text-decoration: none;
   gap: 10px;
 }
 
 .side_menu__link:hover {
   background-color: var(--transition-color);
-}
-
-.side_menu__link a {
-  color: var(--white);
-  text-decoration: none;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  gap: 10px;
 }
 
 .side_menu__link--active {
@@ -351,7 +339,7 @@
   -ms-grid-columns: (minmax(150px, 250px))[auto-fit];
       grid-template-columns: repeat(auto-fit, minmax(150px, 250px));
   gap: 20px;
-  grid-auto-rows: 200px;
+  grid-auto-rows: 250px;
 }
 
 .no-collection-sign {
@@ -408,12 +396,12 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  gap: 20px;
 }
 
 .collection_item__icon {
   width: 70px;
   height: 70px;
-  background-color: var(--black-4);
 }
 
 .modal {

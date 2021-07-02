@@ -30,18 +30,12 @@ div.ham {
 }
 
 .c-card__top {
-  background-color: var(--alt-bg);
   margin-bottom: 10px;
   height: 100%;
   width: 100%;
   -webkit-box-flex: 4;
       -ms-flex: 4;
           flex: 4;
-}
-
-.c-card__top--circle {
-  width: 9em;
-  border-radius: 100px;
   -ms-flex-item-align: center;
       align-self: center;
   display: -webkit-box;
@@ -53,6 +47,16 @@ div.ham {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+.c-card__top img {
+  height: 100px;
+}
+
+.c-card__top--circle {
+  background-color: var(--alt-bg);
+  width: 9em;
+  border-radius: 100px;
 }
 
 .c-card__bottom {

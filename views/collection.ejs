@@ -42,15 +42,13 @@
                   </ul>
                 </button>
                 <input class="dashboard__search" type="search" name="dashboard_search" id="dashboard_search" placeholder="Search collection">
-                <button class="button button--sec dashboard__search_btn desktop">Search</button>
-                <button class="button button--sec dashboard__search_btn mobile"><i class="ri-search-line"></i></button>
               </div>
             </div>
                 <div>
                   <% if (collection.entries.length === 0) { %>
                    
                     <span class="no-collection-sign">
-                      <img src="" alt="no-collection-img" />
+                      <img src="/assets/img/no_data.svg"width="200px" alt="no-collection-img"  />
                       <p>No entries yet...</p>
                     </span>
                     

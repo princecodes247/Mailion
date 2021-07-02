@@ -3,7 +3,7 @@
     <script defer src="/scripts/control-modal.js"></script>
 
     <main class="flex">
-      <%- include('partials/aside', {active: 1}) %>
+      <%- include('partials/aside') %>
       <article class="dashboard">
         <div class="dashboard__top">
           <h3>Dashboard</h3>
@@ -29,8 +29,7 @@
               </ul>
             </button>
             <input class="dashboard__search" type="search" name="dashboard_search" id="dashboard_search" placeholder="Search collection">
-            <button class="button button--sec dashboard__search_btn desktop">Search</button>
-            <button class="button button--sec dashboard__search_btn mobile"><i class="ri-search-line"></i></button>
+            
           </div>
         </div>
         <section class="dashboard__collections">
@@ -42,15 +41,16 @@
             <div class="dashboard__collections_grid">
             <% if (collections.length === 0) { %>
               <span class="no-collection-sign">
-                <img src="" alt="no-collection-img"  />
+                <img src="/assets/img/no_data.svg" width="200px" alt="no-collection-img"  />
                 <p>You have no collections yet...</p>
               </span>
                   <% } else { %>
                   <% collections.forEach(collection => { %>
                     <div class="collection_item" id="<%- collection.collectionID %>">
                       <div class="collection_item__top">
-                        <div class="collection_item__icon">
-                        </div>
+                        
+                          <img class="collection_item__icon" src="/assets/img/collection.svg" alt="">
+                        
                         <div class="collection_item__message_insight"><%- collection.entries.length %>  messages</div>
                       </div>
                       <h4 class="collection_item__title"><%- collection.title %> </h4>

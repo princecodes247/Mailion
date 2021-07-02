@@ -22,18 +22,23 @@ div.ham {
   border-radius: var(--border-rad-1);
   padding: 20px;
   &__top {
-    background-color: var(--alt-bg);
+    
     margin-bottom: 10px;
     height: 100%;
     width: 100%;
     flex: 4;
-    &--circle {
-      width: 9em;
-      border-radius: 100px;
-      align-self: center;
+    align-self: center;
       display: flex;
       justify-content: center;
       align-items: center;
+    img {
+      height: 100px;
+    }
+    &--circle {
+      background-color: var(--alt-bg);
+      width: 9em;
+      border-radius: 100px;
+      
     }
   }
   &__bottom {

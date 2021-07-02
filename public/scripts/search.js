@@ -1,4 +1,5 @@
-let searchBar = document.querySelector("#dashboard_search");
+(()=> {
+  let searchBar = document.querySelector("#dashboard_search");
 let collections = document.querySelectorAll(".collection_item");
 
 searchBar.addEventListener("input", () => {
@@ -20,3 +21,5 @@ searchBar.addEventListener("input", () => {
     }
   });
 });
+
+})()

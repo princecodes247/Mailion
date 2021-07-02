@@ -19,7 +19,7 @@
   box-shadow: 1px 0 6px 4px #0002;
   background: var(--alt-bg);
   font-family: var(--heading-font);
-  padding-left: 40px;
+  padding-left: 30px;
   &__logo {
     flex: 1;
     display: flex;
@@ -39,6 +39,8 @@
     align-items: center;
     gap: 10px;
     color: var(--white);
+  padding-right: 15px;
+
   }
   &__profile_pic {
     background-color: var(--sec-color);
@@ -59,6 +61,7 @@
     }
   }
   &__profile_name {
+    max-width: 80px;
     text-overflow: clip;
     word-wrap: break-word;
     word-break: break-all;
@@ -88,18 +91,12 @@
     display: flex;
     justify-content: flex-start;
     align-items: center;
+    text-decoration: none;
     gap: 10px;
     &:hover {
       background-color: var(--transition-color);
     }
-    a {
-      color: var(--white);
-      text-decoration: none;
-      display: flex;
-      justify-content: flex-start;
-      align-items: center;
-      gap: 10px;
-    }
+
     &--active {
       color: var(--active-color);
       background-color: var(--sec-color);
@@ -199,7 +196,7 @@
     height: min-content;
     grid-template-columns: repeat(auto-fit, minmax(150px, 250px));
     gap: 20px;
-    grid-auto-rows: 200px;
+    grid-auto-rows: 250px;
   }
 }
 
@@ -233,11 +230,11 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 20px;
   }
   &__icon {
     width: 70px;
     height: 70px;
-    background-color: var(--black-4);
   }
 }
 

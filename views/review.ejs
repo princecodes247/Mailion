@@ -2,25 +2,7 @@
 <body>
     
         <main class="flex">
-          <aside class="side_menu">
-            <div class="side_menu__logo">
-              <img src="./assets/img/logo_long.png" width="80px" alt="">
-            </div>
-            <div class="side_menu__top">
-              <div class="side_menu__profile">
-                <img class="side_menu__profile_pic" src="" alt="">
-              <p class="side_menu__profile_name">Prince Lee</p>
-              </div>
-            </div>
-            <div class="side_menu__bottom">
-              <ol class="side_menu__nav">
-                <li class="side_menu__link side_menu__link--active">Dashboard</li>
-                <li class="side_menu__link">Plans</li>
-                <li class="side_menu__link">Settings</li>
-                <li class="side_menu__link">Logout</li>
-              </ol>
-            </div>
-          </aside>
+          <%- include('partials/aside') %>
           <article class="dashboard">
             <div class="dashboard__top">
               <div class="dashboard__nav">

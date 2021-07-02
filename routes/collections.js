@@ -21,7 +21,8 @@ router.get("/view/:collectionID", ensureAuthenticated, (req, res) => {
       title: `${collection.title} Collection - ${process.env.APP_NAME}`,
       collection,
       keys,
-      user
+      user,
+      pageName: "collection"
     };
     res.render("collection", locals);
 })
