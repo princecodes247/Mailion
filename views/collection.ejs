@@ -20,16 +20,16 @@
                         <p><%- collection.desc %> </p>
                         <h5 class="margin_top--30">Link</h5>
                         <div class="row">
-                          <p><%- `${process.env.APP_BASE_URL}/collections/send/collection.collectionID` %> </p>
-                          <button class="button button--trans">
-                            
+                          <p id="collection-link"><%- `${process.env.APP_BASE_URL}/collections/send/collection.collectionID` %> </p>
+                          <button data-target="#collection-link" class="button button--trans copyBtn">
+                            <i class="ri-clipboard-line"></i>
                           </button>
                         </div>
                     </div>
             </div>
             <div class="dashboard__search_sect">
               <div class="dashboard__search_bar">
-                <button class="button button--trans button--with_dropdown dashboard__filter_btn icon__menu"><i class="ri-equalizer-line"></i>
+                <button class="button button--trans button--with_dropdown dashboard__filter_btn icon__menu "><i class="ri-equalizer-line"></i>
                   <ul class="dropdown">
                     <div>
                       <p>Search By</p>
@@ -47,7 +47,15 @@
               </div>
             </div>
                 <div>
-                    <table class="table-bottom">
+                  <% if (collection.entries.length === 0) { %>
+                   
+                    <span class="no-collection-sign">
+                      <img src="" alt="no-collection-img" />
+                      <p>No entries yet...</p>
+                    </span>
+                    
+                    <% } else { %>
+                      <table class="table-bottom">
                         <thead>
                            <tr>
                              <% keys.forEach(key => { %>
@@ -65,7 +73,7 @@
                             <% } %>
                         </tbody>
                     </table>
-               
+                    <% } %>
                 </div>
             </article>
         </main>
