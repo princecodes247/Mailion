@@ -15,11 +15,13 @@ router.get("/view/:collectionID", ensureAuthenticated, (req, res) => {
   
   Collection.findById(collectionID).then((collection) => {
     let keys = Object.keys(Object.assign({}, ...collection.entries))
+    let user = req.user
     let locals = {
       layout: "layouts/layout",
       title: `${collection.title} Collection - ${process.env.APP_NAME}`,
       collection,
-      keys
+      keys,
+      user
     };
     res.render("collection", locals);
 })
@@ -112,7 +114,7 @@ router.post("/send/:collectionID", cors(), (req, res) => {
               message: "Successful",
             });
           });
-          if (collection.useMail == true) {
+          if (false) {
             sendCollectionMail(req, collection);
           }
         }else {

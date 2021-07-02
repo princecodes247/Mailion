@@ -2,7 +2,7 @@
 <body>
   <script defer src="/scripts/jquery@3.4.1.js"></script>
     <script defer src="/scripts/scroll.js"></script>
-        <main>
+        <main class="flex">
           <%- include('partials/aside', {active: ""}) %>
           <div class="navbar_back"></div>
           <article class="dashboard">
@@ -17,7 +17,14 @@
                       
                       <div class="bottom">
                         <h5>Description</h5>
-                        <p><%- collection.title %> </p>
+                        <p><%- collection.desc %> </p>
+                        <h5 class="margin_top--30">Link</h5>
+                        <div class="row">
+                          <p><%- `${process.env.APP_BASE_URL}/collections/send/collection.collectionID` %> </p>
+                          <button class="button button--trans">
+                            
+                          </button>
+                        </div>
                     </div>
             </div>
             <div class="dashboard__search_sect">
@@ -62,3 +69,5 @@
                 </div>
             </article>
         </main>
+
+        <script src="/scripts/copy.js"></script>

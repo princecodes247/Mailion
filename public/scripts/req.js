@@ -35,7 +35,7 @@ createCollectionForm.addEventListener("submit", () => {
   })
     .then((resp) => {
       let grid = document.querySelector(".dashboard__collections_grid");
-      modal.classList.remove("close");
+      modal.classList.add("close");
       let item = document.createElement("div");
       item.classList.add("collection_item");
       let top = document.createElement("div");

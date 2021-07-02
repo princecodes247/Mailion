@@ -12,11 +12,14 @@
 .height--all {
   height: 100%;
 }
-.margin_top--40{
+.margin_y--40{
   margin: 40px 0;
 }
-.margin_top--20{
+.margin_y--20{
   margin: 20px 0;
+}
+.margin_top--30{
+  margin-top: 30px;
 }
 .center {
   justify-content: center;
@@ -24,6 +27,12 @@
 }
 .font--xxbig {
   font-size: 10em;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 
 .above-3{

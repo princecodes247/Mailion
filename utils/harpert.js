@@ -116,16 +116,13 @@ class Harpert {
   }
 
   //? I DON'T UNDERSTAND THIS ONE YET
-  async update(id) {
+  async update(item) {
     let data = JSON.stringify({
       operation: "update",
       schema: this.schema,
       table: this.table,
       records: [
-        {
-          id: id,
-          dog_name: "Penny B",
-        },
+        item,
       ],
     });
 

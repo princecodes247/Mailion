@@ -39,13 +39,13 @@
             <button class="button open-modal-btn">Create new collection</button>
           </div>
           <div class="dashboard__collections_bottom">
+            <div class="dashboard__collections_grid">
             <% if (collections.length === 0) { %>
-              <span class="no-collection-sign hidden">
+              <span class="no-collection-sign">
                 <img src="" alt="collectionz" />
                 <p>You have no collections yet...</p>
               </span>
-              <% } else { %>
-                <div class="dashboard__collections_grid">
+                  <% } else { %>
                   <% collections.forEach(collection => { %>
                     <div class="collection_item" id="<%- collection.collectionID %>">
                       <div class="collection_item__top">
@@ -57,8 +57,8 @@
                       <p class="collection_item__desc"><%- collection.desc %> </p>
                     </div>
                   <% }) %>
+                  <% } %>
                 </div>
-                <% } %>
         </div>
         </section>
     
@@ -84,5 +84,5 @@
   </article>
   </main>
     
-  <script src="/scripts/collectionItems.js"></script>
+  <script defer src="/scripts/collectionItems.js"></script>
     
