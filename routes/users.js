@@ -8,6 +8,7 @@ const idGenerator = require("../utils/idGenerator");
 const { Harpert } = require("../utils/harpert");
 let Collection = new Harpert("users", "collection");
 let User = new Harpert("users", "user");
+let Review = new Harpert("users", "reviews");
 const passport = require("passport");
 const { ensureAuthenticated, forwardAuthenticated } = require("../config/auth");
 
@@ -88,10 +89,13 @@ router.get("/review", ensureAuthenticated, (req, res) => {
 
 
 router.post("/review", ensureAuthenticated, (req, res) => {
-  let { email } = req.body;
+  let { name, review, title } = req.body;
   let user = req.user;
   let userData = {
-    email,
+    name, 
+    review, 
+    title,
+    username: user.userName
   };
   Review.insert(userData)
     .then((resp) => {
