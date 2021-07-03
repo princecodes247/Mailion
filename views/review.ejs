@@ -9,9 +9,7 @@
                   <h3>Write a review</h3>
                 
                   <div>
-                    <button>S</button>
-                    <button>S</button>
-                        <button>S</button>
+
                     </div>
               </div>
               
@@ -20,24 +18,25 @@
                     <p></p>
                 </div>
                   </div>
-                  <form action="/review" method="post">
+                  <form id="review-form" action="/review" method="post">
                       <label for="">
-                        <input type="text" placeholder="John Doe">
+                        <input type="text" id="review_name_input" placeholder="John Doe" >
                         <p class="float" >Your Name</p>
                       </label>
                       <label for="">
-                        <textarea class="input" name="" id="" cols="30" rows="10" placeholder="Your review"></textarea>
+                        <textarea class="input" name="" id="review_message_input" cols="30" rows="10" placeholder="Your review" required></textarea>
                         
                     </label>
                     <label for="">
-                      <input type="password" placeholder="Frontend Developer, VSAW">
+                      <input id="review_title_input" type="text" placeholder="Frontend Developer, VSAW">
                       <p class="float">Your title (if you have any)</p>
                   </label>
                     <div class="button-sect">
-                    <button type="submit">Send Review</button>
+                    <button id="review_submit" type="submit">Send Review</button>
                     </div>
                   </form>
           
               
             </article>
         </main>
+        <script src="/scripts/review.js"></script>

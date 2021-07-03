@@ -1,4 +1,4 @@
-
+<link rel="stylesheet" href="/styles/collection.css">
 <body>
   <script defer src="/scripts/jquery@3.4.1.js"></script>
     <script defer src="/scripts/scroll.js"></script>
@@ -20,7 +20,7 @@
                         <p><%- collection.desc %> </p>
                         <h5 class="margin_top--30">Link</h5>
                         <div class="row">
-                          <p id="collection-link"><%- `${process.env.APP_BASE_URL}/collections/send/collection.collectionID` %> </p>
+                          <p id="collection-link"><%- `${process.env.APP_BASE_URL}/collections/send/${collection.collectionID}` %> </p>
                           <button data-target="#collection-link" class="button button--trans copyBtn">
                             <i class="ri-clipboard-line"></i>
                           </button>
@@ -64,7 +64,7 @@
                         <tbody>
                             <% for( let count = 0; count < collection.entries.length; count++ ) { %>
                               <tr>
-                                <% collection.entries[count].forEach(item => { %>
+                                <% Object.values(collection.entries[count]).forEach(item => { %>
                                   <td><%- item %> </td>
                                 <% }) %>
                               </tr>
