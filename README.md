@@ -4,7 +4,7 @@ Veldora is a service that simplifies form handling to the bearest minimum. It en
 ## How to use
 1. Sign up for Veldora.
 2. Create a collection (i.e A collection is a space to store your form data)
-3. Copy scripts and paste in your code.
+3. Copy your link and paste in your form action.
 
 ## THINGS TO DO
 
@@ -20,7 +20,7 @@ Veldora is a service that simplifies form handling to the bearest minimum. It en
 - [x] Create landing page
 - [x] Create Signup and login pages
 - [x] Create Dashboard page
-- [ ] Create Settings page
+- [x] Create Settings page
 - [x] Create Development page
 - [x] Add 404 page
 - [ ] Work on metas
@@ -49,14 +49,14 @@ Veldora is a service that simplifies form handling to the bearest minimum. It en
 - [x] Add account collection limit
 - [x] Add collection messages limit
 - [x] Fix Create collection message
-- [ ] Update create collection system
+- [x] Update create collection system
 - [ ] Add 404 page route
 - [ ] Set up collection settings
 - [ ] Add add custom email setup
 - [x] Replace collection id generator with uuid
 
 #### Models
-- [ ] Adjust collection model to include settings, a name and a description
+- [x] Adjust collection model to include settings, a name and a description
 
 ### FIX
 
