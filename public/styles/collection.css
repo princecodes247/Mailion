@@ -30,6 +30,7 @@ main form button{
   margin: 25px 0;
   font-size: 0.9em;
   /* min-width: 400px; */
+  width: 100%;
   box-shadow: 0 0 20px rgb(0, 0, 0, 0.15);
 }
 
