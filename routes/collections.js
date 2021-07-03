@@ -36,7 +36,7 @@ router.post("/create", ensureAuthenticated, (req, res) => {
     desc = desc.toString().trim();
     let newCollection = true;
 //Replace with uuid
-    let collectionID = idGenerator(6, title);
+    let collectionID = idGenerator(6, title.replace(/\s+/g, ''));
     console.log(`${collectionID} line 37 collection.js`);
     Collection.findById(
       collectionID,
