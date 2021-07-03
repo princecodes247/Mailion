@@ -103,27 +103,31 @@ router.post("/send/:collectionID", cors(), (req, res) => {
 
   let collectionID = req.params.collectionID;
   let formData = { ...req.body };
+  let host = req.headers.host
   // Move auth to header
-  
   if (true) {
     Collection.findById(collectionID)
       .then((collection) => {
         
-        if (collection.messages.length < 100) {
-          collection.messages.push({ formData });
+        if (collection.entries.length < 100) {
+          collection.entries.push(formData);
           Collection.update(collection).then(() => {
-            res.json({
-              message: "Successful",
-            });
-          });
-          if (false) {
-            sendCollectionMail(req, collection);
-          }
+            if (false) {
+              sendCollectionMail(req, collection);
+            }
+            let locals = {
+              layout: "layouts/layout",
+              title: `Thank you! - ${process.env.APP_NAME}`,
+              host
+            };
+            res.render("thanks", locals);
+          })
         }else {
           res.json("Collection limit exceeded")
         }
       })
       .catch((err) => {
+
         res.send({
           message: "Unsuccessful",
           error: err,
