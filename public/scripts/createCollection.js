@@ -1,4 +1,5 @@
 let createCollectionForm = document.querySelector("#create-collection");
+let noCollectionSign = document.querySelector(".no-collection-sign");
 
 createCollectionForm.addEventListener("submit", () => {
   event.preventDefault();
@@ -9,7 +10,6 @@ createCollectionForm.addEventListener("submit", () => {
   postRequest("/collections/create", "POST", data)
     .then((resp) => {
       let grid = document.querySelector(".dashboard__collections_grid");
-      modal.classList.add("close");
       let item = document.createElement("div");
       item.classList.add("collection_item");
       let top = document.createElement("div");
@@ -31,6 +31,8 @@ createCollectionForm.addEventListener("submit", () => {
       item.append(title);
       item.append(desc);
       grid.append(item);
+      noCollectionSign.classList.add("hidden");
+      modal.classList.add("close");
     })
     .catch((err) => {
       console.log(err);
