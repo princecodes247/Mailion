@@ -1,0 +1,40 @@
+<header class="c-navbar <%- classes %>  scroll-shrink">
+    <div class="c-navbar__logo">
+      <a href="/"
+        ><img src="/assets/img/logo_long.png" width="100px" alt=""
+      /></a>
+    </div>
+    <nav>
+      <ul class="c-navbar__links">
+        <li>
+          <a href="/dashboard" class="c-navbar__link <%- pageName === "dashboard" ||pageName === "collection"   ? "c-navbar__link--current" : "" %> ">
+            <i class="ri-dashboard-line"></i>Dashboard
+          </a>
+        </li>
+        <li>
+          <a href="/review" class="c-navbar__link <%- pageName === "review"   ? "c-navbar__link--current" : "" %> ">
+            <!-- Add review icon -->
+            <i class="ri-bill-line"></i>Review
+            </a>
+        </li>
+        <li>
+          <a
+            href="/settings"
+            class="c-navbar__link  <%- pageName === "settings"   ? "c-navbar__link--current" : "" %>"
+          >
+            <i class="ri-settings-2-line"></i>Settings
+          </a>
+        </li>
+        <li>
+          <a
+            href="/logout"
+            class="c-navbar__link button button--outline"
+          >
+            <i class="ri-logout-box-r-line"></i>Logout
+          </a>
+        </li>
+      </ul>
+    </nav>
+    <div class="ham"></div>
+  </header>
+  <div class="navbar_back <%- classes %>"></div>

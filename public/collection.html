@@ -1,134 +1,206 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="description" content="Veldora is a tool created by Prince Gbalam that makes it easy to send form details to your mail without
+    needing to write backend code.
+    Try it out today!" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <!--TODO Work on these icons-->
+    <link rel="apple-touch-icon" sizes="180x180" href="/img/apple-touch-icon.56e3e538e402.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32x32.195b72d8c434.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon-16x16.64576fad7414.png" />
+    <link rel="shortcut icon" href="/img/favicon.81fde82a904a.ico" />
+    <link rel="manifest" href="/img/manifest.c8e3b78f511f.json" />
+    <link rel="mask-icon" href="/img/safari-pinned-tab.4e80224bde32.svg" color="#832e8e" />
+    <meta name="theme-color" content="#832e8e" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@veldora" />
+    <meta name="twitter:creator" content="@prince_codes247" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Veldora - Supercharged forms" />
+    <meta property="og:image" content="media/images/" />
+    <meta property="og:description" content="Veldora is a tool created by Prince Gbalam that makes it easy to handle form data without
+        needing to write backend code.
+        Try it out today!" />
+    <meta property="og:url" content="" />
+    <meta property="og:site_name" content="veldora.com" />
+    <meta property="fb:app_id" content="206571166063990" />
+    <link rel="canonical" href="https://veldora.herokuapp.com" />
     <title>Veldora</title>
     <link rel="stylesheet" href="./styles/general.css">
-    <link rel="stylesheet" href="./styles/dashboard.css">
-    <link rel="stylesheet" href="./styles/collection.css">  
-    <link rel="stylesheet" href="./styles/button.css">
-    <link rel="stylesheet" href="./styles/control.css">
+  
+    <link rel="stylesheet" href="./styles/button.css" />
+    <link rel="stylesheet" href="./styles/dashboard.css"> 
+    <link rel="stylesheet" href="./styles/collection.css"> 
+    <link rel="stylesheet" href="./styles/form.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="./styles/control.css" />
 </head>
 <body>
-  <header class="c-navbar scroll-shrink">
+  <header class="c-navbar  scroll-shrink">
     <div class="c-navbar__logo">
-      <a href="./home.html"><img src="./assets/img/logo_long.png" width="100px" alt="" /></a>
+      <a href="/"
+        ><img src="./assets/img/logo_long.png" width="100px" alt=""
+      /></a>
     </div>
-    <nav class="desktop">
+    <nav>
       <ul class="c-navbar__links">
-        <li ><a href="./home.html" class="c-navbar__link c-navbar__link--current">home</a></li>
-        <li >
-          <a href="http://" class="c-navbar__link">about</a>
+        <li>
+          <a href="/" class="c-navbar__link c-navbar__link--current"
+            >home</a
+          >
         </li>
-        <li >
-          <a href="http://" class="c-navbar__link">docs</a>
+
+        <li>
+          <a href="/docs" class="c-navbar__link">docs</a>
         </li>
-        <li >
-          <a href="http://" class="c-navbar__link">FAQ</a>
+        <li>
+          <a href="/faqs" class="c-navbar__link">FAQs</a>
         </li>
-        <li >
-          <a href="./dashboard.html" class="c-navbar__link button button--outline">
-          Sign In
+        <li>
+          <a
+            href="/signup"
+            class="c-navbar__link button button--outline"
+          >
+            Sign Up
           </a>
         </li>
       </ul>
     </nav>
-    <div class="ham mobile"></div>
+    <div class="c-navbar__ham ham ">
+      <div class="ham__line ham__line--1"></div>
+      <div class="ham__line ham__line--2"></div>
+      <div class="ham__line ham__line--3"></div>
+    </div>
   </header>
-        <main>
-          <aside class="side_menu">
-            <div class="side_menu__logo">
-              <img src="./assets/img/logo_long.png" width="80px" alt="">
-            </div>
-            <div class="side_menu__top">
-              <div class="side_menu__profile">
-                <img class="side_menu__profile_pic" src="" alt="">
-              <p class="side_menu__profile_name">Prince Lee</p>
+  <div class="navbar_back"></div>
+  <main class="flex">
+    <aside class="side_menu">
+      <div class="side_menu__logo">
+        <a href="/home"><img src="./assets/img/logo_long.png" width="80px" alt="Veldora logo"></a>
+      </div>
+      <div class="side_menu__top">
+        <div class="side_menu__profile">
+          <div class="side_menu__profile_pic">
+            <h2>P</h2>
+          </div>
+        <p class="side_menu__profile_name">princegbalam</p>
+        </div>
+      </div>
+      <div class="side_menu__bottom">
+        <nav class="side_menu__nav">
+          <a href="/dashboard" class="side_menu__link">
+            <i class="ri-dashboard-line"></i>Dashboard
+          </a>
+          <a href="/review" class="side_menu__link">
+            <!-- Add review icon -->
+            <i class="ri-bill-line"></i>Review
+            </a>
+          <a href="/settings" class="side_menu__link">
+            <i class="ri-settings-2-line"></i>Settings
+          </a>
+          <a href="/logout" class="side_menu__link side_menu__link--warning">
+            <i class="ri-logout-box-r-line"></i>Logout
+          </a>
+          
+          </nav>
+      </div>
+    </aside>
+    <article class="dashboard">
+      <div class="dashboard__top">
+              <div class="dashboard__nav">
+                  <h3>Collection: Space Form </h3>
+                
+                  <div class="dashboard__nav_btns">
+                        <button class="button button--trans"><a href="/settings/"></a></button>
+                    </div>
               </div>
-            </div>
-            <div class="side_menu__bottom">
-              <ol class="side_menu__nav">
-                <li class="side_menu__link side_menu__link--active">Dashboard</li>
-                <li class="side_menu__link">Plans</li>
-                <li class="side_menu__link">Settings</li>
-                <li class="side_menu__link">Logout</li>
-              </ol>
-            </div>
-          </aside>
-          <div class="navbar_back"></div>
-          <article class="dashboard">
-            <div class="dashboard__top">
-                    <div class="dashboard__nav">
-                        <h3>Collection: Project Survey</h3>
-                      
-                        <div class="dashboard__nav_btns">
-                              <button class="button button--trans">S</button>
-                          </div>
-                    </div>
-                      
-                      <div class="bottom">
-                        <h5>Description</h5>
-                        <p>This is a something for something</p>
-                    </div>
-            </div>
-            <div class="dashboard__search_sect">
-              <div class="dashboard__search_bar">
-                <button class="button button--trans button--with_dropdown dashboard__filter_btn icon__menu">E
-                  <ul class="dropdown">
-                    <div>
-                      <p>Search By</p>
-                    <li><label>Name</label>
-                    <input type="checkbox"></li>
-                    <li><label>Email</label>
-                      <input type="checkbox"></li>
-                      <li><label>Phone Number</label>
-                        <input type="checkbox"></li>
-                    <li><label>Message</label>
-                      <input type="checkbox"></li>
-                    </div>
-                 
-                  </ul>
-                </button>
-                <input class="dashboard__search" type="search" name="dashboard_search" id="dashboard_search" placeholder="Search collection">
-                <button class="button button--sec dashboard__search_btn desktop">Search</button>
-                <button class="button button--sec dashboard__search_btn mobile">Q</button>
+                
+                <div class="bottom">
+                  <h5>Description</h5>
+                  <p><%- collection.desc %> </p>
+                  <h5 class="margin_top--30">Link</h5>
+                  <div class="row">
+                    <p id="collection-link"><%- `${process.env.APP_BASE_URL}/collections/send/${collection.collectionID}` %> </p>
+                    <button data-target="#collection-link" class="button button--trans copyBtn">
+                      <i class="ri-clipboard-line"></i>
+                    </button>
+                  </div>
               </div>
-            </div>
-                <div>
-                    <table class="table-bottom">
-                        <thead>
-                           <tr>
-                            <th>S/N</th>
-                            <th>Name</th>
-                            <th>Sex</th>
-                            <th>Age</th>
-                            <th>Opinion</th>
-                           </tr>
-                        </thead>
-                        <tbody>
-                            
-                            <tr>
-                              <td>1</td>
-                                <td>Susan</td>
-                                <td>Female</td>
-                                <td>23</td>
-                                <td>I think it's great</td>
-                            </tr>
-                            <tr class="active-row">
-                              <td>2</td>
-                                <td>Susan</td>
-                                <td>Female</td>
-                                <td>23</td>
-                                <td>I think it's great</td>
-                            </tr>
-                        </tbody>
-                    </table>
-               
-                </div>
-            </article>
-        </main>
+      </div>
+      <div class="dashboard__search_sect">
+        <div class="dashboard__search_bar">
+          <button class="button button--trans button--with_dropdown dashboard__filter_btn icon__menu "><i class="ri-equalizer-line"></i>
+            <ul class="dropdown">
+              <div>
+                <p>Search By</p>
+              <li><label>Title</label>
+              <input type="checkbox"></li>
+              <li><label>Description</label>
+                <input type="checkbox"></li>
+              </div>
+           
+            </ul>
+          </button>
+          <input class="dashboard__search" type="search" name="dashboard_search" id="dashboard_search" placeholder="Search collection">
+        </div>
+      </div>
+          <div class="dashboard__bottom">
+            
+             
+              <span class="no-collection-sign">
+                <img src="./assets/img/no_data.svg"width="200px" alt="no-collection-img"  />
+                <p>No entries yet...</p>
+              </span>
+              
+              
+                <table class="table-bottom">
+                  <thead>
+                     <tr>
+                       
+                        <th>S/N</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Message</th>
+                       
+                     </tr>
+                  </thead>
+                  <tbody>
+                      
+                        <tr>
+                          
+                            <td>1</td>
+                            <td>Prince Gbalam</td>
+                            <td>taskmasterharry@gmail.com</td>
+                            <td>Good Evening</td>
+                          
+                        </tr>
+                        <tr>
+                          
+                          <td>2</td>
+                          <td>Prince Gbalam</td>
+                          <td>taskmasterharry@gmail.com</td>
+                          <td>Good Evening</td>
+                        
+                      </tr>
+                      <tr>
+                          
+                        <td>3</td>
+                        <td>Prince Gbalam</td>
+                        <td>taskmasterharry@gmail.com</td>
+                        <td>Good Evening</td>
+                      
+                    </tr>
+                      
+                  </tbody>
+              </table>
+      
+          </div>
+      </article>
+  </main>
  
 </body>
 </html>
