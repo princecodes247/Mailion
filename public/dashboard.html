@@ -1,71 +1,117 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
+    <meta http-equiv="content-type" content="text/html;charset=utf-8" />
+    <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Veldora is a tool created by Prince Gbalam that makes it easy to send form details to your mail without
+    needing to write backend code.
+    Try it out today!" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <!--TODO Work on these icons-->
+    <link rel="apple-touch-icon" sizes="180x180" href="/img/apple-touch-icon.56e3e538e402.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32x32.195b72d8c434.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon-16x16.64576fad7414.png" />
+    <link rel="shortcut icon" href="/img/favicon.81fde82a904a.ico" />
+    <link rel="manifest" href="/img/manifest.c8e3b78f511f.json" />
+    <link rel="mask-icon" href="/img/safari-pinned-tab.4e80224bde32.svg" color="#832e8e" />
+    <meta name="theme-color" content="#832e8e" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@veldora" />
+    <meta name="twitter:creator" content="@prince_codes247" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Veldora - Supercharged forms" />
+    <meta property="og:image" content="media/images/" />
+    <meta property="og:description" content="Veldora is a tool created by Prince Gbalam that makes it easy to handle form data without
+        needing to write backend code.
+        Try it out today!" />
+    <meta property="og:url" content="" />
+    <meta property="og:site_name" content="veldora.com" />
+    <meta property="fb:app_id" content="206571166063990" />
+    <link rel="canonical" href="https://veldora.herokuapp.com" />
     <title>Veldora</title>
     <link rel="stylesheet" href="./styles/general.css">
-    <link rel="stylesheet" href="./styles/button.css">
-    <link rel="stylesheet" href="./styles/dashboard.css">
+  
+    <link rel="stylesheet" href="./styles/button.css" />
+    <link rel="stylesheet" href="./styles/dashboard.css"> 
     <link rel="stylesheet" href="./styles/form.css">
     <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
-    <link rel="stylesheet" href="./styles/control.css">
-    
-  </head>
+    <link rel="stylesheet" href="./styles/control.css" />
+</head>
+<script defer src="https://cdn.jsdelivr.net/npm/axios@0.21.1/dist/axios.min.js"></script>
+<script defer src="./scripts/req.js"></script>
   <body>
     <script defer src="./scripts/control-modal.js"></script>
-        <header class="c-navbar scroll-shrink">
+    <header class="c-navbar  scroll-shrink">
       <div class="c-navbar__logo">
-        <a href="./home.html"><img src="./assets/img/logo_long.png" width="100px" alt="" /></a>
+        <a href="/"
+          ><img src="./assets/img/logo_long.png" width="100px" alt=""
+        /></a>
       </div>
       <nav>
         <ul class="c-navbar__links">
-          <li ><a href="./home.html" class="c-navbar__link c-navbar__link--current">home</a></li>
-          <li >
-            <a href="http://" class="c-navbar__link">about</a>
+          <li>
+            <a href="/" class="c-navbar__link c-navbar__link--current"
+              >home</a
+            >
           </li>
-          <li >
-            <a href="http://" class="c-navbar__link">docs</a>
+  
+          <li>
+            <a href="/docs" class="c-navbar__link">docs</a>
           </li>
-          <li >
-            <a href="http://" class="c-navbar__link">FAQ</a>
+          <li>
+            <a href="/faqs" class="c-navbar__link">FAQs</a>
           </li>
-          <li >
-            <a href="./dashboard.html" class="c-navbar__link button button--outline">
-            Sign In
+          <li>
+            <a
+              href="/signup"
+              class="c-navbar__link button button--outline"
+            >
+              Sign Up
             </a>
           </li>
         </ul>
       </nav>
-      <div class="ham"></div>
+      <div class="c-navbar__ham ham ">
+        <div class="ham__line ham__line--1"></div>
+        <div class="ham__line ham__line--2"></div>
+        <div class="ham__line ham__line--3"></div>
+      </div>
     </header>
+    <div class="navbar_back"></div>
     <main class="flex">
       <aside class="side_menu">
         <div class="side_menu__logo">
-          <a href="./home.html"><img src="./assets/img/logo_long.png" width="80px" alt="Veldora logo"></a>
+          <a href="/home"><img src="./assets/img/logo_long.png" width="80px" alt="Veldora logo"></a>
         </div>
         <div class="side_menu__top">
           <div class="side_menu__profile">
             <div class="side_menu__profile_pic">
               <h2>P</h2>
             </div>
-          <p class="side_menu__profile_name">Prince Lee</p>
+          <p class="side_menu__profile_name">princegbalam</p>
           </div>
         </div>
         <div class="side_menu__bottom">
-          <ol class="side_menu__nav">
-            <li class="side_menu__link side_menu__link--active">
-              <i class="ri-dashboard-line"></i>Dashboard</li>
-            <li class="side_menu__link">
+          <nav class="side_menu__nav">
+            <a href="/dashboard" class="side_menu__link">
+              <i class="ri-dashboard-line"></i>Dashboard
+            </a>
+            <a href="/review" class="side_menu__link">
               <!-- Add review icon -->
-              <i class="ri-bill-line"></i>Review</li>
-            <li class="side_menu__link"><i class="ri-settings-2-line"></i>Settings</li>
-            <li class="side_menu__link side_menu__link--warning"><i class="ri-logout-box-r-line"></i>Logout</li>
-          </ol>
+              <i class="ri-bill-line"></i>Review
+              </a>
+            <a href="/settings" class="side_menu__link">
+              <i class="ri-settings-2-line"></i>Settings
+            </a>
+            <a href="/logout" class="side_menu__link side_menu__link--warning">
+              <i class="ri-logout-box-r-line"></i>Logout
+            </a>
+            
+            </nav>
         </div>
       </aside>
-      <div class="navbar_back"></div>
+
       <article class="dashboard">
         <div class="dashboard__top">
           <h3>Dashboard</h3>
@@ -91,94 +137,49 @@
               </ul>
             </button>
             <input class="dashboard__search" type="search" name="dashboard_search" id="dashboard_search" placeholder="Search collection">
-            <button class="button button--sec dashboard__search_btn desktop">Search</button>
-            <button class="button button--sec dashboard__search_btn mobile"><i class="ri-search-line"></i></button>
+            
           </div>
         </div>
         <section class="dashboard__collections">
           <div class="dashboard__collections_top">
             <p class="">Collections</p>
-            <button class="button open-modal-btn">Create new collection</button>
+            <button class="button open-modal-btn desktop">Create new collection</button>
+            <button class="button open-modal-btn mobile">Create</button>
           </div>
           <div class="dashboard__collections_bottom">
-            <span class="no-collection-sign hidden">
-              <img src="" alt="collectionz" />
-              <p>You have no collections yet...</p>
-            </span>
-          </div>
+            <div class="dashboard__collections_grid">
 
-          <div class="dashboard__collections_grid">
-            <div class="collection_item">
-              <div class="collection_item__top">
-                <div class="collection_item__icon">
+              <span class="no-collection-sign">
+                <img src="./assets/img/no_data.svg" width="200px" alt="no-collection-img"  />
+                <p>You have no collections yet...</p>
+              </span>
 
-                </div>
-                <div class="collection_item__message_insight">40 messages</div>
-              </div>
-              <h4 class="collection_item__title">Collectison</h4>
-              <p class="collection_item__desc">Some stuff about some stuff</p>
-
-            </div>
-            <div class="collection_item">
-              <div class="collection_item__top">
-                <div class="collection_item__icon">
+                    <div class="collection_item" id="<%- collection.collectionID %>">
+                      <div class="collection_item__top">
+                        
+                          <img class="collection_item__icon" src="./assets/img/collection.svg" alt="">
+                        
+                        <div class="collection_item__message_insight">0  messages</div>
+                      </div>
+                      <h4 class="collection_item__title">Space Form</h4>
+                      <p class="collection_item__desc">This form is for something about something</p>
+                    </div>
 
                 </div>
-                <div class="collection_item__message_insight">40 messages</div>
-              </div>
-              <h4 class="collection_item__title">Collection</h4>
-              <p class="collection_item__desc">Some stuff about some stuff</p>
-
-            </div>
-            <div class="collection_item">
-              <div class="collection_item__top">
-                <div class="collection_item__icon">
-
-                </div>
-                <div class="collection_item__message_insight">40 messages</div>
-              </div>
-              <h4 class="collection_item__title">Collection</h4>
-              <p class="collection_item__desc">Some stuff about some stuff</p>
-
-            </div>
-            <div class="collection_item">
-              <div class="collection_item__top">
-                <div class="collection_item__icon">
-
-                </div>
-                <div class="collection_item__message_insight">40 messages</div>
-              </div>
-              <h4 class="collection_item__title">Collection</h4>
-              <p class="collection_item__desc">Some stuff about some stuff</p>
-
-            </div>
-            <div class="collection_item">
-              <div class="collection_item__top">
-                <div class="collection_item__icon">
-
-                </div>
-                <div class="collection_item__message_insight">40 messages</div>
-              </div>
-              <h4 class="collection_item__title">Collection</h4>
-              <p class="collection_item__desc">Some stuff about some stuff</p>
-
-            </div>
-           
-          </div>
-        
+        </div>
         </section>
     
     <section class="modal close">
       <div class="form">
         <h4>Create new collection</h4>
         
-        <form id="create-collection" action="" method="post">
+        <form id="create-collection" action="/create" method="post">
           <label for="">
-            <input id="collection_name_input" type="text" required/>
+            <input id="collection_name_input" type="text" name="title" required/>
             <p class="float">Collection Name</p>
           </label>
           <label for="">
-            <textarea name="" id="collection_desc_input" cols="30" rows="10" placeholder="A brief description of the collection" required></textarea>
+            <textarea name="desc" id="collection_desc_input" cols="30" rows="10" placeholder="A brief description of the collection" required></textarea>
           </label>
           <div class="button-sect">
               <button class="close-modal-btn">Cancel</button>
@@ -200,8 +201,10 @@
             })
         })
     </script> -->
-    <script src="./scripts/axios.min.js"></script>
-    <script src="./scripts/req.js"></script>
-    <script src="./scripts/search.js"></script>
+    <script defer src="./scripts/menu.js"></script>
+    <script defer src="./scripts/search1.js"></script>
+  <script defer src="./scripts/createCollection.js"></script>
+  <script defer src="./scripts/collectionItems.js"></script>
+    
   </body>
 </html>

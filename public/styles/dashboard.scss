@@ -189,14 +189,13 @@
     justify-content: center;
   }
   &__collections_grid {
-    display: -ms-grid;
     display: grid;
-    height: -webkit-min-content;
-    height: -moz-min-content;
     height: min-content;
     grid-template-columns: repeat(auto-fit, minmax(150px, 250px));
     gap: 20px;
+    justify-content: center;
     grid-auto-rows: 250px;
+    padding-top: 30px;
   }
 }
 
@@ -298,7 +297,7 @@
   height: 100%;
 }
 
-@media screen and (max-width: 460px) {
+@media screen and (max-width: 600px) {
   .c-navbar {
     display: flex;
   }
