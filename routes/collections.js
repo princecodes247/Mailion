@@ -22,6 +22,7 @@ router.get("/view/:collectionID", ensureAuthenticated, (req, res) => {
       collection,
       keys,
       user,
+      classes: "small",
       pageName: "collection"
     };
     res.render("collection", locals);
@@ -89,6 +90,7 @@ let locals = {
   layout: "layouts/static",
   title: `Home - ${process.env.APP_NAME}`,
   collectionID,
+  classes: "small",
   owner: collection.userName,
   useMail: collection.useMail,
   active: "collection"
@@ -118,7 +120,9 @@ router.post("/send/:collectionID", cors(), (req, res) => {
             let locals = {
               layout: "layouts/layout",
               title: `Thank you! - ${process.env.APP_NAME}`,
+              classes: "small",
               host
+
             };
             res.render("thanks", locals);
           })

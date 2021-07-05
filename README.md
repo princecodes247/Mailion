@@ -6,6 +6,8 @@ Veldora is a service that simplifies form handling to the bearest minimum. It en
 2. Create a collection (i.e A collection is a space to store your form data)
 3. Copy your link and paste in your form action.
 
+
+
 ## THINGS TO DO
 
 ### Front-end

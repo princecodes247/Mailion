@@ -50,6 +50,7 @@ router.get("/dashboard", ensureAuthenticated, (req, res) => {
     title: `Dashboard - ${process.env.APP_NAME}`,
     collections,
     user,
+    classes: "small",
     pageName: "dashboard"
   };
     res.render("dashboard", locals);
@@ -60,6 +61,7 @@ router.get("/settings", ensureAuthenticated, (req, res) => {
   let locals = {
     layout: "layouts/static",
     title: `Settings - ${process.env.APP_NAME}`,
+    classes: "small",
   };
   res.render("settings", locals);
 });
@@ -81,6 +83,7 @@ router.get("/review", ensureAuthenticated, (req, res) => {
     layout: "layouts/layout",
     title: `Write a review - ${process.env.APP_NAME}`,
     user,
+    classes: "small",
     pageName: "review"
   };
   res.render("review", locals);
