@@ -99,7 +99,7 @@ res.render("collection_settings", locals);
 })
 });
 
-router.post("/send/:collectionID", cors(), (req, res) => {
+router.post("/send/:collectionID", (req, res) => {
   //
   
 
