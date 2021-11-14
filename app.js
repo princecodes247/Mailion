@@ -20,8 +20,9 @@ app.set('layout', 'layouts/layout');
 app.set("layout extractStyles", true);
 
 // Express body parser
-// app.use(bodyParser.json());
+
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
 
 //Fix Session Warning
 
